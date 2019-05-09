@@ -1,6 +1,6 @@
 ## My Target Audience-
 
--includes **Career Coaches, Mentors, Teachers, Hiring Managers, Recruiters, My Peers, Karaoke Singers, Karaoke DJs, Bar Attenders, Bar Employees,** and **Night Owl**s in general.
+-includes **Career Coaches, Mentors, Teachers, Hiring Managers, Recruiters, My Peers, Karaoke Singers, Karaoke DJs, Bar Attendees, Bar Employees,** and **Night Owls** in general.
 
 ## I want to create a web application that-
 
