@@ -1,0 +1,27 @@
+{
+  "name": "Owull",
+  "version": "1.0.0",
+  "description": "**Owull** is my Capstone Project for the **_SavvyCoders_** Course Curriculum.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rustiphyde/owull.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rustiphyde/owull/issues"
+  },
+  "homepage": "https://github.com/rustiphyde/owull#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "parcel-bundler": "^1.12.3"
+  }
+}
