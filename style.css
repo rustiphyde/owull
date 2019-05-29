@@ -3,4 +3,13 @@
   box-sizing: border-box;
 }
 
+nav > ul > li > a {
+  font-family: 'Lemon', cursive;
+}
+
+body {
+  background-color: #F4DB9D;
+  color: #361002;
+}
+
 
