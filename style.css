@@ -1,10 +1,50 @@
 .container {
-  width: auto;
+  max-width: 960px;
   box-sizing: border-box;
+  margin: 0 auto;
+  display: inline-block;
+}
+#wlcm {
+  font-family: 'Lemon', cursive;
+  text-align: center;
+  background-color: #B7410E;
+  color: #F4DB9D;
+  border-top: solid 3px #361002;
+  border-bottom: dotted 6px #361002;
+  text-shadow: 4px 4px 1px #361002;
 }
 
-nav > ul > li > a {
+.messg {
+  background-color: #6B5238;
+}
+
+nav {
+  padding: 6px;
+}
+
+nav  ul {
+  background-color: #6B5238;
+  list-style: none;
+  padding: 6px;
+}
+
+nav ul li {
+  padding: 6px;
+}
+nav ul:hover {
+  background-color: #b7410e;
+}
+nav ul li :hover, nav ul li a :hover {
+  background-color: rgba(0 ,0, 0, 0);
+}
+
+nav ul li a {
   font-family: 'Lemon', cursive;
+  background-color: #6B5238;
+  color: #F4DB9D;
+  list-style: none;
+  text-decoration: none;
+
 }
 
 body {
