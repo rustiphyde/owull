@@ -7,15 +7,21 @@
 #wlcm {
   font-family: 'Lemon', cursive;
   text-align: center;
-  background-color: #B7410E;
+  background-color: #361002;
   color: #F4DB9D;
-  border-top: solid 3px #361002;
-  border-bottom: dotted 6px #361002;
+  border-top: solid 3px #B7410E;
+  border-bottom: solid 3px #B7410E;
   text-shadow: 4px 4px 1px #361002;
+}
+#wlcm h1 {
+  font-size: 3em;
 }
 
 .messg {
   background-color: #6B5238;
+  border-top: solid 3px #B7410E;
+  border-bottom: solid 3px #B7410E;
+
 }
 
 nav {
