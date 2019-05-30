@@ -1,8 +1,7 @@
 .container {
   max-width: 960px;
   box-sizing: border-box;
-  margin: 0 auto;
-  display: inline-block;
+
 }
 #wlcm {
   font-family: 'Lemon', cursive;
