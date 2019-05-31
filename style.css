@@ -99,11 +99,13 @@ input {
   justify-content: center;
   outline-color: #077A07;
   align-self: center;
-
-
 }
 
-/* #firebase-auth-container {
+placeholder {
+ color: #6B5238;
+}
+
+#firebase-auth-container {
   color: #F4DB9D;
   font-family: 'Kreon', serif;
   font-size: 20px;
@@ -113,7 +115,7 @@ input {
   border: solid 2px #361002;
   padding: 16px;
   background-color: #6B5238;
-} */
+}
 
 label {
   color: #F4DB9D;
@@ -135,7 +137,7 @@ label {
   }
 
 
-.btn {
+  #btnLogin {
   justify-content: center;
   margin: 6px auto;
   width: 160px;
@@ -147,6 +149,20 @@ label {
   border-radius: 16px;
   box-shadow: 0px 0px 16px #361002;
 }
+
+#btnSignUp {
+  justify-content: center;
+  margin: 6px auto;
+  width: 160px;
+  height: 80px;
+  background-color: #B7410E;
+  color: #F4DB9D;
+  font-family: 'Lemon', cursive;
+  font-size: 32px;
+  border-radius: 16px;
+  box-shadow: 0px 0px 16px #361002;
+}
+
 .btn:hover, .btn:focus{
   color: #B7410E;
   background-color: #F4DB9D;

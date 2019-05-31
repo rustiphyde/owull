@@ -12,6 +12,7 @@
 
 
     <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Kreon:700|Lemon&display=swap" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
@@ -41,18 +42,19 @@
   <main class="container">
       <div id="firebase-auth-container">
           <label>EMAIL ADDRESS
-              <input type="text">
+              <input id="txtEmail" type="email" placeholder="example@email.com">
               </label>
               <label>PASSWORD
-              <input type="text">
+              <input id="txtPassword" type="password" placeholder="********">
             </label>
-              <button class="btn">LOGIN</button>
+              <button id="btnLogin" class="btn">LOGIN</button>
        </div>
   <p id="nupsu">New User? Please Sign Up</p>
-    <button class="btn">SIGN UP</button>
+    <button id="btnSignUp" class="btn">SIGN UP</button>
     <a class="lnk" href="forgot.html">Forgot something? Click here.</a>
   </main>
-
+<script src="app.js"></script>
+<script src="index.js"></script>
 
 </body>
 </html>
