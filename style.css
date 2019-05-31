@@ -1,5 +1,5 @@
 .container {
-  width: auto;
+  /* width: auto; */
   box-sizing: border-box;
   margin: 0 auto;
   display: flex;
@@ -63,7 +63,7 @@
 
 #wlcm h1 {
   font-size: 3em;
-  -webkit-text-stroke: 1px #B7410E;
+
 }
 
 .messg {
@@ -72,6 +72,10 @@
   border-bottom: solid 3px #B7410E;
 }
 
+main {
+  width:1120px;
+  background-color: #F4DB9D;
+}
 input {
   display: flex;
   flex-direction: column;
@@ -84,6 +88,7 @@ input {
   text-align: center;
   justify-content: center;
   outline-color: #077A07;
+  align-self: center;
 
 
 }
@@ -94,6 +99,7 @@ label {
   text-align: center;
   margin: 16px 0px 0px 0px;
   font-size: 20px;
+  align-self: center;
 
 }
 
@@ -115,7 +121,7 @@ label {
 }
 
 .lnk {
-  margin-top: 12px;
+  margin: 12px 0px;
   font-family:'Kreon', serif;
   font-size: 16px;
   color: #B7410E;
@@ -155,8 +161,8 @@ nav ul li a {
 }
 
 body {
-  background-color: #F4DB9D;
-  color: #361002;
+  background-color: #361002;
+
 }
 
 
