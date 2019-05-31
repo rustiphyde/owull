@@ -1,6 +1,9 @@
 .container {
   width: auto;
   box-sizing: border-box;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 
 }
 #wlcm {
@@ -23,8 +26,29 @@
        url('./fonts/owull-o-font-webfont.svg#owull-fontregular') format('svg');
   font-weight: normal;
   font-style: normal;
-
 }
+
+.logo {
+  overflow: hidden;
+  display: inline-block;
+  color: #361002;
+  text-shadow: none;
+  font-family: 'owull-fontregular';
+  font-size: 64px;
+  -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
+  -moz-transform: matrix(-1, 0, 0, 1, 0, 0);
+  -o-transform: matrix(-1, 0, 0, 1, 0, 0);
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+.mirror {
+  overflow: hidden;
+  color: #361002;
+  text-shadow: none;
+  display: inline-block;
+  font-family: 'owull-fontregular';
+  font-size: 64px
+}
+
 .owullo {
   font-family: 'owull-fontregular';
   font-size: 80px;
@@ -38,7 +62,41 @@
   background-color: #6B5238;
   border-top: solid 3px #B7410E;
   border-bottom: solid 3px #B7410E;
+}
 
+input, input :focus {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 2px;
+  width: 320px;
+  height: 16px;
+  margin-bottom: 16px;
+  border-color: #361002;
+  font-size: 16px;
+  text-align: center;
+
+}
+
+label {
+  color: #361002;
+  font-family: 'Kreon', serif;
+  text-align: center;
+  margin: 16px 0px 0px 0px;
+  font-size: 32px;
+
+}
+
+.btn {
+  justify-content: center;
+  margin: 6px auto;
+  width: 160px;
+  height: 80px;
+  background-color: #B7410E;
+  color: #F4DB9D;
+  font-family: 'Lemon', cursive;
+  font-size: 32px;
+  border-radius: 16px;
+  box-shadow: 0px 0px 16px #361002;
 }
 
 nav {
