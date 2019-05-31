@@ -106,11 +106,8 @@ input {
 #firebase-auth-container {
   color: #F4DB9D;
   font-family: 'Kreon', serif;
-  text-align: center;
-  margin: 16px 0px 0px 0px;
   font-size: 20px;
   align-self: center;
-  align-items: center;
   text-align: center;
   margin: 16px 0px 0px 0px;
   border: solid 2px #361002;
