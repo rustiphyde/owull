@@ -4,8 +4,11 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  max-width: 1600px;
+
 
 }
+
 #wlcm {
   font-family: 'Lemon', cursive;
   text-align: center;
@@ -14,6 +17,8 @@
   border-top: solid 3px #B7410E;
   border-bottom: solid 3px #B7410E;
   text-shadow: 4px 4px 1px #361002;
+
+
 }
 
 @font-face {
@@ -39,6 +44,7 @@
   -moz-transform: matrix(-1, 0, 0, 1, 0, 0);
   -o-transform: matrix(-1, 0, 0, 1, 0, 0);
   transform: matrix(-1, 0, 0, 1, 0, 0);
+  -webkit-text-stroke: 0;
 }
 .mirror {
   overflow: hidden;
@@ -46,7 +52,8 @@
   text-shadow: none;
   display: inline-block;
   font-family: 'owull-fontregular';
-  font-size: 64px
+  font-size: 64px;
+  -webkit-text-stroke: 0;
 }
 
 .owullo {
@@ -56,6 +63,7 @@
 
 #wlcm h1 {
   font-size: 3em;
+  -webkit-text-stroke: 1px #B7410E;
 }
 
 .messg {
@@ -64,7 +72,7 @@
   border-bottom: solid 3px #B7410E;
 }
 
-input, input :focus {
+input {
   display: flex;
   flex-direction: column;
   padding: 8px 2px;
@@ -75,6 +83,8 @@ input, input :focus {
   font-size: 16px;
   text-align: center;
   justify-content: center;
+  outline-color: #077A07;
+
 
 }
 
@@ -83,7 +93,7 @@ label {
   font-family: 'Kreon', serif;
   text-align: center;
   margin: 16px 0px 0px 0px;
-  font-size: 26px;
+  font-size: 20px;
 
 }
 
@@ -99,15 +109,20 @@ label {
   border-radius: 16px;
   box-shadow: 0px 0px 16px #361002;
 }
+.btn:hover, .btn:focus{
+  color: #B7410E;
+  background-color: #F4DB9D;
+}
 
-.links {
+.lnk {
+  margin-top: 12px;
   font-family:'Kreon', serif;
   font-size: 16px;
-  color: #b7410e;
+  color: #B7410E;
   text-align: center;
 }
- .links :hover, .links :active {
-   color: lime;
+  .lnk:hover {
+   color: #077a07;
  }
 
 nav {
