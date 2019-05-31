@@ -6,7 +6,48 @@
       rel="stylesheet"
     />
     <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Kreon:700|Lemon&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <title>Owull</title>
+  <!-- <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script> -->
+</head>
+<body class="container">
+  <header id="wlcm">
+
+
+    <h1><span class="logo">aaaaaaa</span>WELCOME TO <span class="owullo">a</span>WULL<span class="mirror">aaaaaaa</span></h1>
+    <h2>PLEASE LOGIN OR SIGN UP</h2>
+  </header>
+  <main class="container">
+    <form action="">
+    <label>EMAIL ADDRESS
+    <input type="text">
+    </label>
+    <label>PASSWORD
+    <input type="text">
+  </label>
+    <button class="btn">LOGIN</button>
+   </form>
+  <p id="nupsu">New User? Please Sign Up</p>
+    <button class="btn">SIGN UP</button>
+    <a class="lnk" href="forgot.html">Forgot something? Click here.</a>
+  </main>
+  <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
 <script>
 
   var firebaseConfig = {
@@ -48,46 +89,6 @@
       // The start method will wait until the DOM is loaded.
       ui.start('#firebaseui-auth-container', uiConfig);
     </script>
-    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Kreon:700|Lemon&display=swap" rel="stylesheet">
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-    />
-    <link href="style.css" rel="stylesheet" type="text/css" />
-
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
-    <title>Owull</title>
-  <!-- <script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script> -->
-</head>
-<body class="container">
-  <header id="wlcm">
-
-
-    <h1><span class="logo">aaaaaaa</span>WELCOME TO <span class="owullo">a</span>WULL<span class="mirror">aaaaaaa</span></h1>
-    <h2>PLEASE LOGIN OR SIGN UP</h2>
-  </header>
-  <main class="container">
-    <form action="">
-    <label>EMAIL ADDRESS
-    <input type="text">
-    </label>
-    <label>PASSWORD
-    <input type="text">
-  </label>
-    <button class="btn">LOGIN</button>
-   </form>
-  <p id="nupsu">New User? Please Sign Up</p>
-    <button class="btn">SIGN UP</button>
-    <a class="lnk" href="forgot.html">Forgot something? Click here.</a>
-  </main>
 <div id="firebase-auth-container"></div>
 
 </body>
