@@ -74,6 +74,7 @@ input, input :focus {
   border-color: #361002;
   font-size: 16px;
   text-align: center;
+  justify-content: center;
 
 }
 
@@ -82,7 +83,7 @@ label {
   font-family: 'Kreon', serif;
   text-align: center;
   margin: 16px 0px 0px 0px;
-  font-size: 32px;
+  font-size: 26px;
 
 }
 
@@ -98,6 +99,16 @@ label {
   border-radius: 16px;
   box-shadow: 0px 0px 16px #361002;
 }
+
+.links {
+  font-family:'Kreon', serif;
+  font-size: 16px;
+  color: #b7410e;
+  text-align: center;
+}
+ .links :hover, .links :active {
+   color: lime;
+ }
 
 nav {
   padding: 6px;
