@@ -5,6 +5,49 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
       rel="stylesheet"
     />
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+<script>
+
+  var firebaseConfig = {
+    apiKey: "AIzaSyCsjfvMICsJGDkgbMfau_LVi_mnFEWUkU8",
+    authDomain: "owull-3714.firebaseapp.com",
+    databaseURL: "https://owull-3714.firebaseio.com",
+    projectId: "owull-3714",
+    storageBucket: "owull-3714.appspot.com",
+    messagingSenderId: "481614411046",
+    appId: "1:481614411046:web:27a15a56e4bf80d7"
+  };
+  firebase.initializeApp(firebaseConfig);
+</script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <script src="https://cdn.firebase.com/libs/firebaseui/4.0.0/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/4.0.0/firebaseui.css" />
+    <script type="text/javascript">
+      // FirebaseUI config.
+      var uiConfig = {
+        signInSuccessUrl: '<url-to-redirect-to-on-success>',
+        signInOptions: [
+          // Leave the lines as is for the providers you want to offer your users.
+          firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+          firebase.auth.EmailAuthProvider.PROVIDER_ID
+        ],
+        // tosUrl and privacyPolicyUrl accept either url string or a callback
+        // function.
+        // Terms of service url/callback.
+        tosUrl: '<your-tos-url>',
+        // Privacy policy url/callback.
+        privacyPolicyUrl: function() {
+          window.location.assign('<your-privacy-policy-url>');
+        }
+      };
+
+      // Initialize the FirebaseUI Widget using Firebase.
+      var ui = new firebaseui.auth.AuthUI(firebase.auth());
+      // The start method will wait until the DOM is loaded.
+      ui.start('#firebaseui-auth-container', uiConfig);
+    </script>
     <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Kreon:700|Lemon&display=swap" rel="stylesheet">
     <link
       rel="stylesheet"
@@ -28,12 +71,12 @@
   <header id="wlcm">
 
 
-    <h1 class="messg"><span class="logo">aaaaaaa</span>WELCOME TO <span class="owullo">a</span>WULL<span class="mirror">aaaaaaa</span></h1>
-    <h2 class="messg">PLEASE LOGIN OR SIGN UP</h2>
+    <h1><span class="logo">aaaaaaa</span>WELCOME TO <span class="owullo">a</span>WULL<span class="mirror">aaaaaaa</span></h1>
+    <h2>PLEASE LOGIN OR SIGN UP</h2>
   </header>
   <main class="container">
     <form action="">
-    <label>USERNAME/EMAIL ADDRESS
+    <label>EMAIL ADDRESS
     <input type="text">
     </label>
     <label>PASSWORD
@@ -41,10 +84,11 @@
   </label>
     <button class="btn">LOGIN</button>
    </form>
-  <label for="buttons">New User? Please Sign Up</label>
+  <p id="nupsu">New User? Please Sign Up</p>
     <button class="btn">SIGN UP</button>
     <a class="lnk" href="forgot.html">Forgot something? Click here.</a>
   </main>
+
 
 </body>
 </html>

@@ -63,14 +63,12 @@
 
 #wlcm h1 {
   font-size: 3em;
-
-}
-
-.messg {
-  background-color: #6B5238;
   border-top: solid 3px #B7410E;
   border-bottom: solid 3px #B7410E;
+  background-color: #6B5238;
+
 }
+
 
 main {
   width:1120px;
@@ -83,7 +81,7 @@ form {
   text-align: center;
   margin: 16px 0px 0px 0px;
   border: solid 2px #361002;
-  padding: 8px;
+  padding: 16px;
   background-color: #6B5238;
 
 }
@@ -106,7 +104,7 @@ input {
 }
 
 label {
-  color: #361002;
+  color: #F4DB9D;
   font-family: 'Kreon', serif;
   text-align: center;
   margin: 16px 0px 0px 0px;
@@ -114,6 +112,16 @@ label {
   align-self: center;
 
 }
+#nupsu {
+    color: #361002;
+    font-family: 'Kreon', serif;
+    text-align: center;
+    margin: 16px 0px 0px 0px;
+    font-size: 20px;
+    align-self: center;
+
+  }
+
 
 .btn {
   justify-content: center;
