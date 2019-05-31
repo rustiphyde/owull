@@ -1,5 +1,5 @@
 .container {
-  /* width: auto; */
+  width: auto;
   box-sizing: border-box;
   margin: 0 auto;
   display: flex;
