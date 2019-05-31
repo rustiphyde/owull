@@ -67,7 +67,7 @@
 }
 
 .messg {
-  background-color: #ac8545;
+  background-color: #6B5238;
   border-top: solid 3px #B7410E;
   border-bottom: solid 3px #B7410E;
 }
@@ -84,7 +84,7 @@ form {
   margin: 16px 0px 0px 0px;
   border: solid 2px #361002;
   padding: 8px;
-  background-color: #ac8545;
+  background-color: #6B5238;
 
 }
 
@@ -148,7 +148,7 @@ nav {
 }
 
 nav  ul {
-  background-color: #ac8545;
+  background-color: #6B5238;
   list-style: none;
   padding: 6px;
 }
@@ -165,7 +165,7 @@ nav ul li :hover, nav ul li a :hover {
 
 nav ul li a {
   font-family: 'Lemon', cursive;
-  background-color: #ac8545;
+  background-color: #6B5238;
   color: #F4DB9D;
   list-style: none;
   text-decoration: none;
