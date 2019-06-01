@@ -27,7 +27,7 @@
       const auth = firebase.auth();
       //sign in
       const promise = auth.signInWithEmailAndPassword(email, pass);
-      promise.catch( e => console.log(e.message));
+      promise.catch( e => document.querySelector('.errormessg').textContent('Your email and/or password is incorrect. Please try again.'));
     });
 
     //Add sign up event
@@ -47,7 +47,7 @@
     //Add realtime authentication listener
     firebase.auth().onAuthStateChanged(firebaseUser => {
       if(firebaseUser) {
-        ;
+       console.log(firebaseUser);
       }
       else {
         console.log('You are now logged out.');

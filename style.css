@@ -75,6 +75,12 @@ main {
   background-color: #F4DB9D;
 }
 
+.errormessg {
+  color: red;
+  text-align: center;
+  font-family: 'Bree Serif', serif;
+}
+
 
 input {
   display: flex;
