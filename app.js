@@ -27,7 +27,7 @@
       const auth = firebase.auth();
       //sign in
       const promise = auth.signInWithEmailAndPassword(email, pass);
-      promise.catch( e => document.querySelector('.errormessg').textContent = `Email and/or Password invalid. \n ${e.message}`);
+      promise.catch( e => document.querySelector('.errormessg').textContent = `Email and/or Password invalid. <br> ${e.message}`);
     });
 
     //Add sign up event
