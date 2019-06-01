@@ -27,7 +27,8 @@
       const auth = firebase.auth();
       //sign in
       const promise = auth.signInWithEmailAndPassword(email, pass);
-      promise.catch( e => document.querySelector('.errormessg').textContent = `Your email and/or password is incorrect. Please try again.<br> If you don't have an account, please sign up.`);
+      promise.catch( e => document.querySelector('.errormessg').textContent = `Your email and/or password is incorrect. Please try again.
+      If you don't have an account, please sign up.`);
     });
 
     //Add sign up event
