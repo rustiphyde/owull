@@ -17,7 +17,7 @@
   const txtPassword = document.getElementById('txtPassword');
   const btnLogin = document.getElementById('btnLogin');
   const btnSignUp = document.getElementById('btnSignUp');
-  const btnLogout= document.getElementById('btnLogout');
+  const btntempLogout= document.getElementById('btntempLogout');
 
   // Add login event
     btnLogin.addEventListener('click', e => {
@@ -40,7 +40,7 @@
       promise.catch( e => console.log(e.message));
     });
 
-    btnLogout.addEventListener('click', e => {
+    btntempLogout.addEventListener('click', e => {
       firebase.auth(),signOut();
     });
 
