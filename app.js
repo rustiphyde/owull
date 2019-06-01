@@ -47,10 +47,10 @@
     //Add realtime authentication listener
     firebase.auth().onAuthStateChanged(firebaseUser => {
       if(firebaseUser) {
-        console.log(firebaseUser);
+        ;
       }
       else {
-        console.log('not logged in');
+        console.log('You are now logged out.');
       }
 
     })
