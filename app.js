@@ -37,7 +37,7 @@
       const auth = firebase.auth();
       //sign in
       const promise = auth.createUserWithEmailAndPassword(email, pass);
-      promise.catch( e => document.querySelector('.errormessg').textContent = `${e.message}`);
+      promise.catch( e => document.querySelector('.errormessg').textContent = `Sign Up Unsuccessful. ${e.message}`);
     });
 
     btntempLogout.addEventListener('click', e => {
