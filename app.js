@@ -41,7 +41,7 @@
     });
 
     btntempLogout.addEventListener('click', e => {
-      firebase.auth(),signOut();
+      firebase.auth().signOut();
     });
 
     //Add realtime authentication listener
