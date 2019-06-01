@@ -45,7 +45,7 @@
     });
 
     //Add realtime authentication listener
-    firebase.auth.onAuthStateChange(firebaseUser => {
+    firebase.auth().onAuthStateChange(firebaseUser => {
       if(firebaseUser) {
         console.log(firebaseUser);
       }
