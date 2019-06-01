@@ -48,7 +48,8 @@
     firebase.auth.onAuthStateChanged(firebaseUser => {
       if(firebaseUser) {
         console.log(firebaseUser);
-      else{
+      }
+      else {
         console.log('not logged in');
       }
       }
