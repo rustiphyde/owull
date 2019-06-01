@@ -16,7 +16,7 @@
   const txtEmail = document.getElementById('txtEmail');
   const txtPassword = document.getElementById('txtPassword');
   const btnLogin = document.getElementById('btnLogin');
-  const btnSignUp = document.getElementById('btnSignUp');
+  const btnSignUpCreate = document.getElementById('btnSignUp-create');
   const btntempLogout= document.getElementById('btntempLogout');
 
   // Add login event
@@ -31,7 +31,7 @@
     });
 
     //Add sign up event
-    btnSignUp.addEventListener('click', e => {
+    btnSignUpCreate.addEventListener('click', e => {
       const email = txtEmail.value;
       const pass = txtPassword.value;
       const auth = firebase.auth();

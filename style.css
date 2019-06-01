@@ -170,6 +170,10 @@ label {
   color: #B7410E;
   background-color: #F4DB9D;
 }
+.btn:hover, .btn:focus {
+  color: #B7410E;
+  background-color: #F4DB9D;
+}
 
 .lnk {
   margin: 12px 0px;
