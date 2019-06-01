@@ -27,7 +27,7 @@
       const auth = firebase.auth();
       //sign in
       const promise = auth.signInWithEmailAndPassword(email, pass);
-      promise.catch( e => document.querySelector('.errormessg').textContent = 'Email and/or password is invalid. \n If you don\'t have an account, please sign up.');
+      promise.catch( e => document.querySelector('.errormessg').textContent = `${e.message}`);
     });
 
     //Add sign up event
@@ -37,7 +37,7 @@
       const auth = firebase.auth();
       //sign in
       const promise = auth.createUserWithEmailAndPassword(email, pass);
-      promise.catch( e => console.log(e.message));
+      promise.catch( e => document.querySelector('.errormessg').textContent = `${e.message}`);
     });
 
     btntempLogout.addEventListener('click', e => {
