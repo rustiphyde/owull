@@ -75,9 +75,6 @@ main {
   background-color: #F4DB9D;
 }
 
-form {
-
-}
 
 input {
   display: flex;
@@ -85,7 +82,7 @@ input {
   padding: 8px 2px;
   width: 320px;
   height: 16px;
-  margin-bottom: 16px;
+  margin: 8px 0px 16px 0px;
   border-color: #361002;
   font-size: 16px;
   text-align: center;
@@ -98,8 +95,7 @@ placeholder {
  color: #6B5238;
 }
 
-#firebase-auth-container {
-
+.loginForm {
   color: #F4DB9D;
   font-family: 'Kreon', serif;
   font-size: 20px;
