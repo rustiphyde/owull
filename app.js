@@ -12,6 +12,8 @@
   // Initialize Firebase
   firebase.initializeApp(config);
 
+
+
   //get elements
   const txtEmail = document.getElementById('txtEmail');
   const txtPassword = document.getElementById('txtPassword');
@@ -47,11 +49,17 @@
       const confrmPass = confirmPassword.value
       const auth = firebase.auth();
       //sign in
-      const promise = auth.createUserWithEmailAndPassword(email, pass)
+      if(confrmPass === cpass){
+      const promise = auth.createUserWithEmailAndPassword(cemail, cpass)
       promise.catch( e =>{
         return document.querySelector('.errormessg').textContent = `Sign Up Unsuccessful.
         Please try again.`,
-        console.log(e.message)});
+        console.log(e.message)});}
+       else{
+        return document.querySelector('.errormessg').textContent = `Sign Up Unsuccessful.
+        Please try again.`,
+        console.log(e.message);
+       }
     });
 
     btntempLogout.addEventListener('click', e => {
