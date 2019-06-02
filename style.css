@@ -5,13 +5,14 @@
   display: flex;
   flex-direction: column;
   max-width: 1600px;
+  text-align: center;
 
 
 }
 
 #wlcm {
   font-family: 'Lemon', cursive;
-  text-align: center;
+  /* text-align: center; */
   background-color: #361002;
   color: #F4DB9D;
   border-top: solid 3px #B7410E;
@@ -34,7 +35,6 @@
 }
 
 .logo {
-  overflow: hidden;
   display: inline-block;
   color: #361002;
   text-shadow: none;
@@ -47,7 +47,6 @@
   -webkit-text-stroke: 0;
 }
 .mirror {
-  overflow: hidden;
   color: #361002;
   text-shadow: none;
   display: inline-block;
@@ -77,7 +76,6 @@ main {
 
 .errormessg {
   color: red;
-  text-align: center;
   font-size: 16px;
   width: 320px;
 }
@@ -92,10 +90,8 @@ input {
   margin: 0 auto;
   border-color: #361002;
   font-size: 16px;
-  text-align: center;
-  justify-content: center;
   outline-color: #077A07;
-  align-self: center;
+  text-align: center;
 }
 
 placeholder {
@@ -106,9 +102,6 @@ placeholder {
   color: #F4DB9D;
   font-family: 'Kreon', serif;
   font-size: 20px;
-  align-self: center;
-  align-items: center;
-  text-align: center;
   margin: 16px 0px 0px 0px;
   border: solid 2px #361002;
   padding: 16px;
@@ -118,7 +111,6 @@ placeholder {
 label {
   color: #F4DB9D;
   font-family: 'Kreon', serif;
-  text-align: center;
   margin: 16px 0px 0px 0px;
   font-size: 20px;
   align-self: center;
@@ -128,7 +120,6 @@ label {
 #nupsu {
     color: #361002;
     font-family: 'Kreon', serif;
-    text-align: center;
     margin: 16px 0px 0px 0px;
     font-size: 20px;
     align-self: center;
@@ -137,8 +128,7 @@ label {
 
 
   #btnLogin {
-  justify-content: center;
-  margin: 6px auto;
+  margin: 8px auto;
   width: 160px;
   height: 80px;
   background-color: #B7410E;
@@ -150,7 +140,6 @@ label {
 }
 
 #btnSignUp {
-  justify-content: center;
   margin: 6px auto;
   width: 160px;
   height: 80px;
@@ -165,10 +154,12 @@ label {
 #btnLogin:hover, #btnLogin:focus {
   color: #B7410E;
   background-color: #F4DB9D;
+  outline: 0;
 }
 #btnSignUp:hover, #btnSignUp:focus {
   color: #B7410E;
   background-color: #F4DB9D;
+  outline: 0;
 }
 .btn:hover, .btn:focus {
   color: #B7410E;
@@ -180,8 +171,8 @@ label {
   font-family:'Kreon', serif;
   font-size: 16px;
   color: #B7410E;
-  text-align: center;
 }
+
   .lnk:hover {
    color: #077a07;
  }
