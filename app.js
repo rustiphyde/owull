@@ -8,15 +8,13 @@ btnLogin.addEventListener('click', (e) => {
     // get email and password
     const email = txtEmail.value;
     const pass = txtPassword.value;
-    // eslint-disable-next-line no-undef
     const auth = firebase.auth();
     // sign in
     const promise = auth.signInWithEmailAndPassword(email, pass);
 
-    promise.catch((e) => {
-        document.querySelector('.errormessg').textContent = 'Email and/or Password invalid. Please try again.';
-    },
-    console.log(e.message));
+    promise.catch(e => {
+      return  document.querySelector('.errormessg').textContent = 'Email and/or is Password invalid. Please try again.',
+        console.log(e.message)});
 });
 
 
