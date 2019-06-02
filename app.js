@@ -56,7 +56,7 @@
         Please try again.`,
         console.log(e.message)});}
        else{
-        return document.querySelector('.errormessg').textContent = `Sign Up Unsuccessful.
+        return document.querySelector('.errormessg').textContent = `Passwords don't match.
         Please try again.`,
         console.log(e.message);
        }
