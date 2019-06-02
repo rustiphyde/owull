@@ -12,7 +12,17 @@
 
 #wlcm {
   font-family: 'Lemon', cursive;
-  /* text-align: center; */
+  background-color: #361002;
+  color: #F4DB9D;
+  border-top: solid 3px #B7410E;
+  border-bottom: solid 3px #B7410E;
+  text-shadow: 4px 4px 1px #361002;
+
+
+}
+
+#sgnup {
+  font-family: 'Lemon', cursive;
   background-color: #361002;
   color: #F4DB9D;
   border-top: solid 3px #B7410E;
@@ -68,6 +78,14 @@
 
 }
 
+#sgnup h1 {
+  font-size: 3em;
+  border-top: solid 3px #B7410E;
+  border-bottom: solid 3px #B7410E;
+  background-color: #6B5238;
+
+}
+
 
 main {
   width:1120px;
@@ -98,7 +116,7 @@ placeholder {
  color: #6B5238;
 }
 
-.loginForm {
+.loginForm, .signUpForm {
   color: #F4DB9D;
   font-family: 'Kreon', serif;
   font-size: 20px;
@@ -117,7 +135,7 @@ label {
   background-color: #6B5238;
 
 }
-#nupsu {
+#nupsu, #aaupl {
     color: #361002;
     font-family: 'Kreon', serif;
     margin: 16px 0px 0px 0px;
@@ -127,7 +145,7 @@ label {
   }
 
 
-  #btnLogin {
+  #btnLogin, #btnSignUp, #btnLoginRedirect, #btnSignUpCreate, #btnLogout {
   margin: 8px auto;
   width: 160px;
   height: 80px;
@@ -139,28 +157,13 @@ label {
   box-shadow: 0px 0px 16px #361002;
 }
 
-#btnSignUp {
-  margin: 6px auto;
-  width: 160px;
-  height: 80px;
-  background-color: #B7410E;
-  color: #F4DB9D;
-  font-family: 'Lemon', cursive;
-  font-size: 32px;
-  border-radius: 16px;
-  box-shadow: 0px 0px 16px #361002;
+
+#btnLogin:hover, #btnSignUp:hover, #btnLoginRedirect:hover, #btnSignUpCreate:hover, #btnLogout:hover, #btnLogin:focus, #btnSignUp:focus, #btnLoginRedirect:focus, #btnSignUpCreate:focus, #btnLogout:focus {
+  color: #B7410E;
+  background-color: #F4DB9D;
+  outline: 0;
 }
 
-#btnLogin:hover, #btnLogin:focus {
-  color: #B7410E;
-  background-color: #F4DB9D;
-  outline: 0;
-}
-#btnSignUp:hover, #btnSignUp:focus {
-  color: #B7410E;
-  background-color: #F4DB9D;
-  outline: 0;
-}
 .btn:hover, .btn:focus {
   color: #B7410E;
   background-color: #F4DB9D;

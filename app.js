@@ -32,14 +32,22 @@
         console.log(e.message)});
     })
 
+    btnSignUp.addEventListener('click', e => {
+      location.href = "./signup.html";
+    });
+
     //Add sign up event
     btnSignUpCreate.addEventListener('click', e => {
       const email = txtEmail.value;
       const pass = txtPassword.value;
       const auth = firebase.auth();
       //sign in
-      const promise = auth.createUserWithEmailAndPassword(email, pass);
-      promise.catch( e => document.querySelector('.errormessg').textContent = `Sign Up Unsuccessful. Please try again.`, console.log(e.message));
+      const promise = auth.createUserWithEmailAndPassword(email, pass)
+      .then();
+      promise.catch( e =>{
+        return document.querySelector('.errormessg').textContent = `Sign Up Unsuccessful.
+        Please try again.`,
+        console.log(e.message)});
     });
 
     btntempLogout.addEventListener('click', e => {
