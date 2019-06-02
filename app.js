@@ -48,7 +48,6 @@
       const auth = firebase.auth();
       //sign in
       const promise = auth.createUserWithEmailAndPassword(email, pass)
-      .then();
       promise.catch( e =>{
         return document.querySelector('.errormessg').textContent = `Sign Up Unsuccessful.
         Please try again.`,
