@@ -2,7 +2,7 @@ const txtEmail = document.getElementById('txtEmail');
 const txtPassword = document.getElementById('txtPassword');
 const btnLogin = document.getElementById('btnLogin');
 const btnSignUp = document.getElementById('btnSignUp');
-const btntempLogout = document.getElementById('btnTempLogout');
+const btntempLogout = document.getElementById('btntempLogout');
 
 btnLogin.addEventListener('click', (e) => {
     // get email and password
