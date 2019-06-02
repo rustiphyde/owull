@@ -14,7 +14,7 @@ btnLogin.addEventListener('click', (e) => {
     const promise = auth.signInWithEmailAndPassword(email, pass);
 
     promise.catch((e) => {
-        return document.querySelector('.errormessg').textContent = 'Email and/or Password invalid. Please try again.';
+        document.querySelector('.errormessg').textContent = 'Email and/or Password invalid. Please try again.';
     },
     console.log(e.message));
 });
