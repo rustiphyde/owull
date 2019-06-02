@@ -17,7 +17,11 @@
   const txtPassword = document.getElementById('txtPassword');
   const btnLogin = document.getElementById('btnLogin');
   const btnSignUpCreate = document.getElementById('btnSignUp-create');
-  const btntempLogout= document.getElementById('btntempLogout');
+  const btntempLogout = document.getElementById('btntempLogout');
+  const btnSignUp = document.getElementById('btnSignUp');
+  const createEmail = document.getElementById('createEmail');
+  const createPassword = document.getElementById('createPassword');
+  const confirmPassword = document.getElementById('confirmPassword');
 
   // Add login event
     btnLogin.addEventListener('click', e => {
@@ -38,8 +42,9 @@
 
     //Add sign up event
     btnSignUpCreate.addEventListener('click', e => {
-      const email = txtEmail.value;
-      const pass = txtPassword.value;
+      const cemail = createEmail.value;
+      const cpass = createPassword.value;
+      const confrmPass = confirmPassword.value
       const auth = firebase.auth();
       //sign in
       const promise = auth.createUserWithEmailAndPassword(email, pass)
