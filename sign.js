@@ -22,7 +22,7 @@ btnSignUpCreate.addEventListener('click', (e) => {
     return document.querySelector(
         '.errormessg'
     ).textContent = `Sign Up Unsuccessful.
-      Please try again.`,
+      ${e.message}`,
     console.log(e.message)});
 });
 // eslint-disable-next-line indent
