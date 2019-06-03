@@ -5,7 +5,7 @@ const btnLoginRedirect = document.getElementById('btnLoginRedirect');
 
 // Login Redirect
 
-btnLoginRedirect.addEventListener((e) => {
+btnLoginRedirect.addEventListener('click', (e) => {
     location.href = './index.html';
 });
 
@@ -19,10 +19,10 @@ btnSignUpCreate.addEventListener('click', (e) => {
     const promise = auth.createUserWithEmailAndPassword(email, pass);
 
     promise.catch((e) => document.querySelector(
-                '.errormessg'
-            ).textContent = `Sign Up Unsuccessful.
+        '.errormessg'
+    ).textContent = `Sign Up Unsuccessful.
       Please try again.`,
-            console.log(e.message));
+    console.log(e.message));
 });
 // eslint-disable-next-line indent
 
