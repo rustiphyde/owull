@@ -18,11 +18,12 @@ btnSignUpCreate.addEventListener('click', (e) => {
 
     const promise = auth.createUserWithEmailAndPassword(email, pass);
 
-    promise.catch((e) => document.querySelector(
+    promise.catch((e) => {
+    return document.querySelector(
         '.errormessg'
     ).textContent = `Sign Up Unsuccessful.
       Please try again.`,
-    console.log(e.message));
+    console.log(e.message)});
 });
 // eslint-disable-next-line indent
 
