@@ -1,6 +1,6 @@
 // import Navigation from './components/Navigation';
-import Content from './components/Content';
-import Footer from './components/Footer';
+// import Content from './components/Content';
+// import Footer from './components/Footer';
 
 
 // // home: {
@@ -11,30 +11,30 @@ import Footer from './components/Footer';
 // // }
 
 // // Uses innerHTML property as a SETTER;
-import * as states from './store';
+// import * as states from './store';
 
-import Navigo from 'navigo';
+// import Navigo from 'navigo';
 // // import Axios from 'axios';
 
 // // Object Destructuring uses braces to pull one thing from an object
-import { capitalize } from 'lodash';
+// import { capitalize } from 'lodash';
 
 // // window,location.origin provides the base location
-const router = new Navigo(window.location.origin);
+// const router = new Navigo(window.location.origin);
 
-const root = document.querySelector('#root');
+// const root = document.querySelector('#root');
 // // In each of these we are invoking our fxns and the return is our HTML
 
 // // render receives an argument as a named parameter: "state"
-function render(state){
-    root.innerHTML =
-    // ${Navigation(state)}
-    `${Content(state)}
-    ${Footer(state)}
-    `;
+// function render(state){
+//     root.innerHTML = `
+//     ${Navigation(state)}
+//     ${Content(state)}
+//     ${Footer(state)}
+//     `;
 //     // const links = document.querySelectorAll('nav a');
 
-    router.updatePageLinks();
+//     router.updatePageLinks();
 //     // let i = 0;
 
 //     // while(i < links.length){
@@ -61,11 +61,11 @@ function render(state){
 // //     });
 
 // // querySelectorAll returns a NodeList which is an Array Like Object
-function handleRoutes(params){
-    render(states[capitalize(params.path)]);
-}
+// function handleRoutes(params){
+//     render(states[capitalize(params.path)]);
+// }
 
-router
-    .on(':path', handleRoutes)
-    .on('/', () => render(states.Welcome))
-    .resolve();
+// router
+//     .on(':path', handleRoutes)
+//     .on('/', () => render(states.Welcome))
+//     .resolve();
