@@ -10,18 +10,7 @@
 
 }
 
-#wlcm {
-  font-family: 'Lemon', cursive;
-  background-color: #361002;
-  color: #F4DB9D;
-  border-top: solid 3px #B7410E;
-  border-bottom: solid 3px #B7410E;
-  text-shadow: 4px 4px 1px #361002;
-
-
-}
-
-#sgnup {
+#wlcm, #sgnup, #den {
   font-family: 'Lemon', cursive;
   background-color: #361002;
   color: #F4DB9D;
@@ -70,22 +59,13 @@
   font-size: 80px;
 }
 
-#wlcm h1 {
+#wlcm h1, #sgnup h1, #den h1 {
   font-size: 3em;
   border-top: solid 3px #B7410E;
   border-bottom: solid 3px #B7410E;
   background-color: #6B5238;
 
 }
-
-#sgnup h1 {
-  font-size: 3em;
-  border-top: solid 3px #B7410E;
-  border-bottom: solid 3px #B7410E;
-  background-color: #6B5238;
-
-}
-
 
 main {
   width:1120px;

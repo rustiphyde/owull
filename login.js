@@ -12,9 +12,12 @@ btnLogin.addEventListener('click', (e) => {
     // sign in
     const promise = auth.signInWithEmailAndPassword(email, pass);
 
-    promise.catch(e => {
-      return  document.querySelector('.errormessg').textContent = 'Email and/or is Password invalid. Please try again.',
-        console.log(e.message)});
+    promise.then(() => {
+        location.href = './owullden.html';
+    });
+
+    promise.catch((e) => document.querySelector('.errormessg').textContent = 'Email and/or is Password invalid. Please try again.',
+        console.log(e.message));
 });
 
 
