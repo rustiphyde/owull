@@ -106,7 +106,7 @@ input {
   padding: 8px 2px;
   width: 320px;
   height: 16px;
-  margin: 0 auto;
+  margin: 8 auto;
   border-color: #361002;
   font-size: 16px;
   outline-color: #077A07;
@@ -132,7 +132,6 @@ label {
   color: #F4DB9D;
   font-family: 'Kreon', serif;
   margin: 16px 0px;
-  padding: 16px 0px;
   font-size: 20px;
   align-self: center;
   background-color: #6B5238;
