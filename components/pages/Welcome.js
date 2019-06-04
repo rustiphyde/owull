@@ -38,9 +38,7 @@ firebase.auth().onAuthStateChanged((firebaseUser) => {
 });
 
 export default function(){
-    return `<body class="container">
-
-  <header id="wlcm">
+    return ` <header id="wlcm">
 
 
     <h1><span class="logo">aaaaaaa</span>WELCOME TO <span class="owullo">a</span>WULL<span class="mirror">aaaaaaa</span></h1>
