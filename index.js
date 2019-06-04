@@ -1,4 +1,4 @@
-import Navigation from './components/Navigation';
+// import Navigation from './components/Navigation';
 import Content from './components/Content';
 import Footer from './components/Footer';
 
@@ -27,9 +27,9 @@ const root = document.querySelector('#root');
 
 // // render receives an argument as a named parameter: "state"
 function render(state){
-    root.innerHTML = `
-    ${Navigation(state)}
-    ${Content(state)}
+    root.innerHTML =
+    // ${Navigation(state)}
+    `${Content(state)}
     ${Footer(state)}
     `;
 //     // const links = document.querySelectorAll('nav a');
