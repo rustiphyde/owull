@@ -9,7 +9,7 @@ btnLogin.addEventListener('click', (e) => {
     const email = txtEmail.value;
     const pass = txtPassword.value;
     const auth = firebase.auth();
-    // sign in
+    // login event
     const promise = auth.signInWithEmailAndPassword(email, pass);
 
     promise.then(() => {

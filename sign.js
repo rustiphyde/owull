@@ -11,6 +11,7 @@ btnLoginRedirect.addEventListener('click', (e) => {
 
 // // Add sign up event
 btnSignUpCreate.addEventListener('click', (e) => {
+    // TODO - Create confirm password
     const email = createEmail.value;
     const pass = createPassword.value;
     const auth = firebase.auth();
@@ -18,12 +19,11 @@ btnSignUpCreate.addEventListener('click', (e) => {
 
     const promise = auth.createUserWithEmailAndPassword(email, pass);
 
-    promise.catch((e) => {
-    return document.querySelector(
+    promise.catch((e) => document.querySelector(
         '.errormessg'
     ).textContent = `Sign Up Unsuccessful.
       ${e.message}`,
-    console.log(e.message)});
+    console.log(e.message));
 });
 // eslint-disable-next-line indent
 
