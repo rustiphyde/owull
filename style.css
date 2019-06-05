@@ -38,7 +38,7 @@
   color: #361002;
   text-shadow: none;
   font-family: 'owull-fontregular';
-  font-size: 64px;
+  font-size: 40px;
   -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
   -moz-transform: matrix(-1, 0, 0, 1, 0, 0);
   -o-transform: matrix(-1, 0, 0, 1, 0, 0);
@@ -50,13 +50,13 @@
   text-shadow: none;
   display: inline-block;
   font-family: 'owull-fontregular';
-  font-size: 64px;
+  font-size: 40px;
   -webkit-text-stroke: 0;
 }
 
 .owullo {
   font-family: 'owull-fontregular';
-  font-size: 40px;
+  font-size: 60px;
 }
 
 #wlcm h1, #sgnup h1, #den h1 {
