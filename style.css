@@ -12,7 +12,7 @@
 
 }
 
-#wlcm, #sgnup, #den {
+#wlcm, #sgnup, #den, #forgo {
   font-family: 'Lemon', cursive;
   background-color: #361002;
   color: #F4DB9D;
@@ -66,7 +66,7 @@
   font-size: 32px;
 }
 
-#wlcm h1, #sgnup h1, #den h1 {
+#wlcm h1, #sgnup h1, #den h1, #forgo h1 {
   font-size: 2em;
   border-top: solid 3px #B7410E;
   border-bottom: solid 3px #B7410E;
