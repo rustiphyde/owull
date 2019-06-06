@@ -16,7 +16,7 @@ btnReset.addEventListener('click', (e) => {
 
     promise.then((e) => document.querySelector(
       '.successmessg'
-  ).textContent = `Email has been sent.
+  ).textContent = `Email has been sent.`
 
     promise.catch((e) => document.querySelector(
         '.errormessg'
