@@ -13,7 +13,7 @@ btnLogin.addEventListener('click', (e) => {
     const promise = auth.signInWithEmailAndPassword(email, pass);
 
     promise.then(() => {
-        location.href = './owull/index.html';
+        location.href = './owull.html';
     });
 
     promise.catch((e) => document.querySelector('.errormessg').textContent = 'Email and/or is Password invalid. Please try again.',
