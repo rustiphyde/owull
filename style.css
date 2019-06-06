@@ -111,7 +111,7 @@ placeholder {
  color: #6B5238;
 }
 
-.loginForm, .signUpForm {
+.loginForm, .signUpForm, .passwordResetForm {
   color: #F4DB9D;
   font-family: 'Kreon', serif;
   font-size: 20px;
@@ -141,7 +141,7 @@ label {
   }
 
 
-  #btnLogin, #btnSignUp, #btnLoginRedirect, #btnSignUp-create, #btnLogout {
+  .btn {
   margin: 8px auto;
   width: 160px;
   height: 80px;
@@ -154,7 +154,7 @@ label {
 }
 
 
-#btnLogin:hover, #btnSignUp:hover, #btnLoginRedirect:hover, #btnSignUp-create:hover, #btnLogout:hover, #btnLogin:focus, #btnSignUp:focus, #btnLoginRedirect:focus, #btnSignUp-create:focus, #btnLogout:focus {
+.btn:hover, .btn:focus {
   color: #B7410E;
   background-color: #F4DB9D;
   outline: 0;
