@@ -323,7 +323,7 @@ footer > strong {
 }
 
 #btnLogout {
-  float: right;
+  float: left;
   margin-bottom: 16px;
   margin: 0;
 }
