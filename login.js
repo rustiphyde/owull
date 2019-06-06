@@ -16,7 +16,7 @@ btnLogin.addEventListener('click', (e) => {
         location.href = './owull.html';
     });
 
-    promise.catch((e) => document.querySelector('.errormessg').textContent = 'Email and/or is Password invalid. Please try again.',
+    promise.catch((e) => document.querySelector('.errormessg').textContent = 'Email and/or Password is invalid. Please try again.',
         console.log(e.message));
 });
 
