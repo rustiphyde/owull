@@ -66,6 +66,10 @@
   font-size: 32px;
 }
 
+.quest {
+  font-family: 'Kreon', serif;
+}
+
 #wlcm h1, #sgnup h1, #den h1, #forgo h1 {
   font-size: 2em;
   border-top: solid 3px #B7410E;
