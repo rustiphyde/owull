@@ -308,4 +308,15 @@ main > h2 {
 
 }
 
+footer {
+  background-color: #6B5238;
+  color: #F4DB9D;
+  font-size: 16px;
+  text-align: left;
+}
+
+#btnLogout {
+  float: right;
+}
+
 

@@ -2,7 +2,7 @@ const txtEmail = document.getElementById('txtEmail');
 const txtPassword = document.getElementById('txtPassword');
 const btnLogin = document.getElementById('btnLogin');
 const btnSignUp = document.getElementById('btnSignUp');
-const btntempLogout = document.getElementById('btntempLogout');
+
 
 btnLogin.addEventListener('click', (e) => {
     // get email and password
@@ -24,11 +24,6 @@ btnLogin.addEventListener('click', (e) => {
 btnSignUp.addEventListener('click', (e) => {
     location.href = './signup.html', console.log(e.message);
 });
-
-btntempLogout.addEventListener('click', (e) => {
-    firebase.auth().signOut();
-});
-
 
 firebase.auth().onAuthStateChanged((firebaseUser) => {
     if(firebaseUser){
