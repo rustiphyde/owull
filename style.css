@@ -86,14 +86,12 @@
 .successmessg {
   color: #077A07;
   font-size: 16px;
-  width: 320px;
   text-align: center;
 }
 
 .errormessg {
   color: red;
   font-size: 16px;
-  width: 320px;
   text-align: center;
 }
 
@@ -133,9 +131,7 @@ placeholder {
   padding: 16px;
   background-color: #6B5238;
   border-radius: 16px;
-  text-align: center;
-  justify-content: center;
-}
+ }
 
 label {
   color: #F4DB9D;
