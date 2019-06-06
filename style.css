@@ -171,11 +171,6 @@ label {
   outline: 0;
 }
 
-.btn:hover, .btn:focus {
-  color: #B7410E;
-  background-color: #F4DB9D;
-}
-
 .lnk {
   margin: 12px 0px;
   font-family:'Kreon', serif;
