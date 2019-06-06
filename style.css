@@ -256,6 +256,7 @@ display: flexbox;
 flex-direction: column;
 border: solid 6px #B7410E;
 border-radius: 16px;
+width: 320px;
 }
 
 h3 {
