@@ -15,8 +15,8 @@ btnReset.addEventListener('click', (e) => {
     const promise = auth.sendPasswordResetEmail(email);
 
     promise.then((e) => document.querySelector(
-      '.successmessg'
-  ).textContent = `Email has been sent.`
+        '.successmessg'
+    ).textContent = 'Email has been sent.');
 
     promise.catch((e) => document.querySelector(
         '.errormessg'
