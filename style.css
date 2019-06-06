@@ -134,6 +134,7 @@ placeholder {
   background-color: #6B5238;
   border-radius: 16px;
   text-align: center;
+  justify-content: center;
 }
 
 label {
