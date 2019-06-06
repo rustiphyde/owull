@@ -19,6 +19,10 @@ btnSignUpCreate.addEventListener('click', (e) => {
 
     const promise = auth.createUserWithEmailAndPassword(email, pass);
 
+    promise.then((e) => document.querySelector(
+      '.successmessg'
+  ).textContent = `Sign Up Successful. Welcome to Owull. Please Click Login Below.`
+
     promise.catch((e) => document.querySelector(
         '.errormessg'
     ).textContent = `Sign Up Unsuccessful.
