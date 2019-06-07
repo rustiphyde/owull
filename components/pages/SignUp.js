@@ -1,4 +1,4 @@
-// import { signup } from './../../util';
+import { signup } from './../../util';
 
 function buildButton1(btn){
     return `<button id="${btn.id}" class="${btn.class}">${btn.text}</button>`;
@@ -30,4 +30,4 @@ export default function(state){
   </main>`;
 }
 
-// signup();
+signup();
