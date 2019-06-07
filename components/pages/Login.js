@@ -1,11 +1,17 @@
-function buildLoginButton(btn){
+import { login } from './../../util';
 
+function buildButton1(btn){
+    return `<button id="${btn.id}" class="${btn.class}">${btn.text}</button>`;
 }
 
+function buildButton2(btn){
+    return `<button id="${btn.id}" class="${btn.class}" href="/${btn.text.replace(/\s+/g, '').toLowerCase()}" data-navigo>${btn.text}</button>`;
+}
+
+
 export default function(state){
-return `<header id="wlcm">
-
-
+    return `
+    <header id="wlcm">
     <h1><span class="logo">aaa</span><span class="owullo">a</span>WULL<span class="mirror">aaa</span></h1>
     <h2>WELC<span class="owullo2">a</span>ME T<span class="owullo2">a</span> <span class="owullo2">a</span>WULL</h2>
     <h2>PLEASE L<span class="owullo2">a</span>GIN <span class="owullo2">a</span>R SIGN UP</h2>
@@ -20,10 +26,13 @@ return `<header id="wlcm">
               <label>PASSWORD
               <input id="txtPassword" type="password" placeholder="********"/>
             </label>
-              <button id="btnLogin" class="btn">LOGIN</button>
+              ${buildButton1(state.btns.fxnal[0])}
             </div>
   <p id="nupsu">New User? Please Sign Up</p>
-    <button id="btnSignUp" class="btn">SIGN UP</button>
-
-    <a class="lnk" href="forgot.html">Forgot Password?</a>
+    ${buildButton2(state.btns.redirs[1])}
+    <a class="lnk" href="/forgot" >Forgot Password?</a>
   </main>`;
+}
+
+login();
+

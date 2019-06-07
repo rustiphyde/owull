@@ -1,16 +1,16 @@
-export { default as Welcome } from './Welcome';
+export { default as Login } from './Login';
 
-export { default as SignUp } from './SignUp';
+export { default as Signup } from './Signup';
 
 export { default as Forgot } from './Forgot';
 
 export { default as Den } from './Den';
 
-export { default as Okelist } from './Okelist';
+export { default as Oke } from './Oke';
 
-export { default as Drinklist } from './Drinklist';
+export { default as Booz } from './Booz';
 
-export { default as Barzlist } from './Barzlist';
+export { default as Barz } from './Barz';
 
 export { default as Contact } from './Contact';
 
