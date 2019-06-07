@@ -28,10 +28,7 @@ const root = document.querySelector('#root');
 // render receives an argument as a named parameter: "state"
 function render(state){
     root.innerHTML =
-    // ${Navigation(state)}
-    `${Content(state)}`
-    // ${Footer(state)}
-    ;
+      `${Content(state)}`;
     // const links = document.querySelectorAll('nav a');
 
     router.updatePageLinks();
