@@ -37,8 +37,8 @@ function logout(){
                 firebase.auth().signOut().then(
                     location.href = '/login'
                 ).then(document.querySelector(
-                  '.successmessg'
-              ).textContent = 'You have been logged out of Owull. Please Login below.');
+                    '.successmessg'
+                ).textContent = 'You have been logged out of Owull. Please Login below.');
             });
         }
     }
@@ -63,23 +63,26 @@ function register(){
 
                 promise.then(() => document.querySelector(
                     '.successmessg'
-                ).textContent = 'Sign Up Successful. Welcome to Owull!! Please Click the Login Button below to be redirected to the Login Page.',
-                document.querySelector(
-                    '.errormessg'
-                ).textContent = '');
+                ).textContent = 'Sign Up Successful. Welcome to Owull!! Please Click the Login Button below to be redirected to the Login Page.').then(
+                    document.querySelector(
+                        '.errormessg'
+                    ).textContent = '');
 
-                promise.catch((e) => document.querySelector(
-                    '.errormessg'
-                ).textContent = `Sign Up Unsuccessful.${e.message}`,
-                document.querySelector(
-                  '.successmessg'
-              ).textContent = '');
-
-                );
+                promise.catch((e) => {
+                    document.querySelector(
+                        '.errormessg'
+                    ).textContent = `Sign Up Unsuccessful.${e.message}`;
+                    throw e;
+                }).catch((e) => {
+                    document.querySelector(
+                        '.successmessg'
+                    ).textContent = '';
+                });
             });
         }
     });
 }
+
 
 function reset(){
     window.addEventListener('load', (e) => {
