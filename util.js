@@ -73,10 +73,6 @@ function register(){
                         '.errormessg'
                     ).textContent = `Sign Up Unsuccessful.${e.message}`;
                     throw e;
-                }).catch((e) => {
-                    document.querySelector(
-                        '.successmessg'
-                    ).textContent = '';
                 });
             });
         }
