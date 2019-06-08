@@ -71,7 +71,7 @@ function register(){
                 promise.catch((e) => {
                     document.querySelector(
                         '.errormessg'
-                    ).textContent = `Sign Up Unsuccessful.${e.message}`;
+                    ).textContent = `Sign Up Unsuccessful. ${e.message}`;
                     throw e;
                 });
             });
