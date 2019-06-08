@@ -43,14 +43,14 @@ function logout(){
     );
 }
 
-function signup(){
+function register(){
     window.addEventListener('load', (e) => {
-        const btnSignUpCreate = document.getElementById('btnSignUp');
+        const btnRegister = document.getElementById('btnRegister');
         const createEmail = document.getElementById('createEmail');
         const createPassword = document.getElementById('createPassword');
 
-        if(btnSignUpCreate){
-            btnSignUpCreate.addEventListener('click', (e) => {
+        if(btnRegister{
+            btnRegister.addEventListener('click', (e) => {
                 // TODO - Create confirm password
                 const email = createEmail.value;
                 const pass = createPassword.value;
@@ -96,4 +96,4 @@ function reset(){
     });
 }
 
-export { login, logout, signup, reset };
+export { login, logout, register, reset };

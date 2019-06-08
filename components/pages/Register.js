@@ -1,11 +1,11 @@
-import { signup } from './../../util';
+import { register } from './../../util';
 
 function buildButton1(btn){
     return `<button id="${btn.id}" class="${btn.class}">${btn.text}</button>`;
 }
 
 function buildButton2(btn){
-    return `<button id="${btn.id}" class="${btn.class}" href="/${btn.text.replace(/\s+/g, '').toLowerCase()}" data-navigo>${btn.text}</button>`;
+    return `<button id="${btn.id}" class="${btn.class}" href="/${btn.text.toLowerCase()}" data-navigo>${btn.text}</button>`;
 }
 
 export default function(state){
@@ -30,4 +30,4 @@ export default function(state){
   </main>`;
 }
 
-signup();
+register();
