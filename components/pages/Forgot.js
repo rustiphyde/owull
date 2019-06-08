@@ -2,8 +2,6 @@
 
 
 function buildButton1(btn){
-    console.log(btn);
-
     return `<button id="${btn.id}" class="${btn.class}">${btn.text}</button>`;
 }
 

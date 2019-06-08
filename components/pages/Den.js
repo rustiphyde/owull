@@ -63,8 +63,9 @@ export default function(state){
     <button class="btnChooz">CHOOZ</button>
     <h3 class="listName">LIST NAME HERE</h3>
   </div>
-  <footer><strong>&copy2019 Rusty Hoppins</strong>
-      ${buildButton1(state.btns.fxnal[3])}
+  <footer>${buildButton1(state.btns.fxnal[3])}
+  <strong>&copy2019 Rusty Hoppins</strong>
+
   </footer>
 </main>
   `;
