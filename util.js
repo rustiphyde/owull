@@ -49,7 +49,7 @@ function register(){
         const createEmail = document.getElementById('createEmail');
         const createPassword = document.getElementById('createPassword');
 
-        if(btnRegister{
+        if(btnRegister){
             btnRegister.addEventListener('click', (e) => {
                 // TODO - Create confirm password
                 const email = createEmail.value;
