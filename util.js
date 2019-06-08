@@ -1,4 +1,4 @@
-
+import messg from './store/Error';
 
 function login(){
     window.addEventListener('load', (e) => {
@@ -20,8 +20,7 @@ function login(){
                 });
 
                 // eslint-disable-next-line quotes
-                promise.catch(() => document.querySelector('.errormessg').textContent = `Login Unsuccessful. Please make sure the Email and/or Password is correct and try again or Click Register below to create an account.`
-                );
+                promise.catch(() => document.querySelector('.errormessg').textContent = `${messg.errors[0].text}`);
             }) ;
         }
     });
@@ -37,7 +36,7 @@ function logout(){
             btnLogout.addEventListener('click', () => {
                 firebase.auth().signOut().then(
                     location.href = '/login'
-                );
+                ).then(() => document.querySelector('.successmessg').textContent = `${messg.successes[2].text}`);
             });
         }
     }
@@ -62,11 +61,11 @@ function register(){
 
                 promise.then(() => document.querySelector(
                     '.successmessg'
-                ).textContent = 'Sign Up Successful. Welcome to Owull!! Please Click the Login Button below to be Redirected to the Login Page.');
+                ).textContent = `${messg.successes[2].text}`);
 
                 promise.catch((e) => document.querySelector(
                     '.errormessg'
-                ).textContent = `Sign Up Unsuccessful.${e.message}`
+                ).textContent = `${messg.errors[1].text} ${e.message}`
                 );
             });
         }
@@ -89,9 +88,9 @@ function reset(){
 
                 promise.then(() => document.querySelector(
                     '.successmessg'
-                ).textContent = 'Email has been sent.');
+                ).textContent = `${messg.successes[1].text}`);
 
-                promise.catch(() => document.querySelector('.errormessg').textContent = `Please try again. Something went wrong.
+                promise.catch((e) => document.querySelector('.errormessg').textContent = `${messg.errors[2].text}
           ${e.message}`);
             });
         }
