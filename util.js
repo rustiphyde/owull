@@ -61,15 +61,16 @@ function register(){
 
                 promise.then((e) => document.querySelector(
                     '.successmessg'
-                ).textContent = 'Sign Up Successful. Welcome to Owull!! Please Click the Login Button below to be Redirected to the Login Page.',
+                ).textContent = 'Sign Up Successful. Welcome to Owull!! Please Click the Login Button below to be Redirected to the Login Page.');
 
                 promise.catch((e) => document.querySelector(
                     '.errormessg'
                 ).textContent = `Sign Up Unsuccessful.${e.message}`
-                )
+                );
             });
         }
-    });
+    }
+    );
 }
 
 function reset(){
