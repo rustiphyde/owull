@@ -15,11 +15,12 @@ function login(){
                 // login event
                 const promise = auth.signInWithEmailAndPassword(email, pass);
 
-                promise.then((e) => {
+                promise.then(() => {
                     location.href = '/den';
                 });
 
-                promise.catch((e) => document.querySelector('.errormessg').textContent = 'Login Unsuccessful. Please make sure the Email and/or Password is correct and try again or Click Register below to create an account.'
+                // eslint-disable-next-line quotes
+                promise.catch(() => document.querySelector('.errormessg').textContent = `Login Unsuccessful. Please make sure the Email and/or Password is correct and try again or Click Register below to create an account.`
                 );
             }) ;
         }
@@ -28,12 +29,12 @@ function login(){
 
 
 function logout(){
-    window.addEventListener('load', (e) => {
+    window.addEventListener('load', () => {
         const btnLogout = document.getElementById('btnLogout');
 
 
         if(btnLogout){
-            btnLogout.addEventListener('click', (e) => {
+            btnLogout.addEventListener('click', () => {
                 firebase.auth().signOut().then(
                     location.href = '/login'
                 );
@@ -59,7 +60,7 @@ function register(){
 
                 const promise = auth.createUserWithEmailAndPassword(email, pass);
 
-                promise.then((e) => document.querySelector(
+                promise.then(() => document.querySelector(
                     '.successmessg'
                 ).textContent = 'Sign Up Successful. Welcome to Owull!! Please Click the Login Button below to be Redirected to the Login Page.');
 
