@@ -62,9 +62,6 @@ function register(){
                 promise.then((e) => document.querySelector(
                     '.successmessg'
                 ).textContent = 'Sign Up Successful. Welcome to Owull!! Please Click the Login Button below to be redirected to the Login Page.')
-                    .then(document.querySelector(
-                        '.errormessg'
-                    ).textContent = '');
 
 
                 promise.catch((e) => {
