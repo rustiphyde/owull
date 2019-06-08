@@ -19,7 +19,7 @@ function login(){
                     location.href = '/den';
                 });
 
-                promise.catch(() => document.querySelector('.errormessg').textContent = 'Email and/or Password is invalid. Please try again.', console.log(e.message)
+                promise.catch(() => document.querySelector('.errormessg').textContent = 'Email and/or Password is invalid. Please try again.'
                 );
             }) ;
         }
