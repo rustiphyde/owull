@@ -11,7 +11,7 @@ function buildButton2(btn){
 export default function(state){
     return `<header id="sgnup">
     <h1><span class="logo">aaa</span><span class="owullo">a</span>WULL<span class="mirror">aaa</span></h1>
-    <h2>PLEASE SIGN UP</h2>
+    <h2>PLEASE REGISTER BEL<span class="owullo2">a</span>W</h2>
   </header>
   <main class="container">
           <div class="signUpForm">

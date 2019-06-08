@@ -14,7 +14,7 @@ export default function(state){
     <header id="wlcm">
     <h1><span class="logo">aaa</span><span class="owullo">a</span>WULL<span class="mirror">aaa</span></h1>
     <h2>WELC<span class="owullo2">a</span>ME T<span class="owullo2">a</span> <span class="owullo2">a</span>WULL</h2>
-    <h2>PLEASE L<span class="owullo2">a</span>GIN <span class="owullo2">a</span>R SIGN UP</h2>
+    <h2>PLEASE L<span class="owullo2">a</span>GIN <span class="owullo2">a</span>R REGISTER</h2>
   </header>
   <main class="container">
       <div class="loginForm">
@@ -28,7 +28,7 @@ export default function(state){
             </label>
               ${buildButton1(state.btns.fxnal[0])}
             </div>
-  <p id="nupsu">New User? Please Sign Up</p>
+  <p id="nupsu">New User? Please Register</p>
     ${buildButton2(state.btns.redirs[1])}
     <a class="lnk" href="/forgot" >Forgot Password?</a>
   </main>`;

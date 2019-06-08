@@ -2,7 +2,7 @@ import links from './Links';
 import btns from './Buttons';
 
 export default {
-    'pageContent': 'Signup',
+    'pageContent': 'Register',
     'links': links,
     'btns': btns
 };
