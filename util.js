@@ -15,7 +15,7 @@ function login(){
                 // login event
                 const promise = auth.signInWithEmailAndPassword(email, pass);
 
-                promise.then(() => {
+                promise.then((e) => {
                     location.href = '/den';
                 });
 
@@ -59,17 +59,14 @@ function register(){
 
                 const promise = auth.createUserWithEmailAndPassword(email, pass);
 
-                promise.then(() => document.querySelector(
+                promise.then((e) => document.querySelector(
                     '.successmessg'
                 ).textContent = 'Sign Up Successful. Welcome to Owull!! Please Click the Login Button below to be Redirected to the Login Page.',
-                document.querySelector(
-                    '.errormessg'
-                ).textContent = '');
 
                 promise.catch((e) => document.querySelector(
                     '.errormessg'
                 ).textContent = `Sign Up Unsuccessful.${e.message}`
-                );
+                )
             });
         }
     });
@@ -93,7 +90,7 @@ function reset(){
                 ).textContent = 'Email has been sent.');
 
                 promise.catch(() => document.querySelector('.errormessg').textContent = `Please try again. Something went wrong.
-          ${e.message}`, console.log(e.message));
+          ${e.message}`);
             });
         }
     });
