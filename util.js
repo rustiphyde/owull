@@ -36,7 +36,9 @@ function logout(){
             btnLogout.addEventListener('click', (e) => {
                 firebase.auth().signOut().then(
                     location.href = '/login'
-                );
+                ).then(document.querySelector(
+                  '.successmessg'
+              ).textContent = 'You have been logged out of Owull. Please Login below.');
             });
         }
     }
