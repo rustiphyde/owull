@@ -1,13 +1,13 @@
 import messg from './store/Error';
 
 function login(){
-    window.addEventListener('load', (e) => {
+    window.addEventListener('load', () => {
         const btnLogin = document.getElementById('btnLogin');
         const txtEmail = document.getElementById('txtEmail');
         const txtPassword = document.getElementById('txtPassword');
 
         if(btnLogin){
-            btnLogin.addEventListener('click', (e) => {
+            btnLogin.addEventListener('click', () => {
                 // get email and password
                 const email = txtEmail.value;
                 const pass = txtPassword.value;
@@ -36,7 +36,7 @@ function logout(){
             btnLogout.addEventListener('click', () => {
                 firebase.auth().signOut().then(
                     location.href = '/login'
-                ).then(() => document.querySelector('.successmessg').textContent = `${messg.successes[2].text}`);
+                );
             });
         }
     }
@@ -44,13 +44,13 @@ function logout(){
 }
 
 function register(){
-    window.addEventListener('load', (e) => {
+    window.addEventListener('load', () => {
         const btnRegister = document.getElementById('btnRegister');
         const createEmail = document.getElementById('createEmail');
         const createPassword = document.getElementById('createPassword');
 
         if(btnRegister){
-            btnRegister.addEventListener('click', (e) => {
+            btnRegister.addEventListener('click', () => {
                 // TODO - Create confirm password
                 const email = createEmail.value;
                 const pass = createPassword.value;
@@ -63,9 +63,9 @@ function register(){
                     '.successmessg'
                 ).textContent = `${messg.successes[2].text}`);
 
-                promise.catch((e) => document.querySelector(
+                promise.catch(() => document.querySelector(
                     '.errormessg'
-                ).textContent = `${messg.errors[1].text} ${e.message}`
+                ).textContent = `${messg.errors[1].text}`
                 );
             });
         }
@@ -90,8 +90,7 @@ function reset(){
                     '.successmessg'
                 ).textContent = `${messg.successes[1].text}`);
 
-                promise.catch((e) => document.querySelector('.errormessg').textContent = `${messg.errors[2].text}
-          ${e.message}`);
+                promise.catch((e) => document.querySelector('.errormessg').textContent = `${messg.errors[2].text}`);
             });
         }
     });
