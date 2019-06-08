@@ -19,7 +19,7 @@ function login(){
                     location.href = '/den';
                 });
 
-                promise.catch(() => document.querySelector('.errormessg').textContent = 'Email and/or Password is invalid. Please try again.'
+                promise.catch((e) => document.querySelector('.errormessg').textContent = 'Email and/or Password is invalid. Please try again.'
                 );
             }) ;
         }
@@ -63,7 +63,7 @@ function register(){
                     '.successmessg'
                 ).textContent = 'Sign Up Successful. Welcome to Owull. Please Click Login Below.');
 
-                promise.catch(() => document.querySelector(
+                promise.catch((e) => document.querySelector(
                     '.errormessg'
                 ).textContent = `Sign Up Unsuccessful.${e.message}`
                 );
