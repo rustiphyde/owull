@@ -19,7 +19,7 @@ function login(){
                     location.href = '/den';
                 });
 
-                promise.catch((e) => document.querySelector('.errormessg').textContent = 'Login Unsuccessful. Please make sure the Email and/or Password is correct and                Try again. Or Click Register below to start a new account.'
+                promise.catch(() => document.querySelector('.errormessg').textContent = 'Login Unsuccessful. Please make sure the Email and/or Password is correct and                Try again. Or Click Register below to start a new account.'
                 );
             }) ;
         }
@@ -36,9 +36,7 @@ function logout(){
             btnLogout.addEventListener('click', (e) => {
                 firebase.auth().signOut().then(
                     location.href = '/login'
-                ).then(document.querySelector(
-                    '.successmessg'
-                ).textContent = 'You have been logged out of Owull. Please Login below.');
+                );
             });
         }
     }
