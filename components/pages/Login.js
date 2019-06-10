@@ -17,14 +17,14 @@ export default function(state){
     <h2>PLEASE L<span class="owullo2">a</span>GIN <span class="owullo2">a</span>R REGISTER</h2>
   </header>
   <main class="container">
-      <div class="loginForm">
-          <h3 class="successmessg"></h3>
-        <h3 class="errormessg"></h3>
+      <div id="loginForm">
+          <h3 id="successmessg"></h3>
+        <h3 id="errormessg"></h3>
       <label>EMAIL ADDRESS
-              <input id="txtEmail" type="email" placeholder="example@email.com"/>
+              <input id="txtEmail" type="email" placeholder="example@email.com" required/>
               </label>
               <label>PASSWORD
-              <input id="txtPassword" type="password" placeholder="********"/>
+              <input id="txtPassword" type="password" placeholder="********" required/>
             </label>
               ${buildButton1(state.btns.fxnal[0])}
             </div>

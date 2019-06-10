@@ -83,13 +83,13 @@
   width:800px;
   background-color: #F4DB9D;
 } */
-.successmessg {
+#successmessg {
   color: #077A07;
   font-size: 16px;
   text-align: center;
 }
 
-.errormessg {
+#errormessg {
   color: red;
   font-size: 16px;
   text-align: center;
@@ -122,7 +122,7 @@ placeholder {
  color: #6B5238;
 }
 
-.loginForm, .signUpForm, .passwordResetForm {
+#loginForm, #signUpForm, #passwordResetForm {
   color: #F4DB9D;
   font-family: 'Kreon', serif;
   font-size: 20px;

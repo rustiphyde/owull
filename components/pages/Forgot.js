@@ -16,11 +16,11 @@ export default function(state){
     <h3>IT'S <span class="owullo2">a</span>K, LET'S RESET IT</h3>
     </header>
   <main class="container">
-      <div class="passwordResetForm">
-          <h3 class="successmessg"></h3>
-          <h3 class="errormessg"></h3>
+      <div id="passwordResetForm">
+          <h3 id="successmessg"></h3>
+          <h3 id="errormessg"></h3>
         <label>ENTER YOUR EMAIL ADDRESS
-                <input id="enterEmail" type="email" placeholder="example@email.com"/>
+                <input id="enterEmail" type="email" placeholder="example@email.com" required/>
                 </label>
                 ${buildButton1(state.btns.fxnal[2])}
               </div>

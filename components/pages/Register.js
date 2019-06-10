@@ -14,14 +14,14 @@ export default function(state){
     <h2>PLEASE REGISTER BEL<span class="owullo2">a</span>W</h2>
   </header>
   <main class="container">
-          <div class="signUpForm">
-              <h3 class="successmessg"></h3>
-            <h3 class="errormessg"></h3>
+          <div id="signUpForm">
+              <h3 id="successmessg"></h3>
+            <h3 id="errormessg"></h3>
           <label>ENTER EMAIL ADDRESS
-                  <input id="createEmail" type="email" placeholder="example@email.com"/>
+                  <input id="createEmail" type="email" placeholder="example@email.com" required/>
                   </label>
                   <label>CREATE PASSWORD
-                  <input id="createPassword" type="password" placeholder="********"/>
+                  <input id="createPassword" type="password" placeholder="********" required/>
                 </label>
                 ${buildButton1(state.btns.fxnal[1])}
                 </div>
