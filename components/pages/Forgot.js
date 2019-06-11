@@ -11,9 +11,9 @@ function buildButton2(btn){
 
 
 export default function(state){
-    return `<header id="forgo"><h1><span class="logo">aaa</span><span class="owullo">a</span>WULL<span class="mirror">aaa</span></h1>
+    return `<header id="skull"><h1><span class="logo">aaa</span><span class="owullo">a</span>WULL<span class="mirror">aaa</span></h1>
     <h2>F<span class="owullo2">a</span>RGOT Y<span class="owullo2">a</span>UR PASSW<span class="owullo2">a</span>RD<span class="quest">?</span></h2>
-    <h3>IT'S <span class="owullo2">a</span>K, LET'S RESET IT</h3>
+    <h2>IT'S <span class="owullo2">a</span>K, LET'S RESET IT</h2>
     </header>
   <main class="container">
       <div id="passwordResetForm">

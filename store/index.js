@@ -6,7 +6,7 @@ export { default as Forgot } from './Forgot';
 
 export { default as Den } from './Den';
 
-// export { default as Oke } from './Oke';
+export { default as Oke } from './Oke';
 
 // export { default as Booz } from './Booz';
 

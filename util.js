@@ -1,4 +1,5 @@
 /* eslint-disable complexity */
+
 import messg from './store/Error';
 
 
@@ -25,10 +26,10 @@ firebase.auth().onAuthStateChanged((user) => {
 );
 
 function login(){
-    window.addEventListener('DOMContentLoaded', () => {
-        const btnLogin = document.getElementById('btnLogin');
-        const txtEmail = document.getElementById('txtEmail');
-        const txtPassword = document.getElementById('txtPassword');
+    window.addEventListener('load', () => {
+        const btnLogin = document.getElementById('btn-login');
+        const txtEmail = document.getElementById('txt-email');
+        const txtPassword = document.getElementById('txt-password');
 
         if(btnLogin){
             btnLogin.addEventListener('click', (e) => {
@@ -62,31 +63,16 @@ function login(){
 }
 
 
-function logout(){
-    window.addEventListener('load', () => {
-        const btnLogout = document.getElementById('btnLogout');
-
-
-        if(btnLogout){
-            btnLogout.addEventListener('click', () => {
-                firebase.auth().signOut().then(
-                    location.href = '/login'
-                );
-            });
-        }
-    }
-    );
-}
 
 function register(){
-    window.addEventListener('DOMContentLoaded', (e) => {
-        const btnRegister = document.getElementById('btnRegister');
-        const createEmail = document.getElementById('createEmail');
-        const createPassword = document.getElementById('createPassword');
+    window.addEventListener('load', (e) => {
+        const btnRegister = document.querySelector('#btnRegister');
+        const createEmail = document.querySelector('#createEmail');
+        const createPassword = document.querySelector('#createPassword');
 
         if(btnRegister){
             btnRegister.addEventListener('click', (e) => {
-                e.preventDefault();
+
 
                 // TODO - Create confirm password
                 const email = createEmail.value;
@@ -120,7 +106,7 @@ function register(){
 }
 function reset(){
     window.addEventListener('load', (e) => {
-        const btnReset = document.getElementById('btnReset');
+        const btnReset = document.getElementById('btn-reset');
         const enterEmail = document.getElementById('enterEmail');
 
         if(btnReset){
@@ -150,5 +136,5 @@ function reset(){
 }
 
 
-export { login, logout, register, reset };
+export { login, register, reset };
 

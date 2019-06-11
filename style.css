@@ -12,7 +12,7 @@
 
 }
 
-#wlcm, #sgnup, #den, #forgo {
+#skull {
   font-family: 'Lemon', cursive;
   background-color: #361002;
   color: #F4DB9D;
@@ -58,12 +58,12 @@
 
 .owullo {
   font-family: 'owull-fontregular';
-  font-size: 80px;
+  font-size: 70px;
 }
 
 .owullo2 {
   font-family: 'owull-fontregular';
-  font-size: 32px;
+  font-size: 42px;
 }
 
 .quest {
@@ -71,12 +71,17 @@
   font-size: 32px;
 }
 
-#wlcm h1, #sgnup h1, #den h1, #forgo h1 {
+#skull h1 {
   font-size: 3em;
   border-top: solid 3px #B7410E;
   border-bottom: solid 3px #B7410E;
   background-color: #6B5238;
+  text-align: center;
 
+}
+h2 {
+  font-size: 2em !important;
+  text-align: center;
 }
 
 /* main {
@@ -84,7 +89,7 @@
   background-color: #F4DB9D;
 } */
 #successmessg {
-  color: #077A07;
+  color: #F4DB9D;
   font-size: 16px;
   text-align: center;
   text-shadow: 0px 0px 6px black;
@@ -101,8 +106,8 @@
 
 input {
   border-radius: 16px;
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   padding: 8px 2px;
   width: 320px;
   height: 16px;
@@ -153,23 +158,28 @@ label {
 
   }
 
+  input[type="button" i] {
+    align-items: center;
+  }
 
-  .btn {
+
+  .bttn {
   margin: 8px auto;
-  width: 176px;
-  height: 80px;
-  background-color: #B7410E;
-  color: #F4DB9D;
+  width: 180px ;
+  height: 80px ;
+  background-color: #B7410E ;
+  color: #F4DB9D ;
   font-family: 'Lemon', cursive;
-  font-size: 32px;
-  border-radius: 16px;
+  font-size: 26px ;
+  border-radius: 16px ;
   box-shadow: 0px 0px 16px #361002;
+  text-align: center;
 }
 
 
-.btn:hover, .btn:focus {
-  color: #B7410E;
-  background-color: #F4DB9D;
+.bttn:hover, .bttn:focus {
+  color: #B7410E ;
+  background-color: #F4DB9D ;
   outline: 0;
 }
 

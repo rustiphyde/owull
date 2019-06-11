@@ -1,7 +1,7 @@
-import { register } from './../../util';
+import messg from './../../store/Error';
 
 function buildButton1(btn){
-    return `<button id="${btn.id}" class="${btn.class}">${btn.text}</button>`;
+    return `<input type="button" id="${btn.id}" class="${btn.class}" value="${btn.text}"/>`;
 }
 
 function buildButton2(btn){
@@ -9,7 +9,7 @@ function buildButton2(btn){
 }
 
 export default function(state){
-    return `<header id="sgnup">
+    return `<header id="skull">
     <h1><span class="logo">aaa</span><span class="owullo">a</span>WULL<span class="mirror">aaa</span></h1>
     <h2>PLEASE REGISTER BEL<span class="owullo2">a</span>W</h2>
   </header>
@@ -17,11 +17,14 @@ export default function(state){
           <div id="signUpForm">
               <h3 id="successmessg"></h3>
             <h3 id="errormessg"></h3>
+            <label>CHOOSE A USERNAME
+            <input id="create-display-name" type="text" placeholder="Owull User" required/></label>
           <label>ENTER EMAIL ADDRESS
-                  <input id="createEmail" type="email" placeholder="example@email.com" required/>
+
+                  <input id="create-email" type="email" placeholder="example@email.com" required/>
                   </label>
-                  <label>CREATE PASSWORD
-                  <input id="createPassword" type="password" placeholder="********" required/>
+                  <label>CHOOSE A PASSWORD
+                  <input id="create-password" type="password" placeholder="********" required/>
                 </label>
                 ${buildButton1(state.btns.fxnal[1])}
                 </div>
@@ -30,4 +33,50 @@ export default function(state){
   </main>`;
 }
 
+function register(){
+    window.addEventListener('load', (e) => {
+        const btnRegister = document.querySelector('#btn-register');
+        const createEmail = document.querySelector('#create-email');
+        const createPassword = document.querySelector('#create-password');
+
+
+        if(btnRegister){
+            btnRegister.addEventListener('click', (e) => {
+                // TODO - Create confirm password
+                const email = createEmail.value;
+                const pass = createPassword.value;
+                const userName = document.querySelector('#create-display-name');
+                const auth = firebase.auth();
+                // sign in
+
+                auth.createUserWithEmailAndPassword(email, pass)
+                    // eslint-disable-next-line func-names
+                    .then(function(user){
+                        return user.updateProfile({
+                            'displayName': userName.value
+                        });
+                    }).catch((error) => {
+                        const errorCode = error.code;
+
+                        if(errorCode){
+                            document.querySelector('#errormessg').textContent = `${messg.errors[1].text} ${error.message}`;
+
+
+                            setTimeout(errFade, 7000);
+
+                            // eslint-disable-next-line no-inner-declarations
+                            function errFade(){
+                                document.querySelector('#errormessg').textContent = '';
+                            }
+                        }
+                    }
+                    );
+            }
+            );
+        }
+    });
+}
+
 register();
+
+

@@ -11,7 +11,7 @@ function buildButton2(btn){
 
 export default function(state){
     return `
-    <header id="wlcm">
+    <header id="skull">
     <h1><span class="logo">aaa</span><span class="owullo">a</span>WULL<span class="mirror">aaa</span></h1>
     <h2>WELC<span class="owullo2">a</span>ME T<span class="owullo2">a</span> <span class="owullo2">a</span>WULL</h2>
     <h2>PLEASE L<span class="owullo2">a</span>GIN <span class="owullo2">a</span>R REGISTER</h2>
@@ -21,10 +21,10 @@ export default function(state){
           <h3 id="successmessg"></h3>
         <h3 id="errormessg"></h3>
       <label>EMAIL ADDRESS
-              <input id="txtEmail" type="email" placeholder="example@email.com" required/>
+              <input id="txt-email" type="email" placeholder="example@email.com" required/>
               </label>
               <label>PASSWORD
-              <input id="txtPassword" type="password" placeholder="********" required/>
+              <input id="txt-password" type="password" placeholder="********" required/>
             </label>
               ${buildButton1(state.btns.fxnal[0])}
             </div>
