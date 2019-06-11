@@ -1,7 +1,8 @@
 /* eslint-disable complexity */
 import messg from './store/Error';
 
-auth.onAuthStateChanged((user) => {
+
+firebase.auth().onAuthStateChanged((user) => {
     if(user && window.location.pathname === '/login'){
         location.href = '/den';
     }
