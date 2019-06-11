@@ -1,5 +1,5 @@
 // import Navigation from './components/Navigation';
-import Content from './components/Content';
+import Content from './../components/Content';
 // import Footer from './components/Footer';
 
 
@@ -11,7 +11,7 @@ import Content from './components/Content';
 // }
 
 // Uses innerHTML property as a SETTER;
-import * as states from './store';
+import * as states from './../store';
 
 import Navigo from 'navigo';
 // import Axios from 'axios';

@@ -1,4 +1,4 @@
-// import { reset } from './../../util';
+import { reset } from './../../util';
 
 
 function buildButton1(btn){
@@ -30,4 +30,4 @@ export default function(state){
     `;
 }
 
-// reset();
+reset();

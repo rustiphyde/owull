@@ -87,12 +87,14 @@
   color: #077A07;
   font-size: 16px;
   text-align: center;
+  text-shadow: 0px 0px 6px black;
 }
 
 #errormessg {
   color: red;
   font-size: 16px;
   text-align: center;
+  text-shadow: 0px 0px 6px black;
 }
 
 
