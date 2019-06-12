@@ -100,14 +100,15 @@ h2 {
   font-size: 16px;
   text-align: center;
   text-shadow: 0px 0px 6px black;
+  margin: 8px auto;
 }
 
 
 
 input {
   border-radius: 16px;
-  /* display: flex;
-  flex-direction: column; */
+  display: flex;
+  flex-direction: column;
   padding: 8px 2px;
   width: 320px;
   height: 16px;
@@ -159,7 +160,9 @@ label {
   }
 
   input[type="button" i] {
+    margin: 24px auto;
     align-items: center;
+    line-height: 64px;
   }
 
 
@@ -177,7 +180,7 @@ label {
 }
 
 
-.bttn:hover, .bttn:focus {
+.bttn:hover, .bttn:focus, .bttn2:hover, .bttn2:focus {
   color: #B7410E ;
   background-color: #F4DB9D ;
   outline: 0;
@@ -285,15 +288,15 @@ margin-block-end: 0em;
   padding: 0.5em;
 }
 
-.btnOpen{
+#btn-open{
   float: left;
 }
 
-.btnChooz{
+#btn-chooz{
   float: right;
 }
 
-.btnOpen, .btnChooz {
+.bttn2 {
   margin: 8px auto;
   width: 80px;
   height: 40px;
@@ -329,7 +332,7 @@ footer > strong {
 
 }
 
-#btnLogout {
+#btn-logout {
   align-self: flex-end;
   width: 80px;
   height: 40px;
@@ -340,7 +343,7 @@ footer > strong {
   border-radius: 16px;
   box-shadow: 0px 0px 16px #361002;
 }
-#btnLogout:hover, #btnLogout:focus {
+#btn-logout:hover, #btn-logout:focus {
 color: #B7410E;
   background-color: #F4DB9D;
   outline: 0;

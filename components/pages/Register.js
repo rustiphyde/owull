@@ -1,4 +1,6 @@
-import messg from './../../store/Error';
+/* eslint-disable func-names */
+/* eslint-disable complexity */
+import { register } from './../../util';
 
 function buildButton1(btn){
     return `<input type="button" id="${btn.id}" class="${btn.class}" value="${btn.text}"/>`;
@@ -33,50 +35,5 @@ export default function(state){
   </main>`;
 }
 
-function register(){
-    window.addEventListener('load', (e) => {
-        const btnRegister = document.querySelector('#btn-register');
-        const createEmail = document.querySelector('#create-email');
-        const createPassword = document.querySelector('#create-password');
-
-
-        if(btnRegister){
-            btnRegister.addEventListener('click', (e) => {
-                // TODO - Create confirm password
-                const email = createEmail.value;
-                const pass = createPassword.value;
-                const userName = document.querySelector('#create-display-name');
-                const auth = firebase.auth();
-                // sign in
-
-                auth.createUserWithEmailAndPassword(email, pass)
-                    // eslint-disable-next-line func-names
-                    .then(function(user){
-                        return user.updateProfile({
-                            'displayName': userName.value
-                        });
-                    }).catch((error) => {
-                        const errorCode = error.code;
-
-                        if(errorCode){
-                            document.querySelector('#errormessg').textContent = `${messg.errors[1].text} ${error.message}`;
-
-
-                            setTimeout(errFade, 7000);
-
-                            // eslint-disable-next-line no-inner-declarations
-                            function errFade(){
-                                document.querySelector('#errormessg').textContent = '';
-                            }
-                        }
-                    }
-                    );
-            }
-            );
-        }
-    });
-}
 
 register();
-
-

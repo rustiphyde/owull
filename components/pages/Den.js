@@ -1,3 +1,5 @@
+import { logout } from './../../util';
+
 function buildButton1(btn){
     return `<button id="${btn.id}" class="${btn.class}">${btn.text}</button>`;
 }
@@ -7,7 +9,8 @@ function buildUserName(firebaseUser){
         if(firebaseUser){
             return firebase.auth().currentUser.displayName;
         }
-        return 'Owull User';
+        
+return 'Owull User';
     });
 }
 
@@ -30,44 +33,44 @@ export default function(state){
 
   <div class="phayvz">
       <span class="fas fa-music"></span>
-    <button class="btnOpen">OPEN</button>
-    <button class="btnChooz">CHOOZ</button>
+    ${buildButton1(state.btns.fxnal[9])}
+    ${buildButton1(state.btns.fxnal[5])}
     <h3 class="listName">LIST NAME HERE</h3>
   </div>
   <div class="phayvz">
       <span class="fas fa-store-alt"></span>
-    <button class="btnOpen">OPEN</button>
-    <button class="btnChooz">CHOOZ</button>
+    ${buildButton1(state.btns.fxnal[9])}
+    ${buildButton1(state.btns.fxnal[5])}
     <h3 class="listName">LIST NAME HERE</h3>
   </div>
   <div class="phayvz">
       <span class="fas fa-beer"></span>
-    <button class="btnOpen">OPEN</button>
-    <button class="btnChooz">CHOOZ</button>
+    ${buildButton1(state.btns.fxnal[9])}
+    ${buildButton1(state.btns.fxnal[5])}
     <h3 class="listName">LIST NAME HERE</h3>
   </div>
   <div class="phayvz">
       <span class="fas fa-glass-whiskey"></span>
-    <button class="btnOpen">OPEN</button>
-    <button class="btnChooz">CHOOZ</button>
+    ${buildButton1(state.btns.fxnal[9])}
+    ${buildButton1(state.btns.fxnal[5])}
     <h3 class="listName">LIST NAME HERE</h3>
   </div>
   <div class="phayvz">
       <span class="fas fa-music"></span>
-    <button class="btnOpen">OPEN</button>
-    <button class="btnChooz">CHOOZ</button>
+    ${buildButton1(state.btns.fxnal[9])}
+    ${buildButton1(state.btns.fxnal[5])}
     <h3 class="listName">LIST NAME HERE</h3>
   </div>
   <div class="phayvz">
       <span class="fas fa-glass-whiskey"></span>
-    <button class="btnOpen">OPEN</button>
-    <button class="btnChooz">CHOOZ</button>
+    ${buildButton1(state.btns.fxnal[9])}
+    ${buildButton1(state.btns.fxnal[5])}
     <h3 class="listName">LIST NAME HERE</h3>
   </div>
   <div class="phayvz">
       <span class="fas fa-cocktail"></span>
-    <button class="btnOpen">OPEN</button>
-    <button class="btnChooz">CHOOZ</button>
+    ${buildButton1(state.btns.fxnal[9])}
+    ${buildButton1(state.btns.fxnal[5])}
     <h3 class="listName">LIST NAME HERE</h3>
   </div>
   <footer>${buildButton1(state.btns.fxnal[3])}
@@ -78,21 +81,5 @@ export default function(state){
   `;
 }
 
-
-function logout(){
-  window.addEventListener('load', () => {
-      const btnLogout = document.getElementById('btn-logout');
-
-
-      if(btnLogout){
-          btnLogout.addEventListener('click', () => {
-              firebase.auth().signOut().then(
-                  location.href = '/'
-              );
-          });
-      }
-  }
-  );
-}
 
 logout();

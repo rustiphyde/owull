@@ -1,3 +1,4 @@
+/* eslint-disable complexity */
 import { login } from './../../util';
 
 function buildButton1(btn){
@@ -33,6 +34,27 @@ export default function(state){
     <a class="lnk" href="/forgot" >Forgot Password?</a>
   </main>`;
 }
+firebase.auth().onAuthStateChanged((user) => {
+    if(user && window.location.pathname === '/login'){
+        location.href = '/den';
+    }
+    else if(user){
+        console.log('Logged in as', user.email);
+    }
+    else if(!user && window.location.pathname === '/login'){
+        document.querySelector('#successmessg').textContent = 'You are currently logged out. Please login below.';
+    }
+    else if(!user && window.location.pathname === '/register'){
+        document.querySelector('#successmessg').textContent = 'To register for a new Owull account please fill out the form below and click Register. If you already have an account please click Login to navigate to the Login page.' ;
+    }
+    else if(user && window.location.pathname === '/register'){
+        location.href = '/den';
+    }
+    else{
+        console.log('Logged out');
+    }
+}
+);
 
 login();
 

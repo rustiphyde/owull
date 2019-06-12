@@ -21,7 +21,6 @@ function render(state){
     // const links = document.querySelectorAll('nav a');
 
     router.updatePageLinks();
-
 }
 // axios
 //     .get('https://jsonplaceholder.typicode.com/posts')
@@ -38,3 +37,14 @@ router
     .on(':path', handleRoutes)
     .on('/', () => render(states.Login))
     .resolve();
+
+
+firebase.auth().onAuthStateChanged((user) => {
+    if(user){
+        console.log(user);
+    }
+    else{
+        console.log('Logged Out');
+    }
+});
+
