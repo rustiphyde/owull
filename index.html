@@ -3,8 +3,7 @@
 <head>
   <title>Owull</title>
 
- <!-- The core Firebase JS SDK is always required and must be listed first -->
-
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
   <link
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
       rel="stylesheet"
@@ -18,8 +17,11 @@
       integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
       crossorigin="anonymous"
     />
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+
+    <link href="./styles/modals.css" rel="stylesheet" type="text/css" />
+    <link href="./styles/style.css" rel="stylesheet" type="text/css" />
+
+
 
 
     <meta charset="UTF-8" />
@@ -28,33 +30,89 @@
 
 </head>
 <body class="container">
-    `<header id="skull">
-        <h1><span class="logo">aaa</span><span class="owullo">a</span>WULL<span class="mirror">aaa</span></h1>
+    <header id="skull">
+        <h1><span class="logo">OOO</span><span class="owullo">O</span>WULL<span class="mirror">OOO</span></h1>
     </header>
-    <nav class="z-depth-0">
-      <div class="nav-wrapper container">
+    <nav class="container">
+      <div class="container">
         <ul>
           <li class="logged-out">
             <a href="#" class="modal-trigger" data-target="modal-login"><i class="fas fa-unlock-alt"></i>LOGIN</a>
           </li>
           <li class="logged-out">
-            <a href="#" class="modal-trigger" data-target="modal-signup"><i class="fas fa-user-plus"></i> SIGN UP</a>
+            <a href="#" class="modal-trigger" data-target="modal-signup"><i class="fas fa-user-plus"></i>SIGNUP</a>
           </li>
           <li class="logged-out">
-            <a href="#" class="modal-trigger" data-target="modal-forgot"><i class="fas fa-key"></i>
-               FORGOT PASSWORD</a>
+            <a href="#" class="modal-trigger" data-target="modal-forgot"><i class="fas fa-key"></i>FORGOT</a>
           </li>
-
-
         </ul>
       </div>
     </nav>
+    <div id="modal-login" class="modal">
+        <div class="modal-content">
+          <h4>LOGIN</h4><br />
+          <form id="login-form">
+              <h3 id="successmessg"></h3>
+              <h3 id="errormessg"></h3>
+            <div class="input-field">
+            <input type="email" id="login-email" required />
+            <label for="login-email">EMAIL ADDRESS</label>
+            </div>
+            <div class="input-field">
+            <input type="password" id="login-password" required />
+            <label for="login-password">ENTER PASSWORD</label>
+            </div>
+            <button class="bttn2">LOGIN</button>
+          </form>
+        </div>
+      </div>
 
-  <!-- <nav class="z-depth-0 brown darken-4 amber-text accent-1-text">
-    <div class="nav-wrapper container">
-
+    <div id="modal-signup" class="modal">
+      <div class="modal-content">
+        <h4>SIGN UP</h4><br />
+        <form id="signup-form">
+            <h3 id="successmessg"></h3>
+            <h3 id="errormessg"></h3>
+          <label for="signup-username">CHOOSE A USERNAME</label>
+          <input type="text" id="signup-username" required />
+          <label for="signup-email">EMAIL ADDRESS</label>
+          <input type="email" id="signup-email" required />
+          <label for="signup-password">CHOOSE PASSWORD</label>
+          <input type="password" id="signup-password" required />
+          <button class="bttn2">SIGN UP</button>
+        </form>
+      </div>
     </div>
-  </nav> -->
+    <div id="modal-forgot" class="modal">
+        <div class="modal-content">
+          <h4>Reset Password</h4>
+          <form id="reset-form">
+              <h3 id="successmessg"></h3>
+              <h3 id="errormessg"></h3>
+            <label for="reset-email">EMAIL ADDRESS</label>
+            <input type="email" id="reset-email" required />
+            <button class="bttn2">RESET PW</button>
+          </form>
+        </div>
+      </div>
+
+    <main>
+      <br><br>
+      <h2 class="logged-out"><br />NO USER IS CURRENTLY LOGGED IN
+      <br><br>PLEASE LOGIN OR SIGN UP<br><br></h2>
+      <br><br>
+      <section id="skull2">
+          <h1><span class="logo2">OOOOOOOOO</span><span class="owullo2">O</span>WULL<span class="mirror2">OOOOOOOOO</span></h1>
+      </section>
+    </main>
+
+    <footer><button class="bttn2 logged-in" id="btn-logout">LOGOUT</button>
+        <strong>&copy2019 Rusty Hoppins</strong>
+
+        </footer>
+
+
+
   <div id="root"></div>
 
 

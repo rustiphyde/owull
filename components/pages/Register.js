@@ -1,6 +1,6 @@
-/* eslint-disable func-names */
-/* eslint-disable complexity */
-import { register } from './../../util';
+// /* eslint-disable func-names */
+// /* eslint-disable complexity */
+// import { register } from './../../util';
 
 function buildButton1(btn){
     return `<input type="button" id="${btn.id}" class="${btn.class}" value="${btn.text}"/>`;
@@ -32,4 +32,4 @@ export default function(state){
 }
 
 
-register();
+// register();

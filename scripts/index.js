@@ -1,3 +1,4 @@
+/* eslint-disable func-names */
 // import Navigation from './components/Navigation';
 import Content from './../components/Content';
 // import Footer from './components/Footer';
@@ -9,7 +10,7 @@ import Navigo from 'navigo';
 import { capitalize } from 'lodash';
 
 // window,location.origin provides the base location
-const router = new Navigo(window.location.origin);
+// const router = new Navigo(window.location.origin);
 
 const root = document.querySelector('#root');
 // In each of these we are invoking our fxns and the return is our HTML
@@ -20,7 +21,7 @@ function render(state){
     ${Content(state)}`;
     // const links = document.querySelectorAll('nav a');
 
-    router.updatePageLinks();
+    // router.updatePageLinks();
 }
 // axios
 //     .get('https://jsonplaceholder.typicode.com/posts')
@@ -33,18 +34,14 @@ function handleRoutes(params){
     render(states[capitalize(params.path)]);
 }
 
-router
-    .on(':path', handleRoutes)
-    .on('/', () => render(states.Login))
-    .resolve();
+// router
+//     .on(':path', handleRoutes)
+//     .on('/', () => render(states.Login))
+//     .resolve();
 
+document.addEventListener('DOMContentLoaded', function(){
+    var modals = document.querySelectorAll('.modal');
 
-firebase.auth().onAuthStateChanged((user) => {
-    if(user){
-        console.log(user);
-    }
-    else{
-        console.log('Logged Out');
-    }
+    M.Modal.init(modals);
 });
 
