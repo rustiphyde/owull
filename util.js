@@ -1,3 +1,4 @@
+/* eslint-disable quote-props */
 /* eslint-disable quotes */
 /* eslint-disable func-names */
 /* eslint-disable complexity */
@@ -85,7 +86,7 @@ function register(){
         const btnRegister = document.querySelector('#btn-register');
         const createEmail = document.querySelector('#create-email');
         const createPassword = document.querySelector('#create-password');
-        const name = document.querySelector('#create-display-name');
+
 
 
         if(btnRegister){
@@ -97,34 +98,29 @@ function register(){
 
                 firebase.auth().createUserWithEmailAndPassword(email, pass)
                     // eslint-disable-next-line func-names
-                    .then(function(user){
-                        return user.updateProfile({
-                            /* eslint-disable quotes */
-                            "displayName": name.value })
-                            // eslint-disable-next-line func-names
-                            .then(function(){
-                                console.log(firebase.auth().currentUser);
-                            });
-                    }).catch(function(error){
-                        const errorCode = error.code;
+                    .then(function(){
+                        console.log(firebase.auth().currentUser);
+                    });
+            })
+                .catch(function(error){
+                    const errorCode = error.code;
 
-                        if(errorCode){
-                            document.querySelector('#errormessg').textContent = `${messg.errors[1].text} ${error.message}`;
+                    if(errorCode){
+                        document.querySelector('#errormessg').textContent = `${messg.errors[1].text} ${error.message}`;
 
 
-                            setTimeout(errFade, 7000);
+                        setTimeout(errFade, 7000);
 
-                            // eslint-disable-next-line no-inner-declarations
-                            function errFade(){
-                                document.querySelector('#errormessg').textContent = '';
-                            }
+                        // eslint-disable-next-line no-inner-declarations
+                        function errFade(){
+                            document.querySelector('#errormessg').textContent = '';
                         }
                     }
-                    );
-            }
-            );
+                }
+                );
         }
-    });
+    }
+    );
 }
 function reset(){
     window.addEventListener('load', (e) => {

@@ -11,18 +11,14 @@ function buildButton2(btn){
 }
 
 export default function(state){
-    return `<header id="skull">
-    <h1><span class="logo">aaa</span><span class="owullo">a</span>WULL<span class="mirror">aaa</span></h1>
+    return `
     <h2>PLEASE REGISTER BEL<span class="owullo2">a</span>W</h2>
   </header>
   <main class="container">
           <div id="signUpForm">
               <h3 id="successmessg"></h3>
             <h3 id="errormessg"></h3>
-            <label>CHOOSE A USERNAME
-            <input id="create-display-name" type="text" placeholder="Owull User" required/></label>
-          <label>ENTER EMAIL ADDRESS
-
+            <label>ENTER EMAIL ADDRESS
                   <input id="create-email" type="email" placeholder="example@email.com" required/>
                   </label>
                   <label>CHOOSE A PASSWORD

@@ -4,28 +4,34 @@ function buildButton1(btn){
     return `<button id="${btn.id}" class="${btn.class}">${btn.text}</button>`;
 }
 
-function buildUserName(firebaseUser){
-    window.addEventListener('load', (e) => {
-        if(firebaseUser){
-            return firebase.auth().currentUser.displayName;
-        }
-        
-return 'Owull User';
-    });
+// function buildUserName(){
+
+//     window.addEventListener('load', (e) => {
+//         // eslint-disable-next-line func-names
+//         firebase.auth().onAuthStateChanged(function(user){
+//             if(user.displayName == null || user.displayName == ''){
+//                 return user.displayName = 'Owull User';
+//             }
+
+//             return user.displayName;
+//         });
+//     });
+// }
+
+function buildNavHTML(stateLinks){
+    return stateLinks
+        .map(
+            (link) => `<li><a href="/${link.text.replace(/\s+/g, '').toLowerCase()}" data-navigo><span class="${link.icon}"></span>${link.text}</a></li>`
+        ).join(' ');
 }
 
-
 export default function(state){
-    return `<header id="skull">
-  <h1><span class="logo">aaa</span><span class="owullo">a</span>WULL<span class="mirror">aaa</span></h1>
-  <h2>${buildUserName()}'s Den</h2>
+    return `
+
 </header>
 <nav class="container">
   <ul>
-    <li>DEN</li>
-    <li>OKE</li>
-    <li>BOOZ</li>
-    <li>BARZ</li>
+    ${buildNavHTML(state.links.primary)}
     </ul>
 </nav>
 <main class="container">

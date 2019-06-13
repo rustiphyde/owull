@@ -16,5 +16,5 @@
 "editor.fontFamily": "'Inconsolata', Menlo, Monaco, 'Courier New', monospace",
 "editor.fontLigatures": true,
 "better-comments.highlightPlainText": true,
-"eslint.autoFixOnSave": true
+"eslint.autoFixOnSave": false
 }

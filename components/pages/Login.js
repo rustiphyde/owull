@@ -12,13 +12,10 @@ function buildButton2(btn){
 
 export default function(state){
     return `
-    <header id="skull">
-    <h1><span class="logo">aaa</span><span class="owullo">a</span>WULL<span class="mirror">aaa</span></h1>
-    <h2>WELC<span class="owullo2">a</span>ME T<span class="owullo2">a</span> <span class="owullo2">a</span>WULL</h2>
-    <h2>PLEASE L<span class="owullo2">a</span>GIN <span class="owullo2">a</span>R REGISTER</h2>
-  </header>
-  <main class="container">
-      <div id="loginForm">
+
+
+
+        <div id="loginForm">
           <h3 id="successmessg"></h3>
         <h3 id="errormessg"></h3>
       <label>EMAIL ADDRESS
@@ -32,7 +29,7 @@ export default function(state){
   <p id="nupsu">New User? Please Register</p>
     ${buildButton2(state.btns.redirs[1])}
     <a class="lnk" href="/forgot" >Forgot Password?</a>
-  </main>`;
+  `;
 }
 firebase.auth().onAuthStateChanged((user) => {
     if(user && window.location.pathname === '/login'){
