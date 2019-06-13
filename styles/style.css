@@ -180,7 +180,9 @@ placeholder {
   font-family: 'Lemon', cursive;
   font-size: 2em;
   color: #F4DB9D;
-  line-height: 32px;
+  line-height: 26px;
+  border: 3px solid #F4DB9D;
+  border-radius: 16px;
 
 }
 
