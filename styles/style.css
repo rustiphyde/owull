@@ -160,6 +160,7 @@ input {
   margin: 8px auto;
   border-color: #361002;
   outline: none;
+  color: #B7410E;
   font-size: 16px;
   text-align: center;
 }
@@ -183,6 +184,7 @@ placeholder {
   line-height: 26px;
   border: 3px solid #F4DB9D;
   border-radius: 16px;
+  outline: 0;
 
 }
 
