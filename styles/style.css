@@ -155,7 +155,7 @@ input {
   display: flex;
   flex-direction: column;
   padding: 8px 2px;
-  width: 320px;
+
   height: 16px;
   margin: 8px auto;
   border-color: #361002;
@@ -178,18 +178,17 @@ placeholder {
 .modal-content {
   background-color: #361002;
   font-family: 'Lemon', cursive;
-  font-size: 3em;
+  font-size: 2em;
   color: #F4DB9D;
-  line-height: 20px;
+  line-height: 16px;
 
 }
 
 form {
   color: #F4DB9D;
   font-family: 'Kreon', serif;
-  font-size: 20px;
+  font-size: 16px;
   border: solid 2px #361002;
-  padding: 16px;
   background-color: #6B5238;
   border-radius: 16px;
  }
