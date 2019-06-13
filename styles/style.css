@@ -186,6 +186,7 @@ placeholder {
   border-radius: 16px;
   outline: 0;
 
+
 }
 
 form {
@@ -200,8 +201,8 @@ form {
 label {
   color: #F4DB9D;
   font-family: 'Kreon', serif;
-  margin: 16px 0px;
-  font-size: 20px;
+  margin: 8px 0px;
+  font-size: 16px;
   align-self: center;
   background-color: #6B5238;
 
