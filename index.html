@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
   <title>Owull</title>
-  <link href="./styles/style.css" rel="stylesheet" type="text/css" />
+
   <link
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
       rel="stylesheet"
     />
+
 
 
     <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Kreon:700|Lemon&display=swap" rel="stylesheet">
@@ -18,7 +19,7 @@
     />
 
     <link href="./styles/modals.css" rel="stylesheet" type="text/css" />
-
+    <link href="./styles/style.css" rel="stylesheet" type="text/css" />
 
 
 
@@ -63,13 +64,12 @@
         <div class="modal-content">
           <h4>LOGIN</h4><br>
           <form id="login-form">
-              <h3 id="successmessg"></h3>
-              <h3 id="errormessg"></h3>
-            <div class="input-field">
+
+            <div>
             <input type="email" id="login-email" required />
             <label for="login-email">EMAIL ADDRESS</label>
             </div>
-            <div class="input-field">
+            <div>
             <input type="password" id="login-password" required />
             <label for="login-password">ENTER PASSWORD</label>
             </div>
@@ -82,8 +82,6 @@
       <div class="modal-content">
         <h4>SIGN UP</h4><br>
         <form id="signup-form">
-            <h3 id="successmessg"></h3>
-            <h3 id="errormessg"></h3>
           <label for="signup-username">CHOOSE A USERNAME</label>
           <input type="text" id="signup-username" required />
           <label for="signup-email">EMAIL ADDRESS</label>
@@ -98,8 +96,7 @@
         <div class="modal-content">
           <h4>Reset Password</h4><br>
           <form id="reset-form">
-              <h3 id="successmessg"></h3>
-              <h3 id="errormessg"></h3>
+
             <label for="reset-email">EMAIL ADDRESS</label>
             <input type="email" id="reset-email" required />
             <button class="bttn2">RESET PW</button>
@@ -155,10 +152,10 @@
 <script src="auth.js"></script>
 <script src="index.js"></script>
 
-<script
+<!-- <script
   src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
+  crossorigin="anonymous"></script> -->
 
 </body>
 </html>

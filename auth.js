@@ -45,7 +45,7 @@ const setupUI = (user) => {
 
 // listen for auth status changes
 
-auth.onAuthStateChanged((user) => {
+firebase.auth().onAuthStateChanged((user) => {
     if(user){
         const db = firebase.firestore();
 
