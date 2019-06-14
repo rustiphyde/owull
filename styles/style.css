@@ -148,6 +148,16 @@ h4 {
   margin: 8px auto;
 }
 
+.user-name {
+  font-family: 'Lemon', cursive;
+  font-size: 1.5em;
+  background-color: #361002;
+  color: #F4DB9D;
+  border: solid 6px #B7410E;
+  border-radius: 16px;
+
+}
+
 
 
 input {
@@ -317,8 +327,12 @@ body {
 
 }
 
-.fa-unlock-alt {
-  margin-right:6px;
+.fa-ulock-open {
+  margin-right: 6px;
+}
+
+.fa-lock {
+  margin-left: 6px;
 }
 
 

@@ -37,7 +37,7 @@
       <div class="container">
         <ul>
           <li class="logged-out">
-            <a href="#" class="modal-trigger" data-target="modal-login"><i class="fas fa-unlock-alt"></i>LOGIN</a>
+            <a href="#" class="modal-trigger" data-target="modal-login"><i class="fas fa-lock-open"></i>LOGIN</a>
           </li>
           <li class="logged-out">
             <a href="#" class="modal-trigger" data-target="modal-signup"><i class="fas fa-user-plus"></i>SIGNUP</a>
@@ -45,12 +45,16 @@
           <li class="logged-out">
             <a href="#" class="modal-trigger" data-target="modal-forgot"><i class="fas fa-key"></i>FORGOT</a>
           </li>
+          <li class="logged-in">
+            <a href="#" id="logout">LOGOUT<i class="fas fa-lock"></i></a>
+          </li>
         </ul>
       </div>
     </nav>
+    <h2 class="logged-in user-name"></h2>
     <div id="modal-login" class="modal">
         <div class="modal-content">
-          <h4>LOGIN</h4><br />
+          <h4>LOGIN</h4><br>
           <form id="login-form">
               <h3 id="successmessg"></h3>
               <h3 id="errormessg"></h3>
@@ -69,7 +73,7 @@
 
     <div id="modal-signup" class="modal">
       <div class="modal-content">
-        <h4>SIGN UP</h4><br />
+        <h4>SIGN UP</h4><br>
         <form id="signup-form">
             <h3 id="successmessg"></h3>
             <h3 id="errormessg"></h3>
@@ -85,7 +89,7 @@
     </div>
     <div id="modal-forgot" class="modal">
         <div class="modal-content">
-          <h4>Reset Password</h4>
+          <h4>Reset Password</h4><br>
           <form id="reset-form">
               <h3 id="successmessg"></h3>
               <h3 id="errormessg"></h3>
@@ -97,16 +101,10 @@
       </div>
 
     <main>
-      <br><br>
-      <h2 class="logged-out"><br />NO USER IS CURRENTLY LOGGED IN
-      <br><br>PLEASE LOGIN OR SIGN UP<br><br></h2>
-      <br><br>
-      <section id="skull2">
-          <h1><span class="logo2">OOOOOOOOO</span><span class="owullo2">O</span>WULL<span class="mirror2">OOOOOOOOO</span></h1>
-      </section>
+
     </main>
 
-    <footer><button class="bttn2 logged-in" id="btn-logout">LOGOUT</button>
+    <footer>
         <strong>&copy2019 Rusty Hoppins</strong>
 
         </footer>
@@ -139,9 +137,10 @@
   const db = firebase.firestore();
 </script>
 
-<script src="scripts/auth.js"></script>
-<script src="scripts/index.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="auth.js"></script>
+<script src="index.js"></script>
+
 <script
   src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="

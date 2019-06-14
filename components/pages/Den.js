@@ -1,22 +1,10 @@
-import { logout } from './../../util';
+/* eslint-disable no-else-return */
+/* eslint-disable func-names */
 
 function buildButton1(btn){
     return `<button id="${btn.id}" class="${btn.class}">${btn.text}</button>`;
 }
 
-// function buildUserName(){
-
-//     window.addEventListener('load', (e) => {
-//         // eslint-disable-next-line func-names
-//         firebase.auth().onAuthStateChanged(function(user){
-//             if(user.displayName == null || user.displayName == ''){
-//                 return user.displayName = 'Owull User';
-//             }
-
-//             return user.displayName;
-//         });
-//     });
-// }
 
 function buildNavHTML(stateLinks){
     return stateLinks
@@ -25,16 +13,18 @@ function buildNavHTML(stateLinks){
         ).join(' ');
 }
 
+
 export default function(state){
     return `
 
-</header>
+
 <nav class="container">
   <ul>
     ${buildNavHTML(state.links.primary)}
     </ul>
 </nav>
 <main class="container">
+
   <h2>PHAYVZ LIST</h2>
 
   <div class="phayvz">
@@ -79,13 +69,11 @@ export default function(state){
     ${buildButton1(state.btns.fxnal[5])}
     <h3 class="listName">LIST NAME HERE</h3>
   </div>
-  <footer>${buildButton1(state.btns.fxnal[3])}
-  <strong>&copy2019 Rusty Hoppins</strong>
-
+  <footer>
+  <strong>&copy2019 Rusty Hoppins</strong
   </footer>
 </main>
   `;
 }
 
 
-logout();

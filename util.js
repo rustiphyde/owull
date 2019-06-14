@@ -64,21 +64,7 @@
 // }
 
 
-function logout(){
-    window.addEventListener('load', () => {
-        const btnLogout = document.getElementById('btn-logout');
 
-
-        if(btnLogout){
-            btnLogout.addEventListener('click', () => {
-                firebase.auth().signOut().then(
-                    location.href = '/login'
-                );
-            });
-        }
-    }
-    );
-}
 
 
 // function register(){
@@ -155,6 +141,6 @@ function logout(){
 // }
 
 
-export { logout };
+
 
 
