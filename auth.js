@@ -51,7 +51,7 @@ firebase.auth().onAuthStateChanged((user) => {
         const db = firebase.firestore();
 
         db.collection('users').where('ID', '==', user.uid).get().then((snap) => {
-            nameSet(snap.docs);
+            nameSet(snap);
             setupUI(user);
         });
     }
@@ -86,7 +86,7 @@ signupForm.addEventListener('submit', (e) => {
         })
     // if no errors create the account
         .then(function(){
-            const userUid = auth.currentUser.uid;
+            const userUid = firebase.auth().currentUser.uid;
             const db = firebase.firestore();
             const username = htmlUser;
 
