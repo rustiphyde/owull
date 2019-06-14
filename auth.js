@@ -12,7 +12,7 @@ const nameSet = (data) => {
             const nickname = doc.data().name;
 
             const un = `
-        ${nickname}'s Den
+        ${nickname.toUpperCase()}
         `;
 
             html = un;
