@@ -1,6 +1,7 @@
 import messg from './store/Error';
 /* eslint-disable quote-props */
 /* eslint-disable func-names */
+const auth = firebase.auth();
 const userName = document.querySelector('.user-name');
 
 // setup username
@@ -49,7 +50,7 @@ firebase.auth().onAuthStateChanged((user) => {
     if(user){
         const db = firebase.firestore();
 
-        db.collection('users').get().then((snap) => {
+        db.collection('users').where('ID', '==', user.uid).get().then((snap) => {
             nameSet(snap.docs);
             setupUI(user);
         });
@@ -87,14 +88,14 @@ signupForm.addEventListener('submit', (e) => {
         .then(function(){
             const userUid = auth.currentUser.uid;
             const db = firebase.firestore();
+            const username = htmlUser;
 
-            db.collection('users').doc(userUid).set({
+
+            db.collection('users').doc(username).set({
                 email: htmlEmail,
-                emailVerified: false,
-                name: htmlUser,
-                online: false,
-                onlock: false,
-                password: htmlPass
+                username: htmlUser,
+                password: htmlPass,
+                ID: userUid
 
             })
                 .then(function(){
