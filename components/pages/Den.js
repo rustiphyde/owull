@@ -19,7 +19,7 @@ export default function(state){
 
 
 <nav class="container">
-  <ul>
+  <ul class="logged-in">
     ${buildNavHTML(state.links.primary)}
     </ul>
 </nav>
@@ -69,10 +69,7 @@ export default function(state){
     ${buildButton1(state.btns.fxnal[5])}
     <h3 class="listName">LIST NAME HERE</h3>
   </div>
-  <footer>
-  <strong>&copy2019 Rusty Hoppins</strong
-  </footer>
-</main>
+  </main>
   `;
 }
 

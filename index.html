@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
   <title>Owull</title>
-
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+  <link href="./styles/style.css" rel="stylesheet" type="text/css" />
   <link
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
       rel="stylesheet"
@@ -19,7 +18,7 @@
     />
 
     <link href="./styles/modals.css" rel="stylesheet" type="text/css" />
-    <link href="./styles/style.css" rel="stylesheet" type="text/css" />
+
 
 
 
@@ -36,22 +35,30 @@
     <nav class="container">
       <div class="container">
         <ul>
-          <li class="logged-out">
+            <li class="logged-in" style="display: none">
+                <a href="#" class="modal-trigger" data-target="modal-edit"><i class="fas fa-edit"></i>EDIT</a>
+              </li>
+          <li class="logged-out" style="display: none">
             <a href="#" class="modal-trigger" data-target="modal-login"><i class="fas fa-lock-open"></i>LOGIN</a>
           </li>
-          <li class="logged-out">
+          <li class="logged-out" style="display: none">
             <a href="#" class="modal-trigger" data-target="modal-signup"><i class="fas fa-user-plus"></i>SIGNUP</a>
           </li>
-          <li class="logged-out">
+          <li class="logged-out" style="display: none">
             <a href="#" class="modal-trigger" data-target="modal-forgot"><i class="fas fa-key"></i>FORGOT</a>
           </li>
-          <li class="logged-in">
+          <li class="logged-in" style="display: none">
             <a href="#" id="logout">LOGOUT<i class="fas fa-lock"></i></a>
           </li>
         </ul>
       </div>
     </nav>
-    <h2 class="logged-in user-name"></h2>
+    <h2 class="logged-in user-name" style="display: none"></h2>
+    <br><br>
+        <h2 class="logged-out no-user" style="display: none"><br>NO USER IS CURRENTLY LOGGED IN
+        <br><br>PLEASE LOGIN OR SIGN UP<br></h2>
+
+
     <div id="modal-login" class="modal">
         <div class="modal-content">
           <h4>LOGIN</h4><br>
@@ -102,10 +109,17 @@
 
     <main>
 
+        <div id="root"></div>
+
     </main>
 
     <footer>
+        <section id="skull2">
+            <h1><span class="logo2">OOOOOOOOO</span><span class="owullo2">O</span>WULL<span class="mirror2">OOOOOOOOO</span></h1>
+        </section>
+        <br>
         <strong>&copy2019 Rusty Hoppins</strong>
+
 
         </footer>
 

@@ -1,5 +1,4 @@
-// /* eslint-disable complexity */
-// import { login } from './../../util';
-
-
+export default function(state){
+    return ``;
+}
 

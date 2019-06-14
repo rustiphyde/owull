@@ -21,15 +21,28 @@ const nameSet = (data) => {
         userName.innerHTML = html;
     }
     else{
-        userName.innerHTML = `<br><br>
-        <h2 class="logged-out"><br />NO USER IS CURRENTLY LOGGED IN
-        <br><br>PLEASE LOGIN OR SIGN UP<br><br></h2>
-        <br><br>
-        <section id="skull2">
-            <h1><span class="logo2">OOOOOOOOO</span><span class="owullo2">O</span>WULL<span class="mirror2">OOOOOOOOO</span></h1>
-        </section>`;
+        userName.innerHTML = '';
     }
 };
+
+// setup conditional UI
+const loggedOutHTML = document.querySelectorAll('.logged-out');
+const loggedInHTML = document.querySelectorAll('.logged-in');
+
+const setupUI = (user) => {
+    if(user){
+        // toggle UI
+        loggedInHTML.forEach((item) => item.style.display = 'block');
+        loggedOutHTML.forEach((item) => item.style.display = 'none');
+    }
+    else{
+        // toggle UI
+        loggedInHTML.forEach((item) => item.style.display = 'none');
+        loggedOutHTML.forEach((item) => item.style.display = 'block');
+    }
+};
+
+
 // listen for auth status changes
 
 auth.onAuthStateChanged((user) => {
@@ -38,9 +51,11 @@ auth.onAuthStateChanged((user) => {
 
         db.collection('users').get().then((snap) => {
             nameSet(snap.docs);
+            setupUI(user);
         });
     }
     else{
+        setupUI();
         nameSet([]);
     }
 });
