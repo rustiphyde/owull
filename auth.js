@@ -1,7 +1,7 @@
 import messg from './store/Error';
 /* eslint-disable quote-props */
 /* eslint-disable func-names */
-const auth = firebase.auth();
+
 const userName = document.querySelector('.user-name');
 
 // setup username
@@ -10,7 +10,7 @@ const nameSet = (data) => {
         let html = '';
 
         data.forEach((doc) => {
-            const nickname = doc.data().name;
+            const nickname = doc.data().username;
 
             const un = `
         ${nickname.toUpperCase()}
@@ -48,12 +48,24 @@ const setupUI = (user) => {
 
 firebase.auth().onAuthStateChanged((user) => {
     if(user){
-        const db = firebase.firestore();
+        const userNick = document.querySelector('.user-name');
 
-        db.collection('users').where('ID', '==', user.uid).get().then((snap) => {
-            nameSet(snap);
-            setupUI(user);
-        });
+
+        const userUid = firebase.auth().currentUser.uid;
+        const firestore = firebase.firestore();
+        const db = firestore.collection('users').where('ID', '==', userUid);
+
+
+        db.get()
+            .then((snap) => {
+                snap.docs.forEach((doc) => {
+                    let owullName = doc.data().username;
+
+                    userNick.innerHTML = `<span class="owullo2">O</span> ${owullName}`;
+                });
+            });
+
+        setupUI(user);
     }
     else{
         setupUI();
@@ -128,26 +140,15 @@ loginForm.addEventListener('submit', (e) => {
             }
         })
         .then(function(){
-            const userUid = auth.currentUser.uid;
-            const firestore = firebase.firestore();
-            const db = firestore.collection('users').doc(userUid).get()
+            location.href = '/den';
 
-                .then(function(doc){
-                    if(doc.exists){
-                        let owulluseris = doc.data().name;
-
-                        console.log('owulluseris contains: ', owulluseris);
-                    }
-                    else{
-                        console.log('No Such Document.');
-                    }
-                });
             const modal = document.querySelector('#modal-login');
 
             M.Modal.getInstance(modal).close();
             loginForm.reset();
         });
 });
+
 
 // logout
 const logout = document.querySelector('#logout');
