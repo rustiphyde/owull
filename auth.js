@@ -61,7 +61,7 @@ firebase.auth().onAuthStateChanged((user) => {
                 snap.docs.forEach((doc) => {
                     let owullName = doc.data().username;
 
-                    userNick.innerHTML = `<span class="owullo2">O</span> ${owullName}`;
+                    userNick.innerHTML = `&nbsp;&nbsp;<span class="owullo2">O</span> ${owullName.toUpperCase()}  . . .`;
                 });
             });
 
