@@ -111,13 +111,16 @@
   border-top: solid 3px #B7410E;
   border-bottom: solid 3px #B7410E;
   background-color: #6B5238;
-  text-align: right;
+  text-align: center;
 
 }
 
 
 h2 {
   text-align: center;
+}
+h3{
+  font-family: 'Kreon', serif;
 }
 
 h4 {
@@ -251,7 +254,7 @@ label {
     font-family: 'Sancreek', cursive;
     background-color: #000000;
     color: #e10606;
-    font-size: 32px;
+    font-size: 24px;
   }
 
 

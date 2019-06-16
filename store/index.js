@@ -8,9 +8,9 @@ export { default as Den } from './Den';
 
 export { default as Oke } from './Oke';
 
-// export { default as Booz } from './Booz';
+export { default as Booz } from './Booz';
 
-// export { default as Barz } from './Barz';
+export { default as Barz } from './Barz';
 
 // export { default as Contact } from './Contact';
 

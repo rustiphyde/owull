@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Owull</title>
+  <head>
+    <title>Owull</title>
 
-  <link
+    <link
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
       rel="stylesheet"
     />
 
-
-
-    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Kreon:700|Sancreek|Lemon&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Bree+Serif|Kreon:700|Sancreek|Lemon&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
@@ -19,34 +20,44 @@
     />
 
     <link href="./styles/modals.css" rel="stylesheet" type="text/css" />
-<link href="./styles/style.css" rel="stylesheet" type="text/css" />
-
-
-
+    <link href="./styles/style.css" rel="stylesheet" type="text/css" />
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
-</head>
-<body class="container">
+  </head>
+  <body class="container">
     <header id="skull">
-        <h1><span class="logo">OOO</span><span class="owullo">O</span>WULL<span class="mirror">OOO</span></h1>
+      <h1>
+        <span class="logo">OOO</span><span class="owullo">O</span>WULL<span
+          class="mirror"
+          >OOO</span
+        >
+      </h1>
     </header>
+    <h3>ORGANIZE YOUR NIGHT WISELY</h3>
     <nav class="container">
       <div class="container">
         <ul>
-            <li class="logged-in">
-                <a href="#" class="modal-trigger" data-target="modal-edit"><i class="fas fa-edit"></i>EDIT</a>
-              </li>
-          <li class="logged-out">
-            <a href="#" class="modal-trigger" data-target="modal-login"><i class="fas fa-lock-open"></i>LOGIN</a>
+          <li class="logged-in">
+            <a href="#" class="modal-trigger" data-target="modal-edit"
+              ><i class="fas fa-edit"></i>EDIT</a
+            >
           </li>
           <li class="logged-out">
-            <a href="#" class="modal-trigger" data-target="modal-signup"><i class="fas fa-user-plus"></i>SIGNUP</a>
+            <a href="#" class="modal-trigger" data-target="modal-login"
+              ><i class="fas fa-lock-open"></i>LOGIN</a
+            >
           </li>
           <li class="logged-out">
-            <a href="#" class="modal-trigger" data-target="modal-forgot"><i class="fas fa-key"></i>FORGOT</a>
+            <a href="#" class="modal-trigger" data-target="modal-signup"
+              ><i class="fas fa-user-plus"></i>SIGNUP</a
+            >
+          </li>
+          <li class="logged-out">
+            <a href="#" class="modal-trigger" data-target="modal-forgot"
+              ><i class="fas fa-key"></i>FORGOT</a
+            >
           </li>
           <li class="logged-in">
             <a href="#" id="logout">LOGOUT<i class="fas fa-lock"></i></a>
@@ -56,29 +67,33 @@
     </nav>
     <h2 class="logged-in user-name"></h2>
 
-    <h2 class="logged-out no-user" ><br>NO USER IS CURRENTLY LOGGED IN
-    <br><br>PLEASE LOGIN OR SIGN UP<br><br></h2>
+    <h2 class="logged-out no-user">
+      <br />NO USER IS CURRENTLY LOGGED IN <br /><br />PLEASE LOGIN OR SIGN
+      UP<br /><br />
+    </h2>
 
     <div id="modal-login" class="modal">
-        <div class="modal-content">
-          <h4>LOGIN</h4><br>
-          <form id="login-form">
-            <div>
+      <div class="modal-content">
+        <h4>LOGIN</h4>
+        <br />
+        <form id="login-form">
+          <div>
             <label for="login-email">EMAIL ADDRESS</label>
             <input type="email" id="login-email" required />
-            </div>
-            <div>
+          </div>
+          <div>
             <label for="login-password">ENTER PASSWORD</label>
             <input type="password" id="login-password" required />
-            </div>
-            <button class="bttn2">LOGIN</button>
-          </form>
-        </div>
+          </div>
+          <button class="bttn2">LOGIN</button>
+        </form>
       </div>
+    </div>
 
     <div id="modal-signup" class="modal">
       <div class="modal-content">
-        <h4>SIGN UP</h4><br>
+        <h4>SIGN UP</h4>
+        <br />
         <form id="signup-form">
           <label for="signup-username">CHOOSE A USERNAME</label>
           <input type="text" id="signup-username" required />
@@ -91,95 +106,102 @@
       </div>
     </div>
     <div id="modal-forgot" class="modal">
-        <div class="modal-content">
-          <h4>Reset Password</h4><br>
-          <form id="reset-form">
-
-            <label for="reset-email">EMAIL ADDRESS</label>
-            <input type="email" id="reset-email" required />
-            <button class="bttn2">RESET PW</button>
-          </form>
-        </div>
+      <div class="modal-content">
+        <h4>Reset Password</h4>
+        <br />
+        <form id="reset-form">
+          <label for="reset-email">EMAIL ADDRESS</label>
+          <input type="email" id="reset-email" required />
+          <button class="bttn2">RESET PW</button>
+        </form>
       </div>
+    </div>
 
-      <div id="modal-oke-new" class="modal">
-          <div class="modal-content">
-          <form id="okelist-form">
+    <div id="modal-oke-new" class="modal">
+      <div class="modal-content">
+        <form id="okelist-form">
           <label for="create-new-oke-name">NAME YOUR OKE LIST</label>
-          <input id="create-new-oke-name" type="text" placeholder="List Name Here" required/>
+          <input
+            id="create-new-oke-name"
+            type="text"
+            placeholder="List Name Here"
+            required
+          />
           <button class="bttn2">BUILD</button>
-          <br><br>
-          </form>
-          </div>
-          </div>
+          <br /><br />
+        </form>
+      </div>
+    </div>
 
-          <div id="modal-oke-fill" class="modal">
-              <div class="modal-content">
-              <form id="okefill-form">
-              <label for="song-title">SONG TITLE</label>
-              <input id="song-title" type="text" placeholder="SONG NAME" required/>
-              <label for="song-artist">ORIGINAL ARTIST</label>
-              <input id="song-artist" type="text" placeholder="ARTIST NAME" required/>
-              <button class="bttn2">ADDIT</button>
-              <input type="reset" value="CLEAR" class="bttn2">
-              </form>
-              <button class="bttn2">DONE</button>
-              </div>
-              </div>
+    <div id="modal-oke-fill" class="modal">
+      <div class="modal-content">
+        <form id="okefill-form">
+          <label for="song-title">SONG TITLE</label>
+          <input id="song-title" type="text" placeholder="SONG NAME" required />
+          <label for="song-artist">ORIGINAL ARTIST</label>
+          <input
+            id="song-artist"
+            type="text"
+            placeholder="ARTIST NAME"
+            required
+          />
+          <button class="bttn2">ADDIT</button>
+          <input type="reset" value="CLEAR" class="bttn2" />
+        </form>
+        <button class="bttn2">DONE</button>
+      </div>
+    </div>
 
     <main>
-
-        <div id="root" class="logged-in"></div>
-
+      <div id="root" class="logged-in"></div>
     </main>
 
     <footer>
-        <section id="skull2">
-            <h1><span class="logo2">OOOOOOOOO</span><span class="owullo2">O</span>WULL<span class="mirror2">OOOOOOOOO</span></h1>
-        </section>
-        <br>
-        <strong>&copy2019 Rusty Hoppins</strong>
+      <section id="skull2">
+        <h1>
+          <span class="logo2">OOOOOOOOO</span
+          ><span class="owullo2">O</span>WULL<span class="mirror2"
+            >OOOOOOOOO</span
+          >
+        </h1>
+      </section>
+      <br />
+      <strong>&copy2019 Rusty Hoppins</strong>
+    </footer>
 
+    <div id="root"></div>
 
-        </footer>
-
-
-
-  <div id="root"></div>
-
-
-
-<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-firestore.js"></script>
-<!-- TODO: Add SDKs for Firebase products that you want to use
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-firestore.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#config-web-app -->
 
-<script>
-  // Your web app's Firebase configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyCsjfvMICsJGDkgbMfau_LVi_mnFEWUkU8",
-    authDomain: "owull-3714.firebaseapp.com",
-    databaseURL: "https://owull-3714.firebaseio.com",
-    projectId: "owull-3714",
-    appId: "1:481614411046:web:27a15a56e4bf80d7"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+    <script>
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyCsjfvMICsJGDkgbMfau_LVi_mnFEWUkU8",
+        authDomain: "owull-3714.firebaseapp.com",
+        databaseURL: "https://owull-3714.firebaseio.com",
+        projectId: "owull-3714",
+        appId: "1:481614411046:web:27a15a56e4bf80d7"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
 
-  const auth = firebase.auth();
-  const db = firebase.firestore();
-</script>
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+    </script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script src="auth.js"></script>
-<script src="index.js"></script>
-<script src="buildnchooz.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="auth.js"></script>
+    <script src="index.js"></script>
+    <script src="buildnchooz.js"></script>
 
-<script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
-
-</body>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
