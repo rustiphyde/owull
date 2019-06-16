@@ -232,24 +232,52 @@ label {
     margin: 24px auto;
     align-items: center;
     /* line-height: 64px; */
+
+  }
+
+  input[type="reset" i] {
+    margin: 24px auto;
+    align-items: center;
+    /* line-height: 64px; */
+
+  }
+
+  .across {
+    flex-direction: row;
+  }
+
+  #oke-roulette {
+    border: dashed 6px #e10606;
+    font-family: 'Sancreek', cursive;
+    background-color: #000000;
+    color: #e10606;
+    font-size: 32px;
   }
 
 
   .bttn {
   margin: 8px auto;
   width: 180px ;
-  height: 80px ;
-  background-color: #B7410E ;
-  color: #F4DB9D ;
-  font-family: 'Lemon', cursive;
-  font-size: 26px ;
-  border-radius: 16px ;
+  height: 180px ;
+  background-color: #e10606;
+  color: #000000 ;
+  font-family: 'Sancreek', cursive;
+  font-size: 48px ;
+  border-radius: 100px ;
   box-shadow: 0px 0px 16px #361002;
   text-align: center;
+  text-shadow: 0px 0px 26px #F4DB9D;
+}
+
+.bttn:hover, .bttn:focus {
+  color: #e10606 ;
+  background-color: #000000 ;
+  outline: 0;
+  text-shadow: 0px 0px 3px #F4DB9D;
 }
 
 
-.bttn:hover, .bttn:focus, .bttn2:hover, .bttn2:focus {
+ .bttn2:hover, .bttn2:focus {
   color: #B7410E ;
   background-color: #F4DB9D ;
   outline: 0;
@@ -261,6 +289,7 @@ ul {
   margin-block-start: 0em;
   margin-block-end: 0em;
 }
+
 
 nav {
   background-color: #6B5238;
@@ -305,6 +334,56 @@ nav ul li:hover {
 }
 
 nav ul li a {
+  font-family: 'Lemon', cursive;
+  color: #F4DB9D;
+  list-style: none;
+  text-decoration: none;
+
+}
+
+.list-nav {
+  background-color: #361002;
+  text-align: center;
+  border-top: solid 3px #B7410E;
+  border-bottom: solid 3px #B7410E;
+  margin: 0 auto;
+}
+
+.list-nav  ul {
+  background-color: #361002;
+  list-style: none;
+  color: #f4db9d;
+  font-size: 1.25em;
+  font-family: 'Lemon', cursive;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  margin: 0 auto;
+
+}
+
+
+.list-nav ul li {
+  padding: 3px;
+  border-right: solid 10px #361002;
+  border-left: solid 10px #361002;
+  border-top: solid 3px #361002;
+  border-bottom: solid 3px #361002;
+  width: auto;
+
+
+
+
+}
+.list-nav ul li:hover {
+  background-color: #b7410e;
+  border-right: solid 10px #B7410E;
+  border-left: solid 10px #B7410E;
+  border-top: solid 3px #B7410E;
+  border-bottom: solid 3px #B7410E;
+}
+
+.list-nav ul li a {
   font-family: 'Lemon', cursive;
   color: #F4DB9D;
   list-style: none;
@@ -365,6 +444,18 @@ margin-block-end: 0em;
 }
 
 .bttn2 {
+  margin: 8px 0 0;
+  width: 80px;
+  height: 40px;
+  background-color: #B7410E;
+  color: #F4DB9D;
+  font-family: 'Lemon', cursive;
+  font-size: 16px;
+  border-radius: 16px;
+  box-shadow: 0px 0px 16px #361002;
+}
+
+.bttn3 {
   margin: 8px 0 0;
   width: 80px;
   height: 40px;

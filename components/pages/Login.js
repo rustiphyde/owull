@@ -1,4 +1,4 @@
-export default function(state){
+export default function(){
     return ``;
 }
 

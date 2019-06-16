@@ -12,18 +12,40 @@ function buildNavHTML(stateLinks){
 
 export default function(state){
     return `
-  <nav class="container">
+  <nav class="container list-nav logged-in">
   <ul class="logged-in">
     ${buildNavHTML(state.links.primary)}
   </ul>
   </nav>
-  <main class="container">
+  <main class="container logged-in">
   <h2><span class="fas fa-music"></span> OKE LISTS <span class="fas fa-music"></span></h2>
-  <form class="new-oke-list">
-  <label>NAME YOUR OKE LIST
-  <input id="create-new-oke-name" type="text" placeholder="List Name Here" required/>
-  </label>
-  ${buildButton1(state.btns.fxnal[4])}
-  </form>
+  <nav class="container">
+  <div class="container">
+    <ul>
+        <li class="logged-in">
+            <a href="#" class="modal-trigger" data-target="modal-oke-new"><i class="fas fa-hammer"></i>BUILD</a>
+          </li>
+      <li class="logged-in">
+        <a href="#" class="modal-trigger" data-target="modal-oke-edit"><i class="fas fa-pencil-alt"></i>EDIT</a>
+      </li>
+      <li class="logged-in">
+        <a href="#" class="modal-trigger" data-target="modal-oke-view"><i class="fas fa-eye"></i>VIEW</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
+
+
+  <div id="oke-roulette">
+  <br>
+  ***FEELIN' BRAVE ARE YA?***
+  <br>
+  ***PUSH THE RED BUTTON***
+  <br>
+  ${buildButton1(state.btns.fxnal[8])}
+  </div>
   </main>`;
 }

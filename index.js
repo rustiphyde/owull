@@ -1,7 +1,7 @@
 /* eslint-disable func-names */
-// import Navigation from './components/Navigation';
+
 import Content from './components/Content';
-// import Footer from './components/Footer';
+
 
 import * as states from './store';
 
@@ -45,4 +45,5 @@ document.addEventListener('DOMContentLoaded', function(){
 
     M.Modal.init(modals);
 });
-// setup conditional UI
+
+

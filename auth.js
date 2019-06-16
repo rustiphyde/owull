@@ -53,7 +53,7 @@ firebase.auth().onAuthStateChanged((user) => {
 
         const userUid = firebase.auth().currentUser.uid;
         const firestore = firebase.firestore();
-        const db = firestore.collection('users').where('ID', '==', userUid);
+        const db = firestore.collection('Users').where('ID', '==', userUid);
 
 
         db.get()
@@ -98,12 +98,12 @@ signupForm.addEventListener('submit', (e) => {
         })
     // if no errors create the account
         .then(function(){
-            const userUid = firebase.auth().currentUser.uid;
+
             const db = firebase.firestore();
-            const username = htmlUser;
+            const userUid = firebase.auth().currentUser.uid;
 
 
-            db.collection('users').doc(username).set({
+            db.collection('Users').doc(userUid).set({
                 email: htmlEmail,
                 username: htmlUser,
                 password: htmlPass,
