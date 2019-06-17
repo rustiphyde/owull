@@ -23,7 +23,7 @@ export default function(state){
   <div class="container">
     <ul>
         <li class="logged-in">
-            <a href="#" class="modal-trigger" data-target="modal-oke-new"><i class="fas fa-hammer"></i>BUILD</a>
+            <a href="#" class="modal-trigger" data-target="modal-oke-new"><i class="fas fa-hammer"></i>BUILD NEW LIST</a>
           </li>
       <li class="logged-in">
         <a href="#" class="modal-trigger" data-target="modal-oke-edit"><i class="fas fa-pencil-alt"></i>EDIT</a>
