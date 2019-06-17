@@ -40,6 +40,18 @@ okelistForm.addEventListener('submit', (e) => {
                     "by": songArtist
                 })
                     .then(() => {
+                        fire.collection('MegaLists').doc('OkeList').collection('Songs').doc(songTitle).set({
+                            "song": songTitle,
+                            "by": songArtist
+
+                        }).catch((error) => {
+                            const errorCode = error.code;
+
+                            if(errorCode){
+                                console.log(`${error.message}`);
+                            }
+                        });
+
                         songForm.reset();
 
                         const doneBttn = document.querySelector('#done-bttn');
