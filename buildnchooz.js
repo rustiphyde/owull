@@ -1,11 +1,22 @@
 /* eslint-disable quotes */
 
+
 const okelistForm = document.querySelector('#okelist-form');
 
 okelistForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const title = okelistForm['create-new-oke-name'].value;
+
+    const okeListDisplay = document.querySelector('#oke-list-display');
+    const newDiv = document.createElement('div');
+
+    newDiv.id = title.replace(/\s+/g, '-').replace(/'/g, '').toLowerCase();
+    newDiv.className = 'list-disp';
+    newDiv.innerHTML = `<h2>${title}</h2><button id="btn-open" class="bttn2">OPEN</button><button id="btn-chooz" class="bttn2">CHOOZ</button>`;
+
+    okeListDisplay.appendChild(newDiv);
+
     const fire = firebase.firestore();
     const userUid = firebase.auth().currentUser.uid;
 
@@ -34,6 +45,7 @@ okelistForm.addEventListener('submit', (e) => {
 
                 const songTitle = songForm['song-title'].value;
                 const songArtist = songForm['song-artist'].value;
+
 
                 fire.collection('Users').doc(userUid).collection('Lists').doc(title).collection('Songs').doc(songTitle).set({
                     "song": songTitle,
@@ -77,6 +89,31 @@ okelistForm.addEventListener('submit', (e) => {
                 console.log(`${error.message}`);
             }
         });
+});
+
+firebase.auth().onAuthStateChanged((user) => {
+    if(user){
+        const fire = firebase.firestore();
+        const okeMain = document.querySelector('#oke-main');
+        const userUid = firebase.auth().currentUser.uid;
+
+        const db = fire.collection('Users').doc(userUid).collection('Lists').where('type', '==', 'Oke');
+
+        db.get()
+            .then((snapshot) => {
+                snapshot.docs.map((doc) => {
+                    let mainOak = doc.data().title;
+
+                    console.log(mainOak);
+                    const newDiv = document.createElement('div');
+
+
+                    newDiv.innerHTML = `<div id="${mainOak.replace(/\s+/g, '-').replace(/'/g, '').toLowerCase()}" class="list-disp"><h2>${mainOak}</h2><button id="btn-open" class="bttn2">OPEN</button><button id="btn-chooz" class="bttn2">CHOOZ</button></div>`;
+
+                    okeMain.append(newDiv);
+                });
+            });
+    }
 });
 
 

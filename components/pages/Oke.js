@@ -10,6 +10,7 @@ function buildNavHTML(stateLinks){
         ).join(' ');
 }
 
+
 export default function(state){
     return `
   <nav class="container list-nav logged-in">
@@ -17,7 +18,7 @@ export default function(state){
     ${buildNavHTML(state.links.primary)}
   </ul>
   </nav>
-  <main class="container logged-in">
+  <main id="oke-main" class="container logged-in">
   <h2><span class="fas fa-music"></span> OKE LISTS <span class="fas fa-music"></span></h2>
   <nav class="container">
   <div class="container">
@@ -34,18 +35,19 @@ export default function(state){
     </ul>
   </div>
 </nav>
+</main>
 
+<div id="oke-list-display"></div>
 
-
-
-
+<br>
   <div id="oke-roulette">
   <br>
   ***FEELIN' BRAVE ARE YA?***
   <br>
-  ***PUSH THE RED BUTTON***
-  <br>
   ${buildButton1(state.btns.fxnal[8])}
-  </div>
-  </main>`;
+  <br>
+  ***PUSH THE BUTTON***
+  <br>
+  </div>`
+    ;
 }

@@ -98,7 +98,6 @@ signupForm.addEventListener('submit', (e) => {
         })
     // if no errors create the account
         .then(function(){
-
             const db = firebase.firestore();
             const userUid = firebase.auth().currentUser.uid;
 
