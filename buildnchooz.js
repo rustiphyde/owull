@@ -8,15 +8,6 @@ okelistForm.addEventListener('submit', (e) => {
 
     const title = okelistForm['create-new-oke-name'].value;
 
-    const okeListDisplay = document.querySelector('#oke-list-display');
-    const newDiv = document.createElement('div');
-
-    newDiv.id = title.replace(/\s+/g, '-').replace(/'/g, '').toLowerCase();
-    newDiv.className = 'list-disp';
-    newDiv.innerHTML = `<h2>${title}</h2><button id="btn-open" class="bttn2">OPEN</button><button id="btn-chooz" class="bttn2">CHOOZ</button>`;
-
-    okeListDisplay.appendChild(newDiv);
-
     const fire = firebase.firestore();
     const userUid = firebase.auth().currentUser.uid;
 
@@ -24,7 +15,7 @@ okelistForm.addEventListener('submit', (e) => {
         .collection('Lists').doc(title).set({
             "type": 'Oke',
             "phayvd": false,
-            "title": title
+            "title": title,
 
         })
         .then(() => {
@@ -104,16 +95,58 @@ firebase.auth().onAuthStateChanged((user) => {
                 snapshot.docs.map((doc) => {
                     let mainOak = doc.data().title;
 
-                    console.log(mainOak);
                     const newDiv = document.createElement('div');
 
 
-                    newDiv.innerHTML = `<div id="${mainOak.replace(/\s+/g, '-').replace(/'/g, '').toLowerCase()}" class="list-disp"><h2>${mainOak}</h2><button id="btn-open" class="bttn2">OPEN</button><button id="btn-chooz" class="bttn2">CHOOZ</button></div>`;
+                    newDiv.innerHTML = `<br><br><div class="container"><div class="list-disp phayvz"><h3 class="listName">${mainOak}</h3><button class="btn-open bttn2">OPEN</button><button class="modal-trigger btn-chooz bttn2" data-target="modal-oke-chooz">CHOOZ</button><br><br></div></div>`;
 
                     okeMain.append(newDiv);
                 });
             });
     }
+});
+
+const okeChoozForm = document.querySelector('#oke-chooz-form');
+
+okeChoozForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const listcon = okeChoozForm['confirm-list'].value;
+    const fire = firebase.firestore();
+    const userUid = firebase.auth().currentUser.uid;
+    const db = fire.collection('Users').doc(userUid).collection('Lists').doc(listcon).collection('Songs');
+
+    db.get()
+        .then((snaps) => {
+            let owullList = [];
+
+            snaps.docs.map((doc) => {
+                owullList.push(doc.data());
+            });
+
+            // get a random index
+            const owullIndex = Math.floor(Math.random() * owullList.length);
+
+            const result = document.querySelector('#result-text');
+
+            result.innerHTML =  `Owull thinks you should sing "${owullList[owullIndex].song}" by ${owullList[owullIndex].by}, and Owull is wise.`;
+
+
+            const openModal = document.querySelector('#modal-result');
+            const closeModal = document.querySelector('#modal-oke-chooz');
+
+            M.Modal.getInstance(openModal).open();
+            M.Modal.getInstance(closeModal).close();
+
+            okeChoozForm.reset();
+
+            const ok = document.querySelector('#ok');
+
+            ok.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                M.Modal.getInstance(openModal).close();
+            });
+        });
 });
 
 

@@ -2,30 +2,6 @@ import messg from './store/Error';
 /* eslint-disable quote-props */
 /* eslint-disable func-names */
 
-const userName = document.querySelector('.user-name');
-
-// setup username
-const nameSet = (data) => {
-    if(data.length){
-        let html = '';
-
-        data.forEach((doc) => {
-            const nickname = doc.data().username;
-
-            const un = `
-        ${nickname.toUpperCase()}
-        `;
-
-            html = un;
-        });
-
-        userName.innerHTML = html;
-    }
-    else{
-        userName.innerHTML = '';
-    }
-};
-
 // setup conditional UI
 const loggedOutHTML = document.querySelectorAll('.logged-out');
 const loggedInHTML = document.querySelectorAll('.logged-in');
@@ -69,7 +45,6 @@ firebase.auth().onAuthStateChanged((user) => {
     }
     else{
         setupUI();
-        nameSet([]);
     }
 });
 
