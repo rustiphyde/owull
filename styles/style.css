@@ -132,10 +132,7 @@ h4 {
     font-weight: bold;
 }
 
-/* main {
-  width:800px;
-  background-color: #F4DB9D;
-} */
+
 #successmessg {
   color: #F4DB9D;
   font-size: 16px;
@@ -249,12 +246,24 @@ label {
     flex-direction: row;
   }
 
+  .button-collapse {
+    font-family: 'Sancreek', cursive;
+    font-size: 2em;
+    border: solid 3px ##e10606;
+    background-color: #000000;
+    color: #e10606;
+    cursor: pointer;
+    outline: none;
+  }
+
+
   #oke-roulette {
     border: dashed 6px #e10606;
     font-family: 'Sancreek', cursive;
     background-color: #000000;
     color: #e10606;
     font-size: 24px;
+
   }
 
 

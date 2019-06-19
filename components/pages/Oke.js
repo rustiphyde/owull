@@ -39,15 +39,6 @@ export default function(state){
 
 <div id="oke-list-display"></div>
 
-<br>
-  <div id="oke-roulette">
-  <br>
-  ***FEELIN' BRAVE ARE YA?***
-  <br>
-  ${buildButton1(state.btns.fxnal[8])}
-  <br>
-  ***PUSH THE BUTTON***
-  <br>
-  </div>`
+`
     ;
 }

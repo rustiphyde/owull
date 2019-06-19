@@ -47,6 +47,7 @@ okelistForm.addEventListener('submit', (e) => {
                             "song": songTitle,
                             "by": songArtist
 
+
                         }).catch((error) => {
                             const errorCode = error.code;
 
@@ -82,6 +83,7 @@ okelistForm.addEventListener('submit', (e) => {
         });
 });
 
+
 firebase.auth().onAuthStateChanged((user) => {
     if(user){
         const fire = firebase.firestore();
@@ -102,6 +104,13 @@ firebase.auth().onAuthStateChanged((user) => {
 
                     okeMain.append(newDiv);
                 });
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+
+                if(errorCode){
+                    console.log(`${error.message}`);
+                }
             });
     }
 });
@@ -146,7 +155,13 @@ okeChoozForm.addEventListener('submit', (e) => {
 
                 M.Modal.getInstance(openModal).close();
             });
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+
+            if(errorCode){
+                console.log(`${error.message}`);
+            }
         });
 });
-
 

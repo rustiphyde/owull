@@ -36,14 +36,18 @@ function handleRoutes(params){
 
 router
     .on(':path', handleRoutes)
-    .on('/', () => render(states.Login))
+    .on('/', () => render(states.Oke))
     .resolve();
 
 
 document.addEventListener('DOMContentLoaded', function(){
-    var modals = document.querySelectorAll('.modal');
+    const modals = document.querySelectorAll('.modal');
 
     M.Modal.init(modals);
+
+    const collapse = document.querySelectorAll('.collapsible');
+
+    M.Collapsible.init(collapse);
 });
 
 
