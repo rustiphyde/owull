@@ -114,7 +114,7 @@ loginForm.addEventListener('submit', (e) => {
             }
         })
         .then(function(){
-            location.href = '/den';
+            location.href = '/oke';
 
             const modal = document.querySelector('#modal-login');
 
