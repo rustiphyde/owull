@@ -10,7 +10,7 @@ function buildNavHTML(stateLinks){
         ).join(' ');
 }
 
-
+// Dynamically create the main content on the Oke page
 export default function(state){
     return `
   <nav class="container list-nav logged-in">
@@ -24,7 +24,7 @@ export default function(state){
   <div class="container">
     <ul>
         <li class="logged-in">
-            <a href="#" class="modal-trigger" data-target="modal-oke-new"><i class="fas fa-hammer"></i>BUILD NEW LIST</a>
+            <a href="#" class="modal-trigger" data-target="modal-oke-new"><i class="fas fa-hammer"></i>BUILD</a>
           </li>
       <li class="logged-in">
         <a href="#" class="modal-trigger" data-target="modal-oke-edit"><i class="fas fa-pencil-alt"></i>EDIT</a>
