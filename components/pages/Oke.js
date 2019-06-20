@@ -1,9 +1,4 @@
 
-function buildButton1(btn){
-    return `<button id="${btn.id}" class="${btn.class}">${btn.text}</button>`;
-}
-
-
 function buildNavHTML(stateLinks){
     return stateLinks
         .map(
@@ -37,7 +32,12 @@ export default function(state){
   </div>
 </nav>
 </main>
-
+<button class="modal-trigger btn-chooz-1" data-target="modal-oke-chooz">CHOOZ BY LIST</button>
+<br>
+<button class="modal-trigger btn-chooz-2" data-target="modal-artist-chooz">CHOOZ BY ARTIST</button>
+<br>
+<button class="modal-trigger btn-chooz-3" data-target="modal-genre-chooz">CHOOZ BY GENRE</button>
+<br>
 <div id="oke-list-display"></div>
 
 `

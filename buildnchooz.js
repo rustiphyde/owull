@@ -84,37 +84,6 @@ okelistForm.addEventListener('submit', (e) => {
 });
 
 
-firebase.auth().onAuthStateChanged((user) => {
-    if(user){
-        const fire = firebase.firestore();
-        const okeMain = document.querySelector('#oke-main');
-        const userUid = firebase.auth().currentUser.uid;
-
-        const db = fire.collection('Users').doc(userUid).collection('Lists').where('type', '==', 'Oke');
-
-        db.get()
-            .then((snapshot) => {
-                snapshot.docs.map((doc) => {
-                    let mainOak = doc.data().title;
-
-                    const newDiv = document.createElement('div');
-
-
-                    newDiv.innerHTML = `<br><br><div class="container"><div class="list-disp phayvz"><h3 class="listName">${mainOak}</h3><button class="btn-open bttn2">OPEN</button><button class="modal-trigger btn-chooz bttn2" data-target="modal-oke-chooz">CHOOZ</button><br><br></div></div>`;
-
-                    okeMain.append(newDiv);
-                });
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-
-                if(errorCode){
-                    console.log(`${error.message}`);
-                }
-            });
-    }
-});
-
 const okeChoozForm = document.querySelector('#oke-chooz-form');
 
 okeChoozForm.addEventListener('submit', (e) => {
@@ -137,7 +106,7 @@ okeChoozForm.addEventListener('submit', (e) => {
 
             const result = document.querySelector('#result-text');
 
-            result.innerHTML =  `Owull thinks you should sing "${owullList[owullIndex].song}" by ${owullList[owullIndex].by}, and Owull is wise.`;
+            result.innerHTML =  `Owull thinks you should sing "${owullList[owullIndex].song}" by ${owullList[owullIndex].by}. <span id="well">Owull is wise.</span>`;
 
 
             const openModal = document.querySelector('#modal-result');
@@ -196,6 +165,55 @@ megabutton.addEventListener('click', (e) => {
                 e.preventDefault();
 
                 M.Modal.getInstance(openModal).close();
+            });
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+
+            if(errorCode){
+                console.log(`${error.message}`);
+            }
+        });
+});
+
+const artistForm = document.querySelector('#artist-chooz-form');
+
+artistForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const artcon = artistForm['artist-list'].value;
+    const fiery = firebase.firestore();
+    const artdb = fiery.collection('MegaLists').doc('OkeList').collection('Songs').where('by', '==', artcon);
+
+    artdb.get()
+        .then((snappy) => {
+            let artList = [];
+
+            snappy.docs.map((doc) => {
+                artList.push(doc.data());
+            });
+
+            // get a random index
+            const artIndex = Math.floor(Math.random() * artList.length);
+
+            const answer = document.querySelector('#result-text');
+
+            answer.innerHTML =  `Owull thinks you should sing "${artList[artIndex].song}" by ${artList[artIndex].by}. <span id="well">Owull is wise.</span>`;
+
+
+            const openArt = document.querySelector('#modal-result');
+            const closeArt = document.querySelector('#modal-artist-chooz');
+
+            M.Modal.getInstance(openArt).open();
+            M.Modal.getInstance(closeArt).close();
+
+            artistForm.reset();
+
+            const yup = document.querySelector('#ok');
+
+            yup.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                M.Modal.getInstance(openArt).close();
             });
         })
         .catch((error) => {
