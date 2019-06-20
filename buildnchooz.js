@@ -186,6 +186,17 @@ function megachooz(){
                 const megaresult = document.querySelector('#result-text');
 
                 megaresult.innerHTML =  `Owull commends your courage...The song you have to sing is  "${megalist[megaIndex].song}" by ${megalist[megaIndex].by}, brave one.`;
+
+                const openModal = document.querySelector('#modal-result');
+
+                M.Modal.getInstance(openModal).open();
+                const ok = document.querySelector('#ok');
+
+                ok.addEventListener('click', (e) => {
+                    e.preventDefault();
+
+                    M.Modal.getInstance(openModal).close();
+                });
             })
             .catch((error) => {
                 const errorCode = error.code;
