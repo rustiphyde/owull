@@ -186,7 +186,7 @@ function megachooz(){
 
             const megaresult = document.querySelector('#result-text');
 
-            result.innerHTML =  `Owull commends your courage...The song you have to sing is  "${megalist[megaIndex].song}" by ${megalist[megaIndex].by}, brave one.`;
+            megaresult.innerHTML =  `Owull commends your courage...The song you have to sing is  "${megalist[megaIndex].song}" by ${megalist[megaIndex].by}, brave one.`;
         })
         .catch((error) => {
             const errorCode = error.code;
@@ -194,7 +194,7 @@ function megachooz(){
             if(errorCode){
                 console.log(`${error.message}`);
             }
-        });
-    })
+        })
+    });
 }
 
