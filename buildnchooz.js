@@ -165,46 +165,46 @@ okeChoozForm.addEventListener('submit', (e) => {
         });
 });
 
-function megachooz(){
-    const megabutton = document.querySelector('#btn-mega-chooz');
 
-    const spark = firebase.firestore();
-    const megadb = spark.collection('MegaLists').doc('OkeList').collection('Songs');
+const megabutton = document.querySelector('#btn-mega-chooz');
 
-    megabutton.addEventListener('click', (e) => {
-        e.preventDefault();
-        megadb.get()
-            .then((snap) => {
-                let megalist = [];
+const spark = firebase.firestore();
+const megadb = spark.collection('MegaLists').doc('OkeList').collection('Songs');
 
-                snap.docs.map((dock) => {
-                    megalist.push(dock.data());
-                });
+megabutton.addEventListener('click', (e) => {
+    e.preventDefault();
+    megadb.get()
+        .then((snap) => {
+            let megalist = [];
 
-                const megaIndex = Math.floor(Math.random() * megalist.length);
-
-                const megaresult = document.querySelector('#result-text');
-
-                megaresult.innerHTML =  `Owull commends your courage...The song you have to sing is  "${megalist[megaIndex].song}" by ${megalist[megaIndex].by}, brave one.`;
-
-                const openModal = document.querySelector('#modal-result');
-
-                M.Modal.getInstance(openModal).open();
-                const ok = document.querySelector('#ok');
-
-                ok.addEventListener('click', (e) => {
-                    e.preventDefault();
-
-                    M.Modal.getInstance(openModal).close();
-                });
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-
-                if(errorCode){
-                    console.log(`${error.message}`);
-                }
+            snap.docs.map((doc) => {
+                megalist.push(doc.data());
             });
-    });
-}
+
+            const megaIndex = Math.floor(Math.random() * megalist.length);
+
+            const megaresult = document.querySelector('#result-text');
+
+            megaresult.innerHTML =  `Owull commends your courage...The song you have to sing is  "${megalist[megaIndex].song}" by ${megalist[megaIndex].by}, brave one.`;
+
+            const openModal = document.querySelector('#modal-result');
+
+            M.Modal.getInstance(openModal).open();
+            const ok = document.querySelector('#ok');
+
+            ok.addEventListener('click', () => {
+                e.preventDefault();
+
+                M.Modal.getInstance(openModal).close();
+            });
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+
+            if(errorCode){
+                console.log(`${error.message}`);
+            }
+        });
+});
+
 
