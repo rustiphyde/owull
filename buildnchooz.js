@@ -165,3 +165,36 @@ okeChoozForm.addEventListener('submit', (e) => {
         });
 });
 
+function megachooz(){
+    const megabutton = document.querySelector('#btn-mega-chooz');
+
+    const fire = firebase.firestore();
+    const megadb = fire.collection('MegaLists').doc('OkeList').collection('Songs');
+
+    megabutton.addEventListener('click' (e) => {
+        e.preventDefault();
+
+        db.get()
+        .then((snap) => {
+            let megalist = [];
+
+            snap.docs.map((dock) => {
+                megalist.push(dock.data());
+            });
+
+            const megaIndex = Math.floor(Math.random() * megalist.length);
+
+            const megaresult = document.querySelector('#result-text');
+
+            result.innerHTML =  `Owull commends your courage...The song you have to sing is  "${megalist[megaIndex].song}" by ${megalist[megaIndex].by}, brave one.`;
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+
+            if(errorCode){
+                console.log(`${error.message}`);
+            }
+        });
+    })
+}
+

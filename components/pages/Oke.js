@@ -3,6 +3,7 @@ function buildButton1(btn){
     return `<button id="${btn.id}" class="${btn.class}">${btn.text}</button>`;
 }
 
+
 function buildNavHTML(stateLinks){
     return stateLinks
         .map(
