@@ -60,7 +60,7 @@
             >
           </li>
           <li class="logged-in">
-            <a href="#" id="logout">LOGOUT<i class="fas fa-lock"></i></a>
+            <a href="#" class="modal-trigger" data-target="modal-logout">LOGOUT<i class="fas fa-lock"></i></a>
           </li>
         </ul>
       </div>
@@ -117,6 +117,20 @@
       </div>
     </div>
 
+    <div id="modal-logout" class="modal">
+      <div class="modal-content">
+          <form id="logout-form">
+        <label>ARE YOU SURE YOU WANT TO LOGOUT?
+        </label>
+        <br />
+          <button class="bttn2 confirm">LOGOUT</button>
+          <br />
+          <br>
+        </form>
+          <button id="cancel-logout" class="bttn2">CANCEL</button>
+      </div>
+    </div>
+
     <div id="modal-oke-new" class="modal">
       <div class="modal-content">
         <form id="okelist-form">
@@ -165,6 +179,17 @@
       </div>
     </div>
 
+<div id="modal-genre-chooz" class="modal">
+  <div class="modal-content">
+    <form id="genre-chooz-form">
+      <label for="genre-list">ENTER A GENRE</label>
+      <input type="text" id="genre-list" placeholder="GENRE" required />
+      <button class="bttn2 confirm">CONFIRM</button>
+      <br /><br />
+  </form>
+  </div>
+</div>
+
     <div id="modal-result" class="modal">
       <div class="modal-content">
         <form id="result">
@@ -205,21 +230,7 @@
       <div id="root" class="logged-in"></div>
     </main>
 
-    <br>
-    <details>
-    <summary class="button-collapse">?</summary>
-  <div id="oke-roulette" class="content">
 
-  <br>
-  ***FEELIN' BRAVE?***
-  <br>
-  <button id="btn-mega-chooz" class="bttn">MEGA CHOOZ</button>
-  <br>
-  ***PUSH THE BUTTON***
-  <br>
-  <br>
-  </div>
-</details>
 
 
 

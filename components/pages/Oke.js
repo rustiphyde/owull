@@ -9,12 +9,8 @@ function buildNavHTML(stateLinks){
 // Dynamically create the main content on the Oke page
 export default function(state){
     return `
-  <nav class="container list-nav logged-in">
-  <ul class="logged-in">
-    ${buildNavHTML(state.links.primary)}
-  </ul>
-  </nav>
-  <main id="oke-main" class="container logged-in">
+
+  <section class="logged-in">
   <h2><span class="fas fa-music"></span> OKE LISTS <span class="fas fa-music"></span></h2>
   <nav class="container">
   <div class="container">
@@ -31,15 +27,26 @@ export default function(state){
     </ul>
   </div>
 </nav>
-</main>
+
 <button class="modal-trigger btn-chooz-1" data-target="modal-oke-chooz">CHOOZ BY LIST</button>
 <br>
 <button class="modal-trigger btn-chooz-2" data-target="modal-artist-chooz">CHOOZ BY ARTIST</button>
 <br>
-<button class="modal-trigger btn-chooz-3" data-target="modal-genre-chooz">CHOOZ BY GENRE</button>
-<br>
-<div id="oke-list-display"></div>
 
-`
-    ;
+<br>
+<details>
+<summary class="button-collapse">?</summary>
+<div id="oke-roulette" class="content">
+
+<br>
+***FEELIN' BRAVE?***
+<br>
+<button id="btn-mega-chooz" class="bttn">MEGA CHOOZ</button>
+<br>
+***PUSH THE BUTTON***
+<br>
+<br>
+</div>
+</details>
+ </section>`   ;
 }

@@ -114,7 +114,7 @@ loginForm.addEventListener('submit', (e) => {
             }
         })
         .then(function(){
-            location.href = '/oke';
+            location.href = '/den';
 
             const modal = document.querySelector('#modal-login');
 
@@ -125,10 +125,30 @@ loginForm.addEventListener('submit', (e) => {
 
 
 // logout
-const logout = document.querySelector('#logout');
+const cancelOut = document.querySelector('#cancel-logout');
 
-logout.addEventListener('click', (e) => {
+cancelOut.addEventListener('click', (e) => {
     e.preventDefault();
+
+    const stay = document.querySelector('#modal-logout');
+
+    M.Modal.getInstance(stay).close();
+
+    logout.reset();
+});
+
+const logout = document.querySelector('#logout-form');
+
+logout.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+
     firebase.auth().signOut();
+
+    const out = document.querySelector('#modal-logout');
+
+    M.Modal.getInstance(out).close();
+
+    logout.reset();
 });
 

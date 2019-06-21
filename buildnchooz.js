@@ -65,15 +65,10 @@ okelistForm.addEventListener('submit', (e) => {
 
                             M.Modal.getInstance(modal2).close();
                         });
-                    }).catch((error) => {
-                        const errorCode = error.code;
-
-                        if(errorCode){
-                            console.log(`${error.message}`);
-                        }
                     });
             });
         })
+
         .catch((error) => {
             const errorCode = error.code;
 
@@ -82,7 +77,6 @@ okelistForm.addEventListener('submit', (e) => {
             }
         });
 });
-
 
 const okeChoozForm = document.querySelector('#oke-chooz-form');
 
