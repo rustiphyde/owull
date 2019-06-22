@@ -2,7 +2,7 @@ import links from './Links';
 import btns from './Buttons';
 
 export default {
-    'pageContent': 'Den',
+    'pageContent': 'Home',
     'links': links,
     'btns': btns
 };

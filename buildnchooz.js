@@ -1,5 +1,13 @@
 /* eslint-disable quotes */
 
+// handle errors function
+function tryagain(error){
+    const errorCode = error.code;
+
+    if(errorCode){
+        console.log(`Got an error, ${errorCode}, ${error.message}`);
+    }
+}
 
 const okelistForm = document.querySelector('#okelist-form');
 
@@ -48,13 +56,7 @@ okelistForm.addEventListener('submit', (e) => {
                             "by": songArtist
 
 
-                        }).catch((error) => {
-                            const errorCode = error.code;
-
-                            if(errorCode){
-                                console.log(`${error.message}`);
-                            }
-                        });
+                        }).catch(tryagain());
 
                         songForm.reset();
 
@@ -69,13 +71,7 @@ okelistForm.addEventListener('submit', (e) => {
             });
         })
 
-        .catch((error) => {
-            const errorCode = error.code;
-
-            if(errorCode){
-                console.log(`${error.message}`);
-            }
-        });
+        .catch(tryagain());
 });
 
 const okeChoozForm = document.querySelector('#oke-chooz-form');
@@ -119,13 +115,7 @@ okeChoozForm.addEventListener('submit', (e) => {
                 M.Modal.getInstance(openModal).close();
             });
         })
-        .catch((error) => {
-            const errorCode = error.code;
-
-            if(errorCode){
-                console.log(`${error.message}`);
-            }
-        });
+        .catch(tryagain());
 });
 
 
@@ -161,13 +151,7 @@ megabutton.addEventListener('click', (e) => {
                 M.Modal.getInstance(openModal).close();
             });
         })
-        .catch((error) => {
-            const errorCode = error.code;
-
-            if(errorCode){
-                console.log(`${error.message}`);
-            }
-        });
+        .catch(tryagain());
 });
 
 const artistForm = document.querySelector('#artist-chooz-form');
@@ -210,13 +194,7 @@ artistForm.addEventListener('submit', (e) => {
                 M.Modal.getInstance(openArt).close();
             });
         })
-        .catch((error) => {
-            const errorCode = error.code;
-
-            if(errorCode){
-                console.log(`${error.message}`);
-            }
-        });
+        .catch(tryagain());
 });
 
 

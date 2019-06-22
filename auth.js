@@ -18,6 +18,15 @@ const setupUI = (user) => {
         loggedOutHTML.forEach((item) => item.style.display = 'block');
     }
 };
+// catch function
+
+function tryagain(error){
+    const errorCode = error.code;
+
+    if(errorCode){
+        console.log(`Got an error, ${errorCode}, ${error.message}`);
+    }
+}
 
 
 // listen for auth status changes
@@ -64,13 +73,7 @@ signupForm.addEventListener('submit', (e) => {
     auth.createUserWithEmailAndPassword(htmlEmail, htmlPass)
     // if there is an error stop the process
 
-        .catch(function(error){
-            var errorCode = error.code;
-
-            if(errorCode){
-                console.log(`${messg.errors[1].text} ${error.message}`);
-            }
-        })
+        .catch(tryagain())
     // if no errors create the account
         .then(function(){
             const db = firebase.firestore();
@@ -106,13 +109,8 @@ loginForm.addEventListener('submit', (e) => {
 
     auth.signInWithEmailAndPassword(email, pass)
 
-        .catch(function(error){
-            const errorCode = error.code;
+        .catch(tryagain())
 
-            if(errorCode){
-                console.log(`Got an error, ${errorCode}, ${error.message}`);
-            }
-        })
         .then(function(){
             location.href = '/den';
 
@@ -152,3 +150,21 @@ logout.addEventListener('submit', (e) => {
     logout.reset();
 });
 
+const resetPW = document.querySelector('#reset-form');
+const enterEmail = document.querySelector('#reset-email');
+
+resetPW.addEventListener('submit', (e) => {
+    const email = enterEmail.value;
+    const auth = firebase.auth();
+    // sign in
+
+    auth.sendPasswordResetEmail(email)
+
+        .catch(tryagain())
+        .then(function turnoff(){
+            const pw = document.querySelector('#modal-forgot');
+
+            M.Modal.getInstance(pw).close();
+            resetPW.reset();
+        });
+});

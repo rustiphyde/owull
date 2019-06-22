@@ -1,4 +1,5 @@
 /* eslint-disable func-names */
+
 import Nav from './components/Nav';
 import Content from './components/Content';
 
@@ -37,7 +38,7 @@ function handleRoutes(params){
 
 router
     .on(':path', handleRoutes)
-    .on('/', () => render(states.Oke))
+    .on('/', () => render(states.Home))
     .resolve();
 
 

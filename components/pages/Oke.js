@@ -1,8 +1,8 @@
 
-function buildNavHTML(stateLinks){
+function buildOkeNav(stateLinks){
     return stateLinks
         .map(
-            (link) => `<li><a href="/${link.text.replace(/\s+/g, '').toLowerCase()}" data-navigo><span class="${link.icon}"></span>${link.text}</a></li>`
+            (link) => `<li class="logged-in"><a href="#" class="modal-trigger" data-target="${link.target}"><i class="${link.icon}"></i>${link.text}</a></li>`
         ).join(' ');
 }
 
@@ -15,15 +15,7 @@ export default function(state){
   <nav class="container">
   <div class="container">
     <ul>
-        <li class="logged-in">
-            <a href="#" class="modal-trigger" data-target="modal-oke-new"><i class="fas fa-hammer"></i>BUILD</a>
-          </li>
-      <li class="logged-in">
-        <a href="#" class="modal-trigger" data-target="modal-oke-edit"><i class="fas fa-pencil-alt"></i>EDIT</a>
-      </li>
-      <li class="logged-in">
-        <a href="#" class="modal-trigger" data-target="modal-oke-view"><i class="fas fa-eye"></i>VIEW</a>
-      </li>
+        ${buildOkeNav(state.links.oke)}
     </ul>
   </div>
 </nav>

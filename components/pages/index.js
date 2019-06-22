@@ -4,7 +4,7 @@ export { default as Register } from './Register';
 
 export { default as Forgot } from './Forgot';
 
-export { default as Den } from './Den';
+export { default as Home } from './Home';
 
 export { default as Oke } from './Oke';
 
