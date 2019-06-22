@@ -20,14 +20,6 @@ const setupUI = (user) => {
 };
 // catch function
 
-function tryagain(error){
-    const errorCode = error.code;
-
-    if(errorCode){
-        console.log(`Got an error, ${errorCode}, ${error.message}`);
-    }
-}
-
 
 // listen for auth status changes
 
@@ -73,7 +65,13 @@ signupForm.addEventListener('submit', (e) => {
     auth.createUserWithEmailAndPassword(htmlEmail, htmlPass)
     // if there is an error stop the process
 
-        .catch(tryagain())
+        .catch(function(error){
+            const errorCode = error.code;
+
+            if(errorCode){
+                console.log(`Got an error, ${errorCode}, ${error.message}`);
+            }
+        })
     // if no errors create the account
         .then(function(){
             const db = firebase.firestore();
@@ -88,7 +86,7 @@ signupForm.addEventListener('submit', (e) => {
 
             })
                 .then(function(){
-                    location.href = '/den';
+                    location.href = '/home';
                 });
             const modal = document.querySelector('#modal-signup');
 
@@ -109,10 +107,16 @@ loginForm.addEventListener('submit', (e) => {
 
     auth.signInWithEmailAndPassword(email, pass)
 
-        .catch(tryagain())
+        .catch(function(error){
+            const errorCode = error.code;
+
+            if(errorCode){
+                console.log(`Got an error, ${errorCode}, ${error.message}`);
+            }
+        })
 
         .then(function(){
-            location.href = '/den';
+            location.href = '/home';
 
             const modal = document.querySelector('#modal-login');
 
@@ -160,11 +164,52 @@ resetPW.addEventListener('submit', (e) => {
 
     auth.sendPasswordResetEmail(email)
 
-        .catch(tryagain())
-        .then(function turnoff(){
+        .catch(function(error){
+            const errorCode = error.code;
+
+            if(errorCode){
+                console.log(`Got an error, ${errorCode}, ${error.message}`);
+            }
+        })
+
+        .then(function(){
             const pw = document.querySelector('#modal-forgot');
 
             M.Modal.getInstance(pw).close();
             resetPW.reset();
         });
 });
+
+const editForm = document.querySelector('#edit-form');
+
+editForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    // get user info
+    const changeUser = editForm['edit-username'].value;
+    const auth = firebase.auth();
+
+    const db = firebase.firestore();
+    const userUid = auth.currentUser.uid;
+
+
+    db.collection('Users').doc(userUid).set({
+        username: changeUser
+
+
+    })
+        .then(function(){
+            const modal = document.querySelector('#modal-edit');
+
+            M.Modal.getInstance(modal).close();
+            editForm.reset();
+        })
+        .catch(function(error){
+            const errorCode = error.code;
+
+            if(errorCode){
+                console.log(`Got an error, ${errorCode}, ${error.message}`);
+            }
+        });
+});
+// if no errors create the account

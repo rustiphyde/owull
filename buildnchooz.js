@@ -1,14 +1,5 @@
 /* eslint-disable quotes */
 
-// handle errors function
-function tryagain(error){
-    const errorCode = error.code;
-
-    if(errorCode){
-        console.log(`Got an error, ${errorCode}, ${error.message}`);
-    }
-}
-
 const okelistForm = document.querySelector('#okelist-form');
 
 okelistForm.addEventListener('submit', (e) => {
@@ -56,7 +47,15 @@ okelistForm.addEventListener('submit', (e) => {
                             "by": songArtist
 
 
-                        }).catch(tryagain());
+                        })
+                            // eslint-disable-next-line func-names
+                            .catch(function(error){
+                                const errorCode = error.code;
+
+                                if(errorCode){
+                                    console.log(`Got an error, ${errorCode}, ${error.message}`);
+                                }
+                            });
 
                         songForm.reset();
 
@@ -115,7 +114,14 @@ okeChoozForm.addEventListener('submit', (e) => {
                 M.Modal.getInstance(openModal).close();
             });
         })
-        .catch(tryagain());
+        // eslint-disable-next-line func-names
+        .catch(function(error){
+            const errorCode = error.code;
+
+            if(errorCode){
+                console.log(`Got an error, ${errorCode}, ${error.message}`);
+            }
+        });
 });
 
 
@@ -151,7 +157,14 @@ megabutton.addEventListener('click', (e) => {
                 M.Modal.getInstance(openModal).close();
             });
         })
-        .catch(tryagain());
+        // eslint-disable-next-line func-names
+        .catch(function(error){
+            const errorCode = error.code;
+
+            if(errorCode){
+                console.log(`Got an error, ${errorCode}, ${error.message}`);
+            }
+        });
 });
 
 const artistForm = document.querySelector('#artist-chooz-form');
@@ -194,7 +207,13 @@ artistForm.addEventListener('submit', (e) => {
                 M.Modal.getInstance(openArt).close();
             });
         })
-        .catch(tryagain());
+        .catch(function(error){
+            const errorCode = error.code;
+
+            if(errorCode){
+                console.log(`Got an error, ${errorCode}, ${error.message}`);
+            }
+        });
 });
 
 

@@ -25,20 +25,5 @@ export default function(state){
 <button class="modal-trigger btn-chooz-2" data-target="modal-artist-chooz">CHOOZ BY ARTIST</button>
 <br>
 
-<br>
-<details>
-<summary class="button-collapse">?</summary>
-<div id="oke-roulette" class="content">
-
-<br>
-***FEELIN' BRAVE?***
-<br>
-<button id="btn-mega-chooz" class="bttn">MEGA CHOOZ</button>
-<br>
-***PUSH THE BUTTON***
-<br>
-<br>
-</div>
-</details>
  </section>`   ;
 }
