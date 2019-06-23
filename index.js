@@ -14,7 +14,6 @@ import { capitalize } from 'lodash';
 const router = new Navigo(window.location.origin);
 
 const root = document.querySelector('#root');
-// In each of these we are invoking our fxns and the return is our HTML
 
 // render receives an argument as a named parameter: "state"
 function render(state){
@@ -25,12 +24,6 @@ function render(state){
 
     router.updatePageLinks();
 }
-// axios
-//     .get('https://jsonplaceholder.typicode.com/posts')
-//     .then((response) => {
-//         console.log(response.data)
-//     });
-
 
 function handleRoutes(params){
     render(states[capitalize(params.path)]);
@@ -43,6 +36,9 @@ router
 
 
 document.addEventListener('DOMContentLoaded', function(){
+    setTimeout(function(){
+        $('body').addClass('loaded');
+    }, 3000);
     const modals = document.querySelectorAll('.modal');
 
     M.Modal.init(modals);
