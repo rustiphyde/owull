@@ -38,7 +38,7 @@ router
 document.addEventListener('DOMContentLoaded', function(){
     setTimeout(function(){
         $('body').addClass('loaded');
-    }, 3000);
+    }, 5000);
     const modals = document.querySelectorAll('.modal');
 
     M.Modal.init(modals);
