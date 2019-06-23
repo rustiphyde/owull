@@ -193,16 +193,16 @@ editForm.addEventListener('submit', (e) => {
     const userUid = auth.currentUser.uid;
 
 
-    db.collection('Users').doc(userUid).set({
+    db.collection('Users').doc(userUid).update({
         username: changeUser
-
-
     })
         .then(function(){
             const modal = document.querySelector('#modal-edit');
 
             M.Modal.getInstance(modal).close();
             editForm.reset();
+
+            location.href = '/home';
         })
         .catch(function(error){
             const errorCode = error.code;
