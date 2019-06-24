@@ -281,7 +281,7 @@ oketrashForm.addEventListener('submit', (e) => {
             const moda =document.querySelector('#modal-oke-trash');
 
             M.Modal.getInstance(moda).close();
-            oketrashForem.reset();
+            oketrashForm.reset();
         })
         .catch((error) => {
             const errorCode = error.code;
