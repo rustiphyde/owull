@@ -2,7 +2,7 @@
 /* eslint-disable func-names */
 
 
-export default function(state){
+export default function(){
     return `
 
 

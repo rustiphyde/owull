@@ -11,7 +11,7 @@ export default function(state){
     return `
 
   <section class="logged-in">
-  <h2><span class="fas fa-music"></span> OKE LISTS <span class="fas fa-music"></span></h2>
+  <h2 class="list-title">OKE LISTS</h2>
   <nav class="container">
   <div class="container">
     <ul>

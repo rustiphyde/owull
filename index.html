@@ -42,6 +42,8 @@
       </h1>
     </header>
     <h3>ORGANIZE YOUR NIGHT WISELY</h3>
+    <h2 class="logged-in user-name"></h2>
+
     <nav class="container">
       <div class="container">
         <ul>
@@ -71,7 +73,6 @@
         </ul>
       </div>
     </nav>
-    <h2 class="logged-in user-name"></h2>
 
     <h2 class="logged-out no-user">
       <br />NO USER IS CURRENTLY LOGGED IN <br /><br />PLEASE LOGIN OR SIGN
@@ -157,7 +158,7 @@
     <div id="modal-oke-new" class="modal">
       <div class="modal-content">
         <form id="okelist-form">
-          <label for="create-new-oke-name">NAME YOUR OKE LIST</label>
+          <label for="create-new-oke-name">WHAT'S THE NAME OF YOUR OKE LIST?</label>
           <input
             id="create-new-oke-name"
             type="text"
@@ -169,6 +170,47 @@
         </form>
       </div>
     </div>
+
+    <div id="modal-oke-trash" class="modal">
+        <div class="modal-content">
+          <form id="oketrash-form">
+            <label for="trash-oke-name">WHICH OKE LIST?</label>
+            <input
+              id="trash-oke-name"
+              type="text"
+              placeholder="List Name Here"
+              required
+            />
+            <label for="trash-oke-song">WHICH SONG?</label>
+            <input
+              id="trash-oke-song"
+              type="text"
+              placeholder="Song Name Here"
+              required
+            />
+            <button class="bttn2">TRASH</button>
+            <br /><br />
+          </form>
+        </div>
+      </div>
+
+      <div id="modal-oke-view" class="modal">
+          <div class="modal-content">
+            <form id="okeview-form">
+              <label for="view-oke-list">ENTER LIST NAME</label>
+              <input
+                id="view-oke-list"
+                type="text"
+                placeholder="List Name Here"
+                required
+              />
+              <button class="bttn2">VIEW</button>
+              <br /><br />
+            </form>
+          </div>
+        </div>
+
+
 
     <div id="modal-oke-chooz" class="modal">
       <div class="modal-content">

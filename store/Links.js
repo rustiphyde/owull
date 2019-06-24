@@ -4,6 +4,6 @@ export default {
     ],
 
     'oke': [
-        { 'text': 'BUILD', 'icon': 'fas fa-hammer', 'target': 'modal-oke-new' }, { 'text': 'EDIT', 'icon': 'fas fa-pencil-alt', 'target': 'modal-oke-edit'  }, { 'text': 'VIEW', 'icon': 'fas fa-eye', 'target': 'modal-oke-view'  }
+        { 'text': 'BUILD', 'icon': 'fas fa-hammer', 'target': 'modal-oke-new' }, { 'text': 'VIEW', 'icon': 'fas fa-eye', 'target': 'modal-oke-view'  }, { 'text': 'TRASH', 'icon': 'fas fa-trash', 'target': 'modal-oke-trash'  }
     ]
 };
