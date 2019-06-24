@@ -249,10 +249,9 @@ okeviewForm.addEventListener('submit', (e) => {
             okeviewForm.reset();
 
 
-            const noView = document.querySelector('#no-view');
             const viewForm = document.querySelector('#view-list-form');
 
-            noView.addEventListener('click', (e) => {
+            viewForm.addEventListener('submit', (e) => {
                 e.preventDefault();
 
                 M.Modal.getInstance(v).close();
