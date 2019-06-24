@@ -149,16 +149,17 @@ megabutton.addEventListener('click', (e) => {
             const openModal = document.querySelector('#modal-result');
 
             M.Modal.getInstance(openModal).open();
-            const ok = document.querySelector('#ok');
+            const ok = document.querySelector('#result-form');
 
-            ok.addEventListener('click', () => {
+            ok.addEventListener('submit', (e) => {
                 e.preventDefault();
 
                 M.Modal.getInstance(openModal).close();
+                ok.reset();
             });
         })
         // eslint-disable-next-line func-names
-        .catch(function(error){
+        .catch((error) => {
             const errorCode = error.code;
 
             if(errorCode){
