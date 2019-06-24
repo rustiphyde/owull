@@ -207,7 +207,83 @@ artistForm.addEventListener('submit', (e) => {
                 M.Modal.getInstance(openArt).close();
             });
         })
-        .catch(function(error){
+        .catch((error) => {
+            const errorCode = error.code;
+
+            if(errorCode){
+                console.log(`Got an error, ${errorCode}, ${error.message}`);
+            }
+        });
+});
+
+const okeviewForm = document.querySelector('#okeview-form');
+
+okeviewForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const viewer = okeviewForm['view-oke-list'].value;
+    const flame = firebase.firestore();
+    const userUid =  firebase.auth().currentUser.uid;
+
+    const vdb = flame.collection('Users').doc(userUid).collection('Lists').doc(viewer).collection('Songs');
+
+    vdb.get()
+        .then((snip) => {
+            let viewList = [];
+
+            const viewContent = document.querySelector('#view-content');
+
+            snip.docs.map((doc) => {
+                viewList.push(doc.data());
+            });
+                console.log(viewList);
+
+
+            viewContent.innerHTML = viewList.map((cont) => `<li>${cont.song} by ${cont.by}</li><br>`).join(' ');
+
+            const v = document.querySelector('#modal-list-view');
+            const m = document.querySelector('#modal-oke-view');
+
+            M.Modal.getInstance(v).open();
+            M.Modal.getInstance(m).close();
+            okeviewForm.reset();
+
+
+            const noView = document.querySelector('#no-view');
+            const viewForm = document.querySelector('#view-list-form');
+
+            noView.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                M.Modal.getInstance(v).close();
+                viewForm.reset();
+            });
+        }).catch((error) => {
+            const errorCode = error.code;
+
+            if(errorCode){
+                console.log(`Got an error, ${errorCode}, ${error.message}`);
+            }
+        });
+});
+
+const oketrashForm = document.querySelector('#oketrash-form');
+
+oketrashForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const trashList = oketrashForm['trash-oke-name'].value;
+    const trashSong = oketrashForm['trash-oke-song'].value;
+    const userUid = firebase.auth().currentUser.uid;
+    const fuego = firebase.firestore();
+    const tdb = fuego.collection('Users').doc(userUid).collection('Lists').doc(trashList).collection('Songs').doc(trashSong);
+
+    tdb.delete()
+        .then(() => {
+            const moda =document.querySelector('#modal-oke-trash');
+
+            M.Modal.getInstance(moda).close();
+            oketrashForem.reset();
+        })
+        .catch((error) => {
             const errorCode = error.code;
 
             if(errorCode){
