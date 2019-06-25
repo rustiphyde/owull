@@ -114,7 +114,7 @@ okeChoozForm.addEventListener('submit', (e) => {
 
     db.get()
         .then((snaps) => {
-            if(snaps.exists){
+
                 let owullList = [];
 
                 snaps.docs.map((doc) => {
@@ -144,23 +144,6 @@ okeChoozForm.addEventListener('submit', (e) => {
 
                     M.Modal.getInstance(openModal).close();
                 });
-            }
-            else{
-                const errorMessage = document.querySelector('#error-message');
-                const errorForm = document.querySelector('#error-form');
-                const errModa = document.querySelector('#modal-errors');
-
-                errorMessage.innerHTML = `I'm sorry but that list doesn't currently exist on your account. You are welcome to create it in the "Build" tab`;
-
-                M.Modal.getInstance(errModa).open();
-
-                errorForm.addEventListener('submit', (e) => {
-                    e.preventDefault();
-
-                    M.Modal.getInstance(errModa).close();
-                    errorForm.reset();
-                });
-            }
         })
 
         .catch((error) => {
@@ -170,7 +153,7 @@ okeChoozForm.addEventListener('submit', (e) => {
             const errModa = document.querySelector('#modal-errors');
 
             if(errorCode){
-                errorMessage.innerHTML = `${error.message}`;
+                errorMessage.innerHTML = `I'm sorry but that list doesn't currently exist on your account. You are welcome to create it in the "Build" tab`;
 
                 M.Modal.getInstance(errModa).open();
 
@@ -250,53 +233,35 @@ artistForm.addEventListener('submit', (e) => {
 
     artdb.get()
         .then((snappy) => {
-            if(snappy.exists){
-                let artList = [];
+            let artList = [];
 
-                snappy.docs.map((doc) => {
-                    artList.push(doc.data());
-                });
+            snappy.docs.map((doc) => {
+                artList.push(doc.data());
+            });
 
-                // get a random index
-                const artIndex = Math.floor(Math.random() * artList.length);
+            // get a random index
+            const artIndex = Math.floor(Math.random() * artList.length);
 
-                const answer = document.querySelector('#result-text');
+            const answer = document.querySelector('#result-text');
 
-                answer.innerHTML =  `Owull thinks you should sing "${artList[artIndex].song}" by ${artList[artIndex].by}. <span id="well">Owull is wise.</span>`;
+            answer.innerHTML =  `Owull thinks you should sing "${artList[artIndex].song}" by ${artList[artIndex].by}. <span id="well">Owull is wise.</span>`;
 
 
-                const openArt = document.querySelector('#modal-result');
-                const closeArt = document.querySelector('#modal-artist-chooz');
+            const openArt = document.querySelector('#modal-result');
+            const closeArt = document.querySelector('#modal-artist-chooz');
 
-                M.Modal.getInstance(openArt).open();
-                M.Modal.getInstance(closeArt).close();
+            M.Modal.getInstance(openArt).open();
+            M.Modal.getInstance(closeArt).close();
 
-                artistForm.reset();
+            artistForm.reset();
 
-                const yup = document.querySelector('#ok');
+            const yup = document.querySelector('#ok');
 
-                yup.addEventListener('click', (e) => {
-                    e.preventDefault();
+            yup.addEventListener('click', (e) => {
+                e.preventDefault();
 
-                    M.Modal.getInstance(openArt).close();
-                });
-            }
-            else{
-                const errorMessage = document.querySelector('#error-message');
-                const errorForm = document.querySelector('#error-form');
-                const errModa = document.querySelector('#modal-errors');
-
-                errorMessage.innerHTML = `I'm sorry but that artist isn't currently in our database. You are welcome to add them in the 'Build" tab`;
-
-                M.Modal.getInstance(errModa).open();
-
-                errorForm.addEventListener('submit', (e) => {
-                    e.preventDefault();
-
-                    M.Modal.getInstance(errModa).close();
-                    errorForm.reset();
-                });
-            }
+                M.Modal.getInstance(openArt).close();
+            });
         })
         .catch((error) => {
             const errorCode = error.code;
@@ -305,7 +270,7 @@ artistForm.addEventListener('submit', (e) => {
             const errModa = document.querySelector('#modal-errors');
 
             if(errorCode){
-                errorMessage.innerHTML = `${error.message}`;
+                errorMessage.innerHTML = `I'm sorry but that artist isn't currently in our database. You are welcome to add them in the 'Build" tab`;
 
                 M.Modal.getInstance(errModa).open();
 
