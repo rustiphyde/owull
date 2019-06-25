@@ -39,6 +39,24 @@ firebase.auth().onAuthStateChanged((user) => {
 
                     userNick.innerHTML = `&nbsp;&nbsp;<span class="owullo2">O</span> ${owullName.toUpperCase()}  . . .`;
                 });
+            }).catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = document.querySelector('#error-message');
+                const errorForm = document.querySelector('#error-form');
+                const errModa = document.querySelector('#modal-errors');
+
+                if(errorCode){
+                    errorMessage.innerHTML = `Got an error, ${errorCode}, ${error.message}`;
+
+                    M.Modal.getInstance(errModa).open();
+
+                    errorForm.addEventListener('submit', (e) => {
+                        e.preventDefault();
+
+                        M.Modal.getInstance(errModa).close();
+                        errorForm.reset();
+                    });
+                }
             });
 
         setupUI(user);
@@ -64,13 +82,25 @@ signupForm.addEventListener('submit', (e) => {
     auth.createUserWithEmailAndPassword(htmlEmail, htmlPass)
     // if there is an error stop the process
 
-        .catch(function(error){
-            const errorCode = error.code;
+    .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = document.querySelector('#error-message');
+        const errorForm = document.querySelector('#error-form');
+        const errModa = document.querySelector('#modal-errors');
 
-            if(errorCode){
-                console.log(`Got an error, ${errorCode}, ${error.message}`);
-            }
-        })
+        if(errorCode){
+            errorMessage.innerHTML = `Got an error, ${errorCode}, ${error.message}`;
+
+            M.Modal.getInstance(errModa).open();
+
+            errorForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                M.Modal.getInstance(errModa).close();
+                errorForm.reset();
+            });
+        }
+    })
     // if no errors create the account
         .then(function(){
             const db = firebase.firestore();
@@ -105,13 +135,25 @@ loginForm.addEventListener('submit', (e) => {
 
     auth.signInWithEmailAndPassword(email, pass)
 
-        .catch(function(error){
-            const errorCode = error.code;
+    .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = document.querySelector('#error-message');
+        const errorForm = document.querySelector('#error-form');
+        const errModa = document.querySelector('#modal-errors');
 
-            if(errorCode){
-                console.log(`Got an error, ${errorCode}, ${error.message}`);
-            }
-        })
+        if(errorCode){
+            errorMessage.innerHTML = `Got an error, ${errorCode}, ${error.message}`;
+
+            M.Modal.getInstance(errModa).open();
+
+            errorForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                M.Modal.getInstance(errModa).close();
+                errorForm.reset();
+            });
+        }
+    })
 
         .then(function(){
             location.href = '/home';
@@ -162,13 +204,25 @@ resetPW.addEventListener('submit', (e) => {
 
     auth.sendPasswordResetEmail(email)
 
-        .catch(function(error){
-            const errorCode = error.code;
+    .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = document.querySelector('#error-message');
+        const errorForm = document.querySelector('#error-form');
+        const errModa = document.querySelector('#modal-errors');
 
-            if(errorCode){
-                console.log(`Got an error, ${errorCode}, ${error.message}`);
-            }
-        })
+        if(errorCode){
+            errorMessage.innerHTML = `Got an error, ${errorCode}, ${error.message}`;
+
+            M.Modal.getInstance(errModa).open();
+
+            errorForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                M.Modal.getInstance(errModa).close();
+                errorForm.reset();
+            });
+        }
+    })
 
         .then(function(){
             const pw = document.querySelector('#modal-forgot');
@@ -202,11 +256,23 @@ editForm.addEventListener('submit', (e) => {
 
             location.href = '/home';
         })
-        .catch(function(error){
+        .catch((error) => {
             const errorCode = error.code;
+            const errorMessage = document.querySelector('#error-message');
+            const errorForm = document.querySelector('#error-form');
+            const errModa = document.querySelector('#modal-errors');
 
             if(errorCode){
-                console.log(`Got an error, ${errorCode}, ${error.message}`);
+                errorMessage.innerHTML = `Got an error, ${errorCode}, ${error.message}`;
+
+                M.Modal.getInstance(errModa).open();
+
+                errorForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    M.Modal.getInstance(errModa).close();
+                    errorForm.reset();
+                });
             }
         });
 });

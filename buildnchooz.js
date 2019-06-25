@@ -70,7 +70,25 @@ okelistForm.addEventListener('submit', (e) => {
             });
         })
 
-        .catch(tryagain());
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = document.querySelector('#error-message');
+            const errorForm = document.querySelector('#error-form');
+            const errModa = document.querySelector('#modal-errors');
+
+            if(errorCode){
+                errorMessage.innerHTML = `Got an error, ${errorCode}, ${error.message}`;
+
+                M.Modal.getInstance(errModa).open();
+
+                errorForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    M.Modal.getInstance(errModa).close();
+                    errorForm.reset();
+                });
+            }
+        });
 });
 
 const okeChoozForm = document.querySelector('#oke-chooz-form');
@@ -115,11 +133,23 @@ okeChoozForm.addEventListener('submit', (e) => {
             });
         })
         // eslint-disable-next-line func-names
-        .catch(function(error){
+        .catch((error) => {
             const errorCode = error.code;
+            const errorMessage = document.querySelector('#error-message');
+            const errorForm = document.querySelector('#error-form');
+            const errModa = document.querySelector('#modal-errors');
 
             if(errorCode){
-                console.log(`Got an error, ${errorCode}, ${error.message}`);
+                errorMessage.innerHTML = `Got an error, ${errorCode}, ${error.message}`;
+
+                M.Modal.getInstance(errModa).open();
+
+                errorForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    M.Modal.getInstance(errModa).close();
+                    errorForm.reset();
+                });
             }
         });
 });
@@ -161,9 +191,21 @@ megabutton.addEventListener('click', (e) => {
         // eslint-disable-next-line func-names
         .catch((error) => {
             const errorCode = error.code;
+            const errorMessage = document.querySelector('#error-message');
+            const errorForm = document.querySelector('#error-form');
+            const errModa = document.querySelector('#modal-errors');
 
             if(errorCode){
-                console.log(`Got an error, ${errorCode}, ${error.message}`);
+                errorMessage.innerHTML = `Got an error, ${errorCode}, ${error.message}`;
+
+                M.Modal.getInstance(errModa).open();
+
+                errorForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    M.Modal.getInstance(errModa).close();
+                    errorForm.reset();
+                });
             }
         });
 });
@@ -210,9 +252,21 @@ artistForm.addEventListener('submit', (e) => {
         })
         .catch((error) => {
             const errorCode = error.code;
+            const errorMessage = document.querySelector('#error-message');
+            const errorForm = document.querySelector('#error-form');
+            const errModa = document.querySelector('#modal-errors');
 
             if(errorCode){
-                console.log(`Got an error, ${errorCode}, ${error.message}`);
+                errorMessage.innerHTML = `Got an error, ${errorCode}, ${error.message}`;
+
+                M.Modal.getInstance(errModa).open();
+
+                errorForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    M.Modal.getInstance(errModa).close();
+                    errorForm.reset();
+                });
             }
         });
 });
@@ -259,9 +313,21 @@ okeviewForm.addEventListener('submit', (e) => {
             });
         }).catch((error) => {
             const errorCode = error.code;
+            const errorMessage = document.querySelector('#error-message');
+            const errorForm = document.querySelector('#error-form');
+            const errModa = document.querySelector('#modal-errors');
 
             if(errorCode){
-                console.log(`Got an error, ${errorCode}, ${error.message}`);
+                errorMessage.innerHTML = `Got an error, ${errorCode}, ${error.message}`;
+
+                M.Modal.getInstance(errModa).open();
+
+                errorForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    M.Modal.getInstance(errModa).close();
+                    errorForm.reset();
+                });
             }
         });
 });
@@ -285,9 +351,21 @@ oketrashForm.addEventListener('submit', (e) => {
         })
         .catch((error) => {
             const errorCode = error.code;
+            const errorMessage = document.querySelector('#error-message');
+            const errorForm = document.querySelector('#error-form');
+            const errModa = document.querySelector('#modal-errors');
 
             if(errorCode){
-                console.log(`Got an error, ${errorCode}, ${error.message}`);
+                errorMessage.innerHTML = `Got an error, ${errorCode}, ${error.message}`;
+
+                M.Modal.getInstance(errModa).open();
+
+                errorForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    M.Modal.getInstance(errModa).close();
+                    errorForm.reset();
+                });
             }
         });
 });
