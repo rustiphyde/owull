@@ -95,7 +95,7 @@ okeChoozForm.addEventListener('submit', (e) => {
 
             const result = document.querySelector('#result-text');
 
-            result.innerHTML =  `Owull thinks you should sing "${owullList[owullIndex].song}" by ${owullList[owullIndex].by}. <span id="well">Owull is wise.</span>`;
+            result.innerHTML =  `Owull thinks you should go with "${owullList[owullIndex].song}" by ${owullList[owullIndex].by}. <span id="well">Owull is wise.</span>`;
 
 
             const openModal = document.querySelector('#modal-result');
