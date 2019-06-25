@@ -49,11 +49,23 @@ okelistForm.addEventListener('submit', (e) => {
 
                         })
                             // eslint-disable-next-line func-names
-                            .catch(function(error){
+                            .catch((error) => {
                                 const errorCode = error.code;
+                                const errorMessage = document.querySelector('#error-message');
+                                const errorForm = document.querySelector('#error-form');
+                                const errModa = document.querySelector('#modal-errors');
 
                                 if(errorCode){
-                                    console.log(`Got an error, ${errorCode}, ${error.message}`);
+                                    errorMessage.innerHTML = `${error.message}`;
+
+                                    M.Modal.getInstance(errModa).open();
+
+                                    errorForm.addEventListener('submit', (e) => {
+                                        e.preventDefault();
+
+                                        M.Modal.getInstance(errModa).close();
+                                        errorForm.reset();
+                                    });
                                 }
                             });
 
@@ -77,7 +89,7 @@ okelistForm.addEventListener('submit', (e) => {
             const errModa = document.querySelector('#modal-errors');
 
             if(errorCode){
-                errorMessage.innerHTML = `Got an error, ${errorCode}, ${error.message}`;
+                errorMessage.innerHTML = `${error.message}`;
 
                 M.Modal.getInstance(errModa).open();
 
@@ -150,7 +162,7 @@ okeChoozForm.addEventListener('submit', (e) => {
                 });
             }
         })
-        // eslint-disable-next-line func-names
+
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = document.querySelector('#error-message');
@@ -158,7 +170,7 @@ okeChoozForm.addEventListener('submit', (e) => {
             const errModa = document.querySelector('#modal-errors');
 
             if(errorCode){
-                errorMessage.innerHTML = `Got an error, ${errorCode}, ${error.message}`;
+                errorMessage.innerHTML = `${error.message}`;
 
                 M.Modal.getInstance(errModa).open();
 
@@ -214,7 +226,7 @@ megabutton.addEventListener('click', (e) => {
             const errModa = document.querySelector('#modal-errors');
 
             if(errorCode){
-                errorMessage.innerHTML = `Got an error, ${errorCode}, ${error.message}`;
+                errorMessage.innerHTML = `${error.message}`;
 
                 M.Modal.getInstance(errModa).open();
 
@@ -293,7 +305,7 @@ artistForm.addEventListener('submit', (e) => {
             const errModa = document.querySelector('#modal-errors');
 
             if(errorCode){
-                errorMessage.innerHTML = `Got an error, ${errorCode}, ${error.message}`;
+                errorMessage.innerHTML = `${error.message}`;
 
                 M.Modal.getInstance(errModa).open();
 
@@ -373,7 +385,7 @@ okeviewForm.addEventListener('submit', (e) => {
             const errModa = document.querySelector('#modal-errors');
 
             if(errorCode){
-                errorMessage.innerHTML = `Got an error, ${errorCode}, ${error.message}`;
+                errorMessage.innerHTML = `${error.message}`;
 
                 M.Modal.getInstance(errModa).open();
 
@@ -410,7 +422,7 @@ oketrashForm.addEventListener('submit', (e) => {
             const errModa = document.querySelector('#modal-errors');
 
             if(errorCode){
-                errorMessage.innerHTML = `Got an error, ${errorCode}, ${error.message}`;
+                errorMessage.innerHTML = `${error.message}`;
 
                 M.Modal.getInstance(errModa).open();
 
