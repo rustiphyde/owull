@@ -1,3 +1,4 @@
+/* eslint-disable complexity */
 /* eslint-disable quote-props */
 /* eslint-disable func-names */
 
@@ -141,22 +142,32 @@ loginForm.addEventListener('submit', (e) => {
             const errorForm = document.querySelector('#error-form');
             const errModa = document.querySelector('#modal-errors');
 
-            if(errorCode){
-                errorMessage.innerHTML = `${error.message}`;
-
-                M.Modal.getInstance(errModa).open();
-
-                errorForm.addEventListener('submit', (e) => {
-                    e.preventDefault();
-
-                    M.Modal.getInstance(errModa).close();
-                    errorForm.reset();
-                });
+            if(errorCode === 'auth/invalid-email'){
+                errorMessage.innerHTML = 'Please use the correct email address corresponding to your account. If you do not currently have an account please feel free to create one with the "Sign Up" tab';
             }
+            else if(errorCode === 'auth/user-disabled'){
+                errorMessage.innerHTML = 'I\'m sorry, but this account has been disabled.';
+            }
+            else if(errorCode === 'auth/user-not-found'){
+                errorMessage.innerHTML = 'I\'m sorry but we do not currently have an account with these credentials in our system. Please make sure you have spelled everything correctly. If you do not currently have an account you can create one for free under the "Sign Up" tab.';
+            }
+            else if(errorCode === 'auth/wrong-password'){
+                errorMessage.innerHTML = 'I\'m sorry, but the password does not match the one corresponding to this account in our system. Please make sure you have spelled everything correctly and try again. If you\'ve forgotten your password you can reset under the "Forgot" tab';
+            }
+ else{
+                errorMessage.innerHTML = `${error.message}`;
+            }
+            M.Modal.getInstance(errModa).open();
+
+            errorForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                M.Modal.getInstance(errModa).close();
+                errorForm.reset();
+            });
         })
 
         .then(() => {
-
             const modal = document.querySelector('#modal-login');
 
             M.Modal.getInstance(modal).close();
