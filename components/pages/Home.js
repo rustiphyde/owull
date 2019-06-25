@@ -1,5 +1,9 @@
-/* eslint-disable no-else-return */
-/* eslint-disable func-names */
+function buildNavHTML(stateLinks){
+  return stateLinks
+      .map(
+          (link) => `<li><a href="/${link.text.replace(/\s+/g, '').toLowerCase()}" data-navigo><span class="${link.icon}"></span>${link.text}</a></li>`
+      ).join(' ');
+}
 
 
 export default function(){
