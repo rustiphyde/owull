@@ -138,7 +138,7 @@ okeChoozForm.addEventListener('submit', (e) => {
                 const errorForm = document.querySelector('#error-form');
                 const errModa = document.querySelector('#modal-errors');
 
-                errorMessage.innerHTML = `I'm sorry but that list doesn't currently exist. You are welcome to create it in the "Build" tab`;
+                errorMessage.innerHTML = `I'm sorry but that list doesn't currently exist on your account. You are welcome to create it in the "Build" tab`;
 
                 M.Modal.getInstance(errModa).open();
 
@@ -355,7 +355,7 @@ okeviewForm.addEventListener('submit', (e) => {
                 const errorForm = document.querySelector('#error-form');
                 const errModa = document.querySelector('#modal-errors');
 
-                errorMessage.innerHTML = `I'm sorry but that list doesn't currently exist. You are welcome to create it in the "Build" tab`;
+                errorMessage.innerHTML = `I'm sorry but that list doesn't currently exist on your account. You are welcome to create it in the "Build" tab`;
 
                 M.Modal.getInstance(errModa).open();
 
