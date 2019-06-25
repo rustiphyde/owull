@@ -332,7 +332,7 @@ okeviewForm.addEventListener('submit', (e) => {
 
     vdb.get()
         .then((snip) => {
-            if(snip.exists){
+
                 let viewList = [];
 
                 const viewContent = document.querySelector('#view-content');
@@ -362,30 +362,16 @@ okeviewForm.addEventListener('submit', (e) => {
                     viewForm.reset();
                 });
             }
-            else{
-                const errorMessage = document.querySelector('#error-message');
-                const errorForm = document.querySelector('#error-form');
-                const errModa = document.querySelector('#modal-errors');
 
-                errorMessage.innerHTML = `I'm sorry but that list doesn't currently exist on your account. You are welcome to create it in the "Build" tab`;
-
-                M.Modal.getInstance(errModa).open();
-
-                errorForm.addEventListener('submit', (e) => {
-                    e.preventDefault();
-
-                    M.Modal.getInstance(errModa).close();
-                    errorForm.reset();
-                });
-            }
-        }).catch((error) => {
+        })
+        .catch((error) => {
             const errorCode = error.code;
             const errorMessage = document.querySelector('#error-message');
             const errorForm = document.querySelector('#error-form');
             const errModa = document.querySelector('#modal-errors');
 
             if(errorCode){
-                errorMessage.innerHTML = `${error.message}`;
+                errorMessage.innerHTML = `I'm sorry but that list doesn't currently exist on your account. You are welcome to create it in the "Build" tab}`;
 
                 M.Modal.getInstance(errModa).open();
 
