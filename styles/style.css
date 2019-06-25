@@ -272,6 +272,7 @@ h4 {
   border: solid 3px #B7410E;
   border-radius: 16px;
   line-height: 2em;
+  padding: 10px;
 }
 
 .user-name {
