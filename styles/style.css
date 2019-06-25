@@ -271,6 +271,7 @@ h4 {
   text-align: left;
   border: solid 3px #B7410E;
   border-radius: 16px;
+  line-height: 2em;
 }
 
 .user-name {
