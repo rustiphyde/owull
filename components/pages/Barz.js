@@ -13,6 +13,6 @@ export default function(state){
     </ul>
 </nav>
 <main class="container">
-<h2>COMING SOON</h2>
+<h2 class="list-title">BARZ COMING SOON</h2>
 </main>`;
 }
