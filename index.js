@@ -1,6 +1,5 @@
 /* eslint-disable func-names */
 
-import Nav from './components/Nav';
 import Content from './components/Content';
 
 
@@ -18,7 +17,6 @@ const root = document.querySelector('#root');
 // render receives an argument as a named parameter: "state"
 function render(state){
     root.innerHTML = `
-    ${Nav(state)}
     ${Content(state)}`;
 
 
