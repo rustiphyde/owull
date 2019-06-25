@@ -5,7 +5,7 @@ function buildNavHTML(stateLinks){
         ).join(' ');
   }
 
-export default function(){
+export default function(state){
     return `
 <nav class="container list-nav logged-in">
     <ul class="logged-in">
