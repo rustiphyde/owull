@@ -113,8 +113,8 @@ okeChoozForm.addEventListener('submit', (e) => {
     const db = fire.collection('Users').doc(userUid).collection('Lists').doc(listcon).collection('Songs');
 
     db.get()
+    //TODO Resolve error messages not showing
         .then((snaps) => {
-
                 let owullList = [];
 
                 snaps.docs.map((doc) => {
@@ -233,6 +233,7 @@ artistForm.addEventListener('submit', (e) => {
 
     artdb.get()
         .then((snappy) => {
+
             let artList = [];
 
             snappy.docs.map((doc) => {
