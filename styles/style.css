@@ -264,10 +264,13 @@ h4 {
 
 
 #homebase {
-  color: #361002;
+  color: #F4DB9D;
+  background-color: #361002;
   font-size: 1.5em;
   font-family: 'Kreon', serif;
   text-align: left;
+  border: solid 3px #B7410E;
+  border-radius: 16px;
 }
 
 .user-name {
