@@ -80,7 +80,6 @@ signupForm.addEventListener('submit', (e) => {
             db.collection('Users').doc(userUid).set({
                 email: htmlEmail,
                 username: htmlUser,
-                password: htmlPass,
                 ID: userUid
 
             })
