@@ -102,35 +102,53 @@ okeChoozForm.addEventListener('submit', (e) => {
 
     db.get()
         .then((snaps) => {
-            let owullList = [];
+            if(snaps.exists){
+                let owullList = [];
 
-            snaps.docs.map((doc) => {
-                owullList.push(doc.data());
-            });
+                snaps.docs.map((doc) => {
+                    owullList.push(doc.data());
+                });
 
-            // get a random index
-            const owullIndex = Math.floor(Math.random() * owullList.length);
+                // get a random index
+                const owullIndex = Math.floor(Math.random() * owullList.length);
 
-            const result = document.querySelector('#result-text');
+                const result = document.querySelector('#result-text');
 
-            result.innerHTML =  `Owull thinks you should go with "${owullList[owullIndex].song}" by ${owullList[owullIndex].by}. <span id="well">Owull is wise.</span>`;
+                result.innerHTML =  `Owull thinks you should go with "${owullList[owullIndex].song}" by ${owullList[owullIndex].by}. <span id="well">Owull is wise.</span>`;
 
 
-            const openModal = document.querySelector('#modal-result');
-            const closeModal = document.querySelector('#modal-oke-chooz');
+                const openModal = document.querySelector('#modal-result');
+                const closeModal = document.querySelector('#modal-oke-chooz');
 
-            M.Modal.getInstance(openModal).open();
-            M.Modal.getInstance(closeModal).close();
+                M.Modal.getInstance(openModal).open();
+                M.Modal.getInstance(closeModal).close();
 
-            okeChoozForm.reset();
+                okeChoozForm.reset();
 
-            const ok = document.querySelector('#ok');
+                const ok = document.querySelector('#ok');
 
-            ok.addEventListener('click', (e) => {
-                e.preventDefault();
+                ok.addEventListener('click', (e) => {
+                    e.preventDefault();
 
-                M.Modal.getInstance(openModal).close();
-            });
+                    M.Modal.getInstance(openModal).close();
+                });
+            }
+            else{
+                const errorMessage = document.querySelector('#error-message');
+                const errorForm = document.querySelector('#error-form');
+                const errModa = document.querySelector('#modal-errors');
+
+                errorMessage.innerHTML = `I'm sorry but that list doesn't currently exist. You are welcome to create it in the "Build" tab`;
+
+                M.Modal.getInstance(errModa).open();
+
+                errorForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    M.Modal.getInstance(errModa).close();
+                    errorForm.reset();
+                });
+            }
         })
         // eslint-disable-next-line func-names
         .catch((error) => {
@@ -220,35 +238,53 @@ artistForm.addEventListener('submit', (e) => {
 
     artdb.get()
         .then((snappy) => {
-            let artList = [];
+            if(snappy.exists){
+                let artList = [];
 
-            snappy.docs.map((doc) => {
-                artList.push(doc.data());
-            });
+                snappy.docs.map((doc) => {
+                    artList.push(doc.data());
+                });
 
-            // get a random index
-            const artIndex = Math.floor(Math.random() * artList.length);
+                // get a random index
+                const artIndex = Math.floor(Math.random() * artList.length);
 
-            const answer = document.querySelector('#result-text');
+                const answer = document.querySelector('#result-text');
 
-            answer.innerHTML =  `Owull thinks you should sing "${artList[artIndex].song}" by ${artList[artIndex].by}. <span id="well">Owull is wise.</span>`;
+                answer.innerHTML =  `Owull thinks you should sing "${artList[artIndex].song}" by ${artList[artIndex].by}. <span id="well">Owull is wise.</span>`;
 
 
-            const openArt = document.querySelector('#modal-result');
-            const closeArt = document.querySelector('#modal-artist-chooz');
+                const openArt = document.querySelector('#modal-result');
+                const closeArt = document.querySelector('#modal-artist-chooz');
 
-            M.Modal.getInstance(openArt).open();
-            M.Modal.getInstance(closeArt).close();
+                M.Modal.getInstance(openArt).open();
+                M.Modal.getInstance(closeArt).close();
 
-            artistForm.reset();
+                artistForm.reset();
 
-            const yup = document.querySelector('#ok');
+                const yup = document.querySelector('#ok');
 
-            yup.addEventListener('click', (e) => {
-                e.preventDefault();
+                yup.addEventListener('click', (e) => {
+                    e.preventDefault();
 
-                M.Modal.getInstance(openArt).close();
-            });
+                    M.Modal.getInstance(openArt).close();
+                });
+            }
+            else{
+                const errorMessage = document.querySelector('#error-message');
+                const errorForm = document.querySelector('#error-form');
+                const errModa = document.querySelector('#modal-errors');
+
+                errorMessage.innerHTML = `I'm sorry but that artist isn't currently in our database. You are welcome to add them in the 'Build" tab`;
+
+                M.Modal.getInstance(errModa).open();
+
+                errorForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    M.Modal.getInstance(errModa).close();
+                    errorForm.reset();
+                });
+            }
         })
         .catch((error) => {
             const errorCode = error.code;
@@ -281,36 +317,55 @@ okeviewForm.addEventListener('submit', (e) => {
 
     const vdb = flame.collection('Users').doc(userUid).collection('Lists').doc(viewer).collection('Songs');
 
+
     vdb.get()
         .then((snip) => {
-            let viewList = [];
+            if(snip.exists){
+                let viewList = [];
 
-            const viewContent = document.querySelector('#view-content');
+                const viewContent = document.querySelector('#view-content');
 
-            snip.docs.map((doc) => {
-                viewList.push(doc.data());
-            });
+                snip.docs.map((doc) => {
+                    viewList.push(doc.data());
+                });
                 console.log(viewList);
 
 
-            viewContent.innerHTML = viewList.map((cont) => `<li>${cont.song} by ${cont.by}</li><br>`).join(' ');
+                viewContent.innerHTML = viewList.map((cont) => `<li>${cont.song} by ${cont.by}</li><br>`).join(' ');
 
-            const v = document.querySelector('#modal-list-view');
-            const m = document.querySelector('#modal-oke-view');
+                const v = document.querySelector('#modal-list-view');
+                const m = document.querySelector('#modal-oke-view');
 
-            M.Modal.getInstance(v).open();
-            M.Modal.getInstance(m).close();
-            okeviewForm.reset();
+                M.Modal.getInstance(v).open();
+                M.Modal.getInstance(m).close();
+                okeviewForm.reset();
 
 
-            const viewForm = document.querySelector('#view-list-form');
+                const viewForm = document.querySelector('#view-list-form');
 
-            viewForm.addEventListener('submit', (e) => {
-                e.preventDefault();
+                viewForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
 
-                M.Modal.getInstance(v).close();
-                viewForm.reset();
-            });
+                    M.Modal.getInstance(v).close();
+                    viewForm.reset();
+                });
+            }
+            else{
+                const errorMessage = document.querySelector('#error-message');
+                const errorForm = document.querySelector('#error-form');
+                const errModa = document.querySelector('#modal-errors');
+
+                errorMessage.innerHTML = `I'm sorry but that list doesn't currently exist. You are welcome to create it in the "Build" tab`;
+
+                M.Modal.getInstance(errModa).open();
+
+                errorForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    M.Modal.getInstance(errModa).close();
+                    errorForm.reset();
+                });
+            }
         }).catch((error) => {
             const errorCode = error.code;
             const errorMessage = document.querySelector('#error-message');
@@ -331,7 +386,6 @@ okeviewForm.addEventListener('submit', (e) => {
             }
         });
 });
-
 const oketrashForm = document.querySelector('#oketrash-form');
 
 oketrashForm.addEventListener('submit', (e) => {
@@ -344,7 +398,7 @@ oketrashForm.addEventListener('submit', (e) => {
 
     tdb.delete()
         .then(() => {
-            const moda =document.querySelector('#modal-oke-trash');
+            const moda = document.querySelector('#modal-oke-trash');
 
             M.Modal.getInstance(moda).close();
             oketrashForm.reset();
