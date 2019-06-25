@@ -263,19 +263,8 @@ h4 {
 }
 
 
-#successmessg {
-  color: #F4DB9D;
-  font-size: 16px;
-  text-align: center;
-  text-shadow: 0px 0px 6px black;
-}
-
-#errormessg {
-  color: red;
-  font-size: 16px;
-  text-align: center;
-  text-shadow: 0px 0px 6px black;
-  margin: 8px auto;
+#homebase {
+  color: #361002;
 }
 
 .user-name {
