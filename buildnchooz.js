@@ -332,37 +332,34 @@ okeviewForm.addEventListener('submit', (e) => {
 
     vdb.get()
         .then((snip) => {
+            let viewList = [];
 
-                let viewList = [];
+            const viewContent = document.querySelector('#view-content');
 
-                const viewContent = document.querySelector('#view-content');
-
-                snip.docs.map((doc) => {
-                    viewList.push(doc.data());
-                });
-                console.log(viewList);
-
-
-                viewContent.innerHTML = viewList.map((cont) => `<li>${cont.song} by ${cont.by}</li><br>`).join(' ');
-
-                const v = document.querySelector('#modal-list-view');
-                const m = document.querySelector('#modal-oke-view');
-
-                M.Modal.getInstance(v).open();
-                M.Modal.getInstance(m).close();
-                okeviewForm.reset();
+            snip.docs.map((doc) => {
+                viewList.push(doc.data());
+            });
+            console.log(viewList);
 
 
-                const viewForm = document.querySelector('#view-list-form');
+            viewContent.innerHTML = viewList.map((cont) => `<li>${cont.song} by ${cont.by}</li><br>`).join(' ');
 
-                viewForm.addEventListener('submit', (e) => {
-                    e.preventDefault();
+            const v = document.querySelector('#modal-list-view');
+            const m = document.querySelector('#modal-oke-view');
 
-                    M.Modal.getInstance(v).close();
-                    viewForm.reset();
-                });
-            }
+            M.Modal.getInstance(v).open();
+            M.Modal.getInstance(m).close();
+            okeviewForm.reset();
 
+
+            const viewForm = document.querySelector('#view-list-form');
+
+            viewForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                M.Modal.getInstance(v).close();
+                viewForm.reset();
+            });
         })
         .catch((error) => {
             const errorCode = error.code;
