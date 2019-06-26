@@ -259,7 +259,6 @@ artistForm.addEventListener('submit', (e) => {
                 const artIndex = Math.floor(Math.random() * artList.length);
 
 
-
                 answer.innerHTML =  `Owull thinks you should sing "${artList[artIndex].song}" by ${artList[artIndex].by}. <span id="well">Owull is wise.</span>`;
 
 
@@ -323,40 +322,51 @@ okeviewForm.addEventListener('submit', (e) => {
 
     vdb.get()
         .then((snip) => {
-            let viewList = [];
+            if(snip.docChanges().length){
+                let viewList = [];
 
-            const viewContent = document.querySelector('#view-content');
+                const viewContent = document.querySelector('#view-content');
 
-            snip.docs.map((doc) => {
-                viewList.push(doc.data());
-            });
-            console.log(viewList);
-
-
-            viewContent.innerHTML = viewList.map((cont) => `<li>${cont.song} by ${cont.by}</li><br>`).join(' ');
-
-            const v = document.querySelector('#modal-list-view');
-            const m = document.querySelector('#modal-oke-view');
-
-            M.Modal.getInstance(v).open();
-            M.Modal.getInstance(m).close();
-            okeviewForm.reset();
+                snip.docs.map((doc) => {
+                    viewList.push(doc.data());
+                });
+                console.log(viewList);
 
 
-            const viewForm = document.querySelector('#view-list-form');
+                viewContent.innerHTML = viewList.map((cont) => `<li>${cont.song} by ${cont.by}</li><br>`).join(' ');
 
-            viewForm.addEventListener('submit', (e) => {
-                e.preventDefault();
+                const v = document.querySelector('#modal-list-view');
+                const m = document.querySelector('#modal-oke-view');
 
-                M.Modal.getInstance(v).close();
-                viewForm.reset();
-            });
+                M.Modal.getInstance(v).open();
+                M.Modal.getInstance(m).close();
+                okeviewForm.reset();
+
+
+                const viewForm = document.querySelector('#view-list-form');
+
+                viewForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    M.Modal.getInstance(v).close();
+                    viewForm.reset();
+                });
+            }
+            else{
+                errorMessage.innerHTML = `I'm sorry but that list doesn't currently exist on your account. You are welcome to create it in the "Build" tab}`;
+
+                M.Modal.getInstance(errModa).open();
+
+                errorForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    M.Modal.getInstance(errModa).close();
+                    errorForm.reset();
+                });
+            }
         })
         .catch((error) => {
             const errorCode = error.code;
-            const errorMessage = document.querySelector('#error-message');
-            const errorForm = document.querySelector('#error-form');
-            const errModa = document.querySelector('#modal-errors');
 
             if(errorCode){
                 errorMessage.innerHTML = `I'm sorry but that list doesn't currently exist on your account. You are welcome to create it in the "Build" tab}`;
