@@ -104,6 +104,10 @@ okelistForm.addEventListener('submit', (e) => {
 });
 
 const okeChoozForm = document.querySelector('#oke-chooz-form');
+const result = document.querySelector('#result-text');
+const openModal = document.querySelector('#modal-result');
+const closeModal = document.querySelector('#modal-oke-chooz');
+const ok = document.querySelector('#ok');
 
 okeChoozForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -113,8 +117,10 @@ okeChoozForm.addEventListener('submit', (e) => {
     const db = fire.collection('Users').doc(userUid).collection('Lists').doc(listcon).collection('Songs');
 
     db.get()
-    //TODO Resolve error messages not showing
+    // TODO Resolve error messages not showing
         .then((snaps) => {
+            console.log(snaps.docChanges());
+            if(snaps.docChanges().length){
                 let owullList = [];
 
                 snaps.docs.map((doc) => {
@@ -124,27 +130,32 @@ okeChoozForm.addEventListener('submit', (e) => {
                 // get a random index
                 const owullIndex = Math.floor(Math.random() * owullList.length);
 
-                const result = document.querySelector('#result-text');
-
                 result.innerHTML =  `Owull thinks you should go with "${owullList[owullIndex].song}" by ${owullList[owullIndex].by}. <span id="well">Owull is wise.</span>`;
 
-
-                const openModal = document.querySelector('#modal-result');
-                const closeModal = document.querySelector('#modal-oke-chooz');
 
                 M.Modal.getInstance(openModal).open();
                 M.Modal.getInstance(closeModal).close();
 
                 okeChoozForm.reset();
 
-                const ok = document.querySelector('#ok');
+                ok.addEventListener('click', (e) => {
+                    e.preventDefault();
+
+                    M.Modal.getInstance(openModal).close();
+                });
+            }
+            else{
+                result.innerHTML = 'I\'m sorry but that list doesn\'t currently exist on your account. You are welcome to create it in the "Build" tab';
+
+                M.Modal.getInstance(openModal).open();
 
                 ok.addEventListener('click', (e) => {
                     e.preventDefault();
 
                     M.Modal.getInstance(openModal).close();
                 });
-        })
+            }
+                })
 
         .catch((error) => {
             const errorCode = error.code;
@@ -165,7 +176,7 @@ okeChoozForm.addEventListener('submit', (e) => {
                 });
             }
         });
-});
+    });
 
 
 const megabutton = document.querySelector('#btn-mega-chooz');
@@ -233,7 +244,6 @@ artistForm.addEventListener('submit', (e) => {
 
     artdb.get()
         .then((snappy) => {
-
             let artList = [];
 
             snappy.docs.map((doc) => {
@@ -384,5 +394,3 @@ oketrashForm.addEventListener('submit', (e) => {
             }
         });
 });
-
-
