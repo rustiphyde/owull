@@ -154,7 +154,7 @@ loginForm.addEventListener('submit', (e) => {
             else if(errorCode === 'auth/wrong-password'){
                 errorMessage.innerHTML = 'I\'m sorry, but the password does not match the one corresponding to this account in our system. Please make sure you have spelled everything correctly and try again. If you\'ve forgotten your password you can reset under the "Forgot" tab';
             }
- else{
+            else{
                 errorMessage.innerHTML = `${error.message}`;
             }
             M.Modal.getInstance(errModa).open();
@@ -215,12 +215,26 @@ resetPW.addEventListener('submit', (e) => {
 
     auth.sendPasswordResetEmail(email)
 
-    .then(function(){
-        const pw = document.querySelector('#modal-forgot');
+        .then(function(){
+            const pw = document.querySelector('#modal-forgot');
 
-        M.Modal.getInstance(pw).close();
-        resetPW.reset();
-    })
+            M.Modal.getInstance(pw).close();
+            resetPW.reset();
+
+            const openModal = document.querySelector('#modal-result');
+            const ok = document.querySelector('#ok');
+            const result = document.querySelector('#result-text');
+
+            result.innerHTML = 'Your password reset email has been sent to the email address you provided.';
+
+            M.Modal.getInstance(openModal).open();
+
+            ok.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                M.Modal.getInstance(openModal).close();
+            });
+        })
 
         .catch((error) => {
             const errorCode = error.code;
@@ -229,7 +243,7 @@ resetPW.addEventListener('submit', (e) => {
             const errModa = document.querySelector('#modal-errors');
 
             if(errorCode){
-                errorMessage.innerHTML = `${error.message}`;
+                errorMessage.innerHTML = 'The email you entered doesn\'t match any in our database. Please make sure you have entered the correct information and try again. If you do not have an account you can sign up for a free one in the "Sign Up" tab.';
 
                 M.Modal.getInstance(errModa).open();
 
