@@ -208,6 +208,7 @@ const resetPW = document.querySelector('#reset-form');
 const enterEmail = document.querySelector('#reset-email');
 
 resetPW.addEventListener('submit', (e) => {
+    e.preventDefault();
     const email = enterEmail.value;
     const auth = firebase.auth();
     // sign in
