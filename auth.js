@@ -240,13 +240,6 @@ resetPW.addEventListener('submit', (e) => {
                 });
             }
         });
-
-        .then(function(){
-            const pw = document.querySelector('#modal-forgot');
-
-            M.Modal.getInstance(pw).close();
-            resetPW.reset();
-        });
 });
 
 const editForm = document.querySelector('#edit-form');
