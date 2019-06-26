@@ -119,7 +119,6 @@ okeChoozForm.addEventListener('submit', (e) => {
     db.get()
     // TODO Resolve error messages not showing
         .then((snaps) => {
-            console.log(snaps.docChanges());
             if(snaps.docChanges().length){
                 let owullList = [];
 
@@ -155,7 +154,7 @@ okeChoozForm.addEventListener('submit', (e) => {
                     M.Modal.getInstance(openModal).close();
                 });
             }
-                })
+        })
 
         .catch((error) => {
             const errorCode = error.code;
@@ -176,7 +175,7 @@ okeChoozForm.addEventListener('submit', (e) => {
                 });
             }
         });
-    });
+});
 
 
 const megabutton = document.querySelector('#btn-mega-chooz');
@@ -235,6 +234,11 @@ megabutton.addEventListener('click', (e) => {
 });
 
 const artistForm = document.querySelector('#artist-chooz-form');
+const answer = document.querySelector('#result-text');
+const openArt = document.querySelector('#modal-result');
+const errorMessage = document.querySelector('#error-message');
+const errorForm = document.querySelector('#error-form');
+const errModa = document.querySelector('#modal-errors');
 
 artistForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -244,41 +248,52 @@ artistForm.addEventListener('submit', (e) => {
 
     artdb.get()
         .then((snappy) => {
-            let artList = [];
+            if(snappy.docChanges().length){
+                let artList = [];
 
-            snappy.docs.map((doc) => {
-                artList.push(doc.data());
-            });
+                snappy.docs.map((doc) => {
+                    artList.push(doc.data());
+                });
 
-            // get a random index
-            const artIndex = Math.floor(Math.random() * artList.length);
-
-            const answer = document.querySelector('#result-text');
-
-            answer.innerHTML =  `Owull thinks you should sing "${artList[artIndex].song}" by ${artList[artIndex].by}. <span id="well">Owull is wise.</span>`;
+                // get a random index
+                const artIndex = Math.floor(Math.random() * artList.length);
 
 
-            const openArt = document.querySelector('#modal-result');
-            const closeArt = document.querySelector('#modal-artist-chooz');
 
-            M.Modal.getInstance(openArt).open();
-            M.Modal.getInstance(closeArt).close();
+                answer.innerHTML =  `Owull thinks you should sing "${artList[artIndex].song}" by ${artList[artIndex].by}. <span id="well">Owull is wise.</span>`;
 
-            artistForm.reset();
 
-            const yup = document.querySelector('#ok');
+                const closeArt = document.querySelector('#modal-artist-chooz');
 
-            yup.addEventListener('click', (e) => {
-                e.preventDefault();
+                M.Modal.getInstance(openArt).open();
+                M.Modal.getInstance(closeArt).close();
 
-                M.Modal.getInstance(openArt).close();
-            });
+                artistForm.reset();
+
+                const yup = document.querySelector('#ok');
+
+                yup.addEventListener('click', (e) => {
+                    e.preventDefault();
+
+                    M.Modal.getInstance(openArt).close();
+                });
+            }
+            else{
+                errorMessage.innerHTML = `I'm sorry but that artist isn't currently in our database. You are welcome to add them in the 'Build" tab`;
+
+                M.Modal.getInstance(errModa).open();
+
+                errorForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    M.Modal.getInstance(errModa).close();
+                    errorForm.reset();
+                });
+            }
         })
         .catch((error) => {
             const errorCode = error.code;
-            const errorMessage = document.querySelector('#error-message');
-            const errorForm = document.querySelector('#error-form');
-            const errModa = document.querySelector('#modal-errors');
+
 
             if(errorCode){
                 errorMessage.innerHTML = `I'm sorry but that artist isn't currently in our database. You are welcome to add them in the 'Build" tab`;
