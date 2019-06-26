@@ -172,6 +172,8 @@ loginForm.addEventListener('submit', (e) => {
 
             M.Modal.getInstance(modal).close();
             loginForm.reset();
+
+            location.href = '/home';
         });
 });
 
@@ -233,6 +235,8 @@ resetPW.addEventListener('submit', (e) => {
                 e.preventDefault();
 
                 M.Modal.getInstance(openModal).close();
+
+                location.href = '/home';
             });
         })
 
