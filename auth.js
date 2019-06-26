@@ -214,6 +214,13 @@ resetPW.addEventListener('submit', (e) => {
 
     auth.sendPasswordResetEmail(email)
 
+    .then(function(){
+        const pw = document.querySelector('#modal-forgot');
+
+        M.Modal.getInstance(pw).close();
+        resetPW.reset();
+    })
+
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = document.querySelector('#error-message');
@@ -232,7 +239,7 @@ resetPW.addEventListener('submit', (e) => {
                     errorForm.reset();
                 });
             }
-        })
+        });
 
         .then(function(){
             const pw = document.querySelector('#modal-forgot');
