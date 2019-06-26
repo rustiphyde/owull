@@ -353,7 +353,7 @@ okeviewForm.addEventListener('submit', (e) => {
                 });
             }
             else{
-                errorMessage.innerHTML = `I'm sorry but that list doesn't currently exist on your account. You are welcome to create it in the "Build" tab}`;
+                errorMessage.innerHTML = `I'm sorry but that list doesn't currently exist on your account. You are welcome to create it in the "Build" tab.`;
 
                 M.Modal.getInstance(errModa).open();
 
@@ -369,7 +369,7 @@ okeviewForm.addEventListener('submit', (e) => {
             const errorCode = error.code;
 
             if(errorCode){
-                errorMessage.innerHTML = `I'm sorry but that list doesn't currently exist on your account. You are welcome to create it in the "Build" tab}`;
+                errorMessage.innerHTML = `I'm sorry but that list doesn't currently exist on your account. You are welcome to create it in the "Build" tab.`;
 
                 M.Modal.getInstance(errModa).open();
 
