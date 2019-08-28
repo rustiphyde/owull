@@ -199,8 +199,6 @@ megabutton.addEventListener('click', (e) => {
 
             megaresult.innerHTML =  `Owull commends your courage...The song you have to sing is  "${megalist[megaIndex].song}" by ${megalist[megaIndex].by}.<span id="wish"> GOOD LUCK!!</span>`;
 
-            const openModal = document.querySelector('#modal-result');
-
             M.Modal.getInstance(openModal).open();
             const ok = document.querySelector('#result-form');
 
