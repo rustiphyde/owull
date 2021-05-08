@@ -28,7 +28,7 @@
   "dependencies": {
     "firebase": "^6.4.2",
     "firebaseui": "^4.1.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "navigo": "^7.1.2"
   }
 }
